@@ -1,0 +1,4095 @@
+{
+  "agentManagementMode": "agent-native",
+  "registries": {
+    "wire.companionProfile": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "Companion profile registry",
+      "entries": [
+        [
+          1,
+          "aap-secure-session-v1"
+        ]
+      ]
+    },
+    "wire.companionProfileV1Refusal": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "Companion-profile v1 refusal registry",
+      "entries": [
+        [
+          1,
+          "resumeTokenInvalid"
+        ],
+        [
+          2,
+          "resumeTokenExpired"
+        ],
+        [
+          3,
+          "peerBindingMismatch"
+        ],
+        [
+          4,
+          "versionFamilyMismatch"
+        ],
+        [
+          5,
+          "bootstrapTranscriptMismatch"
+        ],
+        [
+          6,
+          "replayContinuityNotRestorable"
+        ],
+        [
+          7,
+          "trustPolicyMismatch"
+        ],
+        [
+          8,
+          "requiredAuditObjectUnavailable"
+        ]
+      ]
+    },
+    "wire.companionProfileV1ResultingAction": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "Companion-profile v1 resulting-action registry",
+      "entries": [
+        [
+          1,
+          "requireFreshSession"
+        ],
+        [
+          2,
+          "closeTransportSession"
+        ],
+        [
+          3,
+          "allowDiagnosticsOnly"
+        ]
+      ]
+    },
+    "wire.staleStatusOutcome": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "Stale-status outcome registry",
+      "entries": [
+        [
+          1,
+          "rejectEvidence"
+        ]
+      ]
+    },
+    "wire.statePhase": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "State Phase Registry",
+      "entries": [
+        [
+          1,
+          "proposed"
+        ],
+        [
+          2,
+          "countered"
+        ],
+        [
+          3,
+          "accepted"
+        ],
+        [
+          4,
+          "ready"
+        ],
+        [
+          5,
+          "executing"
+        ],
+        [
+          6,
+          "challenged"
+        ],
+        [
+          7,
+          "delivering"
+        ],
+        [
+          8,
+          "proved"
+        ],
+        [
+          9,
+          "completed"
+        ],
+        [
+          10,
+          "partiallyCompleted"
+        ],
+        [
+          11,
+          "cancelled"
+        ],
+        [
+          12,
+          "failed"
+        ],
+        [
+          13,
+          "rollingBack"
+        ],
+        [
+          14,
+          "settling"
+        ],
+        [
+          15,
+          "closed"
+        ],
+        [
+          16,
+          "declined"
+        ]
+      ]
+    },
+    "wire.declineReasonCode": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "declineReasonCode",
+      "entries": [
+        [
+          1,
+          "unsupportedVersion"
+        ],
+        [
+          2,
+          "unsupportedProfile"
+        ],
+        [
+          3,
+          "unsupportedPredicateRuntime"
+        ],
+        [
+          4,
+          "insufficientTrust"
+        ],
+        [
+          5,
+          "insufficientBudgetAuthority"
+        ],
+        [
+          6,
+          "permissionDenied"
+        ],
+        [
+          7,
+          "ambiguousGoal"
+        ],
+        [
+          8,
+          "policyConflict"
+        ],
+        [
+          9,
+          "busyRetryable"
+        ],
+        [
+          10,
+          "counterRequired"
+        ]
+      ]
+    },
+    "wire.deliveryClass": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "deliveryClass",
+      "entries": [
+        [
+          1,
+          "artifactManifest"
+        ],
+        [
+          2,
+          "resultSummary"
+        ],
+        [
+          3,
+          "proofOnly"
+        ],
+        [
+          4,
+          "terminalResult"
+        ],
+        [
+          5,
+          "partialTerminalResult"
+        ]
+      ]
+    },
+    "wire.challengeClass": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "challengeClass",
+      "entries": [
+        [
+          1,
+          "missingEvidence"
+        ],
+        [
+          2,
+          "digestMismatch"
+        ],
+        [
+          3,
+          "policyViolation"
+        ],
+        [
+          4,
+          "insufficientVerifierIndependence"
+        ],
+        [
+          5,
+          "replayFailure"
+        ],
+        [
+          6,
+          "semanticMismatch"
+        ],
+        [
+          7,
+          "delegateLiabilityGap"
+        ],
+        [
+          8,
+          "compromiseRecoveryFreeze"
+        ]
+      ]
+    },
+    "wire.repairClass": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "repairClass",
+      "entries": [
+        [
+          1,
+          "replaceArtifact"
+        ],
+        [
+          2,
+          "replaceEvidence"
+        ],
+        [
+          3,
+          "narrowClaim"
+        ],
+        [
+          4,
+          "rerunVerification"
+        ],
+        [
+          5,
+          "rollbackAndRetry"
+        ],
+        [
+          6,
+          "declineRepair"
+        ]
+      ]
+    },
+    "wire.settlementOutcome": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "settlementOutcome",
+      "entries": [
+        [
+          1,
+          "completed"
+        ],
+        [
+          2,
+          "partiallyCompleted"
+        ],
+        [
+          3,
+          "cancelled"
+        ],
+        [
+          4,
+          "failed"
+        ]
+      ]
+    },
+    "wire.closeReasonCode": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "closeReasonCode",
+      "entries": [
+        [
+          1,
+          "declined"
+        ],
+        [
+          2,
+          "settledFinality"
+        ],
+        [
+          3,
+          "disputeWindowExpired"
+        ],
+        [
+          4,
+          "witnessThresholdMet"
+        ],
+        [
+          5,
+          "transparencyAnchored"
+        ],
+        [
+          6,
+          "policyFailClosed"
+        ],
+        [
+          7,
+          "sessionShutdown"
+        ],
+        [
+          8,
+          "diagnosticComplete"
+        ]
+      ]
+    },
+    "wire.errorScope": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "errorScope",
+      "entries": [
+        [
+          1,
+          "session"
+        ],
+        [
+          2,
+          "stream"
+        ],
+        [
+          3,
+          "message"
+        ],
+        [
+          4,
+          "contractCandidate"
+        ]
+      ]
+    },
+    "wire.tokenClass": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "tokenClass",
+      "entries": [
+        [
+          1,
+          "executionCapability"
+        ],
+        [
+          2,
+          "delegationCapability"
+        ],
+        [
+          3,
+          "budgetLeaseCapability"
+        ],
+        [
+          4,
+          "verificationCapability"
+        ]
+      ]
+    },
+    "wire.finalityMode": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "finalityMode",
+      "entries": [
+        [
+          1,
+          "bilateralObservation"
+        ],
+        [
+          2,
+          "witnessQuorum"
+        ],
+        [
+          3,
+          "transparencyAnchor"
+        ]
+      ]
+    },
+    "wire.trustLevel": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "trustLevel",
+      "entries": [
+        [
+          1,
+          "asserted"
+        ],
+        [
+          2,
+          "observed"
+        ],
+        [
+          3,
+          "replayed"
+        ],
+        [
+          4,
+          "verified"
+        ],
+        [
+          5,
+          "quorumVerified"
+        ]
+      ]
+    },
+    "wire.closeScope": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "Close Scope Registry",
+      "entries": [
+        [
+          1,
+          "session"
+        ],
+        [
+          2,
+          "contract"
+        ],
+        [
+          3,
+          "diagnostic"
+        ]
+      ]
+    },
+    "wire.degradedBootstrapMode": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "Degraded Bootstrap Mode Registry",
+      "entries": [
+        [
+          1,
+          "normal"
+        ],
+        [
+          2,
+          "diagnosticOnly"
+        ],
+        [
+          3,
+          "domainLimited"
+        ],
+        [
+          4,
+          "finalityBlocked"
+        ]
+      ]
+    },
+    "wire.meterKind": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "Meter Kind Registry",
+      "entries": [
+        [
+          1,
+          "computeMs"
+        ],
+        [
+          2,
+          "latencyMs"
+        ],
+        [
+          3,
+          "memoryBytes"
+        ],
+        [
+          4,
+          "networkBytes"
+        ],
+        [
+          5,
+          "tokenUnits"
+        ],
+        [
+          6,
+          "riskPoints"
+        ],
+        [
+          7,
+          "retryCount"
+        ],
+        [
+          8,
+          "delegationDepth"
+        ]
+      ]
+    },
+    "wire.cancelReasonCode": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "Cancel Reason Code Registry",
+      "entries": [
+        [
+          1,
+          "issuerAbort"
+        ],
+        [
+          2,
+          "executorAbort"
+        ],
+        [
+          3,
+          "policyAbort"
+        ]
+      ]
+    },
+    "wire.settlementDisposition": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "Settlement Disposition Registry",
+      "entries": [
+        [
+          1,
+          "notRequired"
+        ],
+        [
+          2,
+          "settleNormally"
+        ],
+        [
+          3,
+          "failClosed"
+        ]
+      ]
+    },
+    "wire.errorCode": {
+      "sourceFile": "01.WIRE.FORMAT.md",
+      "sourceHeading": "Error Code Registry",
+      "entries": [
+        [
+          100,
+          "malformedHeader"
+        ],
+        [
+          101,
+          "unsupportedMajorVersion"
+        ],
+        [
+          102,
+          "unknownCriticalExtension"
+        ],
+        [
+          103,
+          "invalidAuthTag"
+        ],
+        [
+          104,
+          "invalidFragmentMetadata"
+        ],
+        [
+          105,
+          "streamSequencingViolation"
+        ],
+        [
+          106,
+          "frameExceedsPolicyLimit"
+        ],
+        [
+          107,
+          "staleFrameDropped"
+        ],
+        [
+          108,
+          "replayWindowViolation"
+        ],
+        [
+          109,
+          "unsupportedBaseProfileSchema"
+        ],
+        [
+          110,
+          "capabilityNegotiationIncomplete"
+        ],
+        [
+          111,
+          "negotiationMismatch"
+        ],
+        [
+          112,
+          "unsupportedEnumValue"
+        ],
+        [
+          113,
+          "limitAgreementViolation"
+        ],
+        [
+          114,
+          "contractReferenceMismatch"
+        ],
+        [
+          115,
+          "invalidStateTransition"
+        ]
+      ]
+    },
+    "contract.predicateRuntimeProfile": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Predicate runtime profile registry",
+      "entries": [
+        [
+          1,
+          "aap-predicate-wasm32-v1"
+        ]
+      ]
+    },
+    "contract.feeModel": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Fee model registry",
+      "entries": [
+        [
+          1,
+          "noAdditionalBridgeFee"
+        ]
+      ]
+    },
+    "contract.bondRule": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Bond rule registry",
+      "entries": [
+        [
+          1,
+          "noBridgeBond"
+        ]
+      ]
+    },
+    "contract.bridgeVerificationBinding": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Bridge Verification Binding Registry",
+      "entries": [
+        [
+          1,
+          "subjectDigest"
+        ],
+        [
+          2,
+          "evaluationScopeDigest"
+        ],
+        [
+          3,
+          "predicateRuntimeProfileDigest"
+        ],
+        [
+          4,
+          "proofProfileDigest"
+        ],
+        [
+          5,
+          "contractRevision"
+        ],
+        [
+          6,
+          "environmentDigest"
+        ]
+      ]
+    },
+    "contract.capabilityConsumptionMode": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Capability consumption-mode registry",
+      "entries": [
+        [
+          1,
+          "auditOnly"
+        ],
+        [
+          2,
+          "singleUseReceipt"
+        ],
+        [
+          3,
+          "multiUseReceipt"
+        ],
+        [
+          4,
+          "onlineRedeem"
+        ]
+      ]
+    },
+    "contract.transitionCauseCode": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Transition cause-code registry",
+      "entries": [
+        [
+          1,
+          "acceptancePredicatePassed"
+        ],
+        [
+          2,
+          "repairAccepted"
+        ],
+        [
+          3,
+          "repairRejected"
+        ],
+        [
+          4,
+          "failureDeclared"
+        ],
+        [
+          5,
+          "rollbackStarted"
+        ],
+        [
+          6,
+          "policyFailClosed"
+        ],
+        [
+          7,
+          "readyDeclared"
+        ],
+        [
+          8,
+          "executionStarted"
+        ]
+      ]
+    },
+    "contract.failureClass": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Failure-class registry",
+      "entries": [
+        [
+          1,
+          "transportFailure"
+        ],
+        [
+          2,
+          "authFailure"
+        ],
+        [
+          3,
+          "capabilityMismatch"
+        ],
+        [
+          4,
+          "contractViolation"
+        ],
+        [
+          5,
+          "budgetExhausted"
+        ],
+        [
+          6,
+          "deadlineExceeded"
+        ],
+        [
+          7,
+          "evidenceInsufficient"
+        ],
+        [
+          8,
+          "delegationFailure"
+        ],
+        [
+          9,
+          "partialCompletion"
+        ],
+        [
+          10,
+          "semanticAmbiguity"
+        ]
+      ]
+    },
+    "contract.failureMode": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Failure-mode registry",
+      "entries": [
+        [
+          1,
+          "executionError"
+        ],
+        [
+          2,
+          "policyEvaluationError"
+        ],
+        [
+          3,
+          "verifierRejected"
+        ],
+        [
+          4,
+          "budgetAuthorityLost"
+        ],
+        [
+          5,
+          "settlementComputationFailed"
+        ],
+        [
+          6,
+          "finalityProofExpired"
+        ],
+        [
+          7,
+          "challengeTimeout"
+        ],
+        [
+          8,
+          "repairRejected"
+        ]
+      ]
+    },
+    "contract.rollbackScope": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Rollback-scope registry",
+      "entries": [
+        [
+          1,
+          "localEffectsOnly"
+        ],
+        [
+          2,
+          "delegatedSubgraph"
+        ],
+        [
+          3,
+          "fullContract"
+        ]
+      ]
+    },
+    "contract.challengeReasonCode": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Challenge reason-code registry",
+      "entries": [
+        [
+          1,
+          "requiredVerifierInputAbsent"
+        ],
+        [
+          2,
+          "subjectDigestMismatch"
+        ],
+        [
+          3,
+          "disclosedArtifactMissing"
+        ],
+        [
+          4,
+          "policyConstraintUnsatisfied"
+        ],
+        [
+          5,
+          "verifierIndependenceShortfall"
+        ],
+        [
+          6,
+          "replayCapsuleRequired"
+        ],
+        [
+          7,
+          "finalityEvidenceIncomplete"
+        ]
+      ]
+    },
+    "contract.requestedRepair": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Requested-repair registry",
+      "entries": [
+        [
+          1,
+          "attachMissingProof"
+        ],
+        [
+          2,
+          "replaceEvidence"
+        ],
+        [
+          3,
+          "rerunVerification"
+        ],
+        [
+          4,
+          "narrowClaim"
+        ],
+        [
+          5,
+          "rollbackAndRetry"
+        ],
+        [
+          6,
+          "withdrawResult"
+        ]
+      ]
+    },
+    "contract.closeDecisionStatus": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Close-decision status registry",
+      "entries": [
+        [
+          1,
+          "finalitySatisfied"
+        ],
+        [
+          2,
+          "witnessThresholdMet"
+        ],
+        [
+          3,
+          "disputeWindowExpired"
+        ],
+        [
+          4,
+          "finalityWaitExpired"
+        ],
+        [
+          5,
+          "staleRevocationEvidence"
+        ],
+        [
+          6,
+          "policyBlocked"
+        ]
+      ]
+    },
+    "contract.lateEvidenceDisposition": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Late-evidence disposition registry",
+      "entries": [
+        [
+          1,
+          "retainForAuditOnly"
+        ],
+        [
+          2,
+          "ignoreForSemantics"
+        ],
+        [
+          3,
+          "newRevisionOnly"
+        ]
+      ]
+    },
+    "contract.settlementMode": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Settlement Modes",
+      "entries": [
+        [
+          1,
+          "none"
+        ],
+        [
+          2,
+          "resource-accounting"
+        ],
+        [
+          3,
+          "credit-ledger"
+        ],
+        [
+          4,
+          "external-billing-bridge"
+        ]
+      ]
+    },
+    "contract.finalityExposureMode": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Finality Exposure Modes",
+      "entries": [
+        [
+          1,
+          "bilateralObservation"
+        ],
+        [
+          2,
+          "witnessQuorum"
+        ],
+        [
+          3,
+          "transparencyAnchor"
+        ]
+      ]
+    },
+    "contract.settlementTriggerOutcome": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Settlement trigger outcome registry",
+      "entries": [
+        [
+          1,
+          "completed"
+        ],
+        [
+          2,
+          "partiallyCompleted"
+        ],
+        [
+          3,
+          "failed"
+        ],
+        [
+          4,
+          "cancelled"
+        ]
+      ]
+    },
+    "contract.reductionFunction": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Reduction function registry",
+      "entries": [
+        [
+          1,
+          "sum"
+        ],
+        [
+          2,
+          "max"
+        ],
+        [
+          3,
+          "min"
+        ],
+        [
+          4,
+          "lastAccepted"
+        ]
+      ]
+    },
+    "contract.roundingMode": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Rounding-mode registry",
+      "entries": [
+        [
+          1,
+          "floor"
+        ],
+        [
+          2,
+          "ceil"
+        ],
+        [
+          3,
+          "halfUp"
+        ],
+        [
+          4,
+          "exact"
+        ]
+      ]
+    },
+    "contract.meterSelector": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Meter selector registry",
+      "entries": [
+        [
+          1,
+          "primaryLeaseOnly"
+        ]
+      ]
+    },
+    "contract.payoutFormula": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Payout formula registry",
+      "entries": [
+        [
+          1,
+          "debitIssuerCreditExecutor"
+        ]
+      ]
+    },
+    "contract.autoCloseRule": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "autoCloseRule must be one of",
+      "entries": [
+        [
+          1,
+          "closeOnSettledFinality"
+        ],
+        [
+          2,
+          "closeAfterDisputeWindow"
+        ],
+        [
+          3,
+          "closeOnWitnessThreshold"
+        ],
+        [
+          4,
+          "manualCloseForbidden"
+        ]
+      ]
+    },
+    "contract.blockedCloseOutcome": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "blockedCloseOutcome must be one of",
+      "entries": [
+        [
+          1,
+          "failClosed"
+        ],
+        [
+          2,
+          "closeWithoutPositiveSettlement"
+        ],
+        [
+          3,
+          "cancelWithoutRelease"
+        ]
+      ]
+    },
+    "contract.challengeBondMode": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Challenge-bond mode registry",
+      "entries": [
+        [
+          1,
+          "none"
+        ],
+        [
+          2,
+          "escrowRequired"
+        ],
+        [
+          3,
+          "slashOnFrivolousLoss"
+        ]
+      ]
+    },
+    "contract.refundRule": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Refund rule registry",
+      "entries": [
+        [
+          1,
+          "neverRefund"
+        ],
+        [
+          2,
+          "refundOnSustainedChallenge"
+        ],
+        [
+          3,
+          "refundOnPolicyTimeout"
+        ]
+      ]
+    },
+    "contract.slashRule": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Slash rule registry",
+      "entries": [
+        [
+          1,
+          "neverSlash"
+        ],
+        [
+          2,
+          "slashOnTimeout"
+        ],
+        [
+          3,
+          "slashOnFrivolousLoss"
+        ]
+      ]
+    },
+    "contract.disputeOutcome": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Dispute Outcome Registry",
+      "entries": [
+        [
+          1,
+          "failClosed"
+        ],
+        [
+          2,
+          "partialIfAllowed"
+        ],
+        [
+          3,
+          "requireVerifierBridge"
+        ]
+      ]
+    },
+    "contract.inconclusiveResolution": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Inconclusive resolution registry",
+      "entries": [
+        [
+          1,
+          "failClosed"
+        ],
+        [
+          2,
+          "partialIfAllowed"
+        ],
+        [
+          3,
+          "requireVerifierBridge"
+        ]
+      ]
+    },
+    "contract.stalledCounterpartyRule": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Stalled counterparty rule registry",
+      "entries": [
+        [
+          1,
+          "cancelAndSettle"
+        ],
+        [
+          2,
+          "failAndRollback"
+        ],
+        [
+          3,
+          "closeAsDeclined"
+        ]
+      ]
+    },
+    "contract.repairExhaustionOutcome": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Repair exhaustion outcome registry",
+      "entries": [
+        [
+          1,
+          "failClosed"
+        ],
+        [
+          2,
+          "partialIfAllowed"
+        ],
+        [
+          3,
+          "cancelAndSettle"
+        ]
+      ]
+    },
+    "contract.disputeExhaustionOutcome": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Dispute exhaustion outcome registry",
+      "entries": [
+        [
+          1,
+          "failClosed"
+        ],
+        [
+          2,
+          "partialIfAllowed"
+        ],
+        [
+          3,
+          "cancelAndSettle"
+        ]
+      ]
+    },
+    "contract.challengeCost": {
+      "sourceFile": "02.CONTRACT.MODEL.md",
+      "sourceHeading": "Challenge cost registry",
+      "entries": [
+        [
+          1,
+          "dispute.compute.0001"
+        ],
+        [
+          2,
+          "dispute.compute.0004"
+        ]
+      ]
+    },
+    "trust.claimedTrustLevel": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Claimed trust level registry",
+      "entries": [
+        [
+          1,
+          "asserted"
+        ],
+        [
+          2,
+          "observed"
+        ],
+        [
+          3,
+          "replayed"
+        ],
+        [
+          4,
+          "verified"
+        ],
+        [
+          5,
+          "quorumVerified"
+        ]
+      ]
+    },
+    "trust.evidenceKind": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Evidence-kind registry",
+      "entries": [
+        [
+          1,
+          "executionLogDigest"
+        ],
+        [
+          2,
+          "toolReceipt"
+        ],
+        [
+          3,
+          "inputDigest"
+        ],
+        [
+          4,
+          "outputDigest"
+        ],
+        [
+          5,
+          "sandboxAttestation"
+        ],
+        [
+          6,
+          "memoryUseRecord"
+        ],
+        [
+          7,
+          "policyDecisionTrace"
+        ],
+        [
+          8,
+          "verifierAttestation"
+        ],
+        [
+          9,
+          "delegateChainProof"
+        ],
+        [
+          10,
+          "replayCapsuleDigest"
+        ]
+      ]
+    },
+    "trust.evidencePrivacyClass": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Evidence Privacy-Class Registry",
+      "entries": [
+        [
+          1,
+          "retainForAuditOnly"
+        ],
+        [
+          2,
+          "bridgeMinimalDisclosure"
+        ],
+        [
+          3,
+          "restricted"
+        ],
+        [
+          4,
+          "sealed"
+        ]
+      ]
+    },
+    "trust.evidenceIntegrityScope": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Evidence Integrity-Scope Registry",
+      "entries": [
+        [
+          1,
+          "contentOnly"
+        ],
+        [
+          2,
+          "contentAndOrigin"
+        ],
+        [
+          3,
+          "contentOriginAndExecutionContext"
+        ]
+      ]
+    },
+    "trust.verifierClass": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Verifier-class registry",
+      "entries": [
+        [
+          1,
+          "self-check"
+        ],
+        [
+          2,
+          "peer-agent"
+        ],
+        [
+          3,
+          "supervisor-agent"
+        ],
+        [
+          4,
+          "sandbox-engine"
+        ],
+        [
+          5,
+          "quorum-aggregator"
+        ]
+      ]
+    },
+    "trust.verifierMembershipRole": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Verifier Membership Role Registry",
+      "entries": [
+        [
+          1,
+          "verification"
+        ],
+        [
+          2,
+          "bridgeVerification"
+        ],
+        [
+          3,
+          "finalityWitness"
+        ],
+        [
+          4,
+          "quorumAggregation"
+        ]
+      ]
+    },
+    "trust.sybilResistanceClass": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "sybilResistanceClass registry",
+      "entries": [
+        [
+          1,
+          "closedFederation"
+        ],
+        [
+          2,
+          "costBound"
+        ],
+        [
+          3,
+          "stakeBound"
+        ],
+        [
+          4,
+          "scarceNamespace"
+        ],
+        [
+          5,
+          "externalAdmission"
+        ]
+      ]
+    },
+    "trust.basisClass": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "basisClass registry",
+      "entries": [
+        [
+          1,
+          "closedMembershipRegistry"
+        ],
+        [
+          2,
+          "stakeEscrow"
+        ],
+        [
+          3,
+          "scarceNamespaceControl"
+        ],
+        [
+          4,
+          "costOfIdentity"
+        ],
+        [
+          5,
+          "externalAdmissionReview"
+        ]
+      ]
+    },
+    "trust.revocationStatus": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Revocation-status registry",
+      "entries": [
+        [
+          1,
+          "active"
+        ],
+        [
+          2,
+          "revoked"
+        ],
+        [
+          3,
+          "statusUnknown"
+        ]
+      ]
+    },
+    "trust.revocationStatusReason": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Revocation-status reason registry",
+      "entries": [
+        [
+          1,
+          "explicitRevocation"
+        ],
+        [
+          2,
+          "staleStatus"
+        ],
+        [
+          3,
+          "equivocationDetected"
+        ],
+        [
+          4,
+          "scopeMismatch"
+        ]
+      ]
+    },
+    "trust.verificationResult": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Verification-result registry",
+      "entries": [
+        [
+          1,
+          "pass"
+        ],
+        [
+          2,
+          "fail"
+        ],
+        [
+          3,
+          "inconclusive"
+        ],
+        [
+          4,
+          "policy-blocked"
+        ]
+      ]
+    },
+    "trust.verificationFailureReason": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Verification-failure reason registry",
+      "entries": [
+        [
+          1,
+          "replayFailure"
+        ],
+        [
+          2,
+          "runtimeUnsupported"
+        ],
+        [
+          3,
+          "missingEnvironment"
+        ],
+        [
+          4,
+          "privacyBlocked"
+        ],
+        [
+          5,
+          "policyUnsatisfied"
+        ]
+      ]
+    },
+    "trust.proofProfile": {
+      "sourceFile": "03.TRUST.MODEL.md",
+      "sourceHeading": "Proof profile registry",
+      "entries": [
+        [
+          1,
+          "proof_full_disclosure_v1"
+        ]
+      ]
+    },
+    "canonical.principalClass": {
+      "sourceFile": "04.CANONICAL.OBJECTS.md",
+      "sourceHeading": "Principal Class Registry",
+      "entries": [
+        [
+          1,
+          "agent"
+        ],
+        [
+          2,
+          "verifier"
+        ],
+        [
+          3,
+          "witness"
+        ],
+        [
+          4,
+          "trustDomainRole"
+        ]
+      ]
+    },
+    "canonical.keyPurposeBit": {
+      "sourceFile": "04.CANONICAL.OBJECTS.md",
+      "sourceHeading": "Key Purpose Bit Registry",
+      "entries": [
+        [
+          1,
+          "sessionAuthentication"
+        ],
+        [
+          2,
+          "contractControl"
+        ],
+        [
+          4,
+          "executionAuthority"
+        ],
+        [
+          8,
+          "verificationAuthority"
+        ],
+        [
+          16,
+          "witnessAuthority"
+        ]
+      ]
+    },
+    "canonical.actionClass": {
+      "sourceFile": "04.CANONICAL.OBJECTS.md",
+      "sourceHeading": "Action Class Registry",
+      "entries": [
+        [
+          1,
+          "propose"
+        ],
+        [
+          2,
+          "counter"
+        ],
+        [
+          3,
+          "accept"
+        ],
+        [
+          4,
+          "startExecution"
+        ],
+        [
+          5,
+          "declareSuccess"
+        ],
+        [
+          6,
+          "challenge"
+        ],
+        [
+          7,
+          "repair"
+        ],
+        [
+          8,
+          "cancel"
+        ],
+        [
+          9,
+          "settle"
+        ],
+        [
+          10,
+          "close"
+        ],
+        [
+          11,
+          "FREEZE"
+        ],
+        [
+          12,
+          "EMERGENCY_REVOKE"
+        ],
+        [
+          13,
+          "MIGRATE_AUTHORITY"
+        ]
+      ]
+    },
+    "canonical.signaturePurpose": {
+      "sourceFile": "04.CANONICAL.OBJECTS.md",
+      "sourceHeading": "Signature Purpose Registry",
+      "entries": [
+        [
+          1,
+          "attestation"
+        ],
+        [
+          2,
+          "contractAuthority"
+        ],
+        [
+          3,
+          "witness"
+        ],
+        [
+          4,
+          "revocation"
+        ]
+      ]
+    },
+    "canonical.rotationReason": {
+      "sourceFile": "04.CANONICAL.OBJECTS.md",
+      "sourceHeading": "Rotation Reason Registry",
+      "entries": [
+        [
+          1,
+          "routineRotation"
+        ],
+        [
+          2,
+          "compromiseRecovery"
+        ],
+        [
+          3,
+          "algorithmUpgrade"
+        ]
+      ]
+    }
+  },
+  "fieldRegistryBindings": {
+    "acceptedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "acceptedCriticalExtensions": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "list<u16>"
+      ]
+    },
+    "acceptedPredicateRuntimeProfiles": {
+      "registryId": "contract.predicateRuntimeProfile",
+      "strategy": "explicitReference",
+      "evidence": [
+        "03.TRUST.MODEL.md: predicate runtime profile",
+        "03.TRUST.MODEL.md: predicate runtime profile",
+        "04.CANONICAL.OBJECTS.md: predicate runtime profile",
+        "04.CANONICAL.OBJECTS.md: predicate runtime profile"
+      ],
+      "observedTokens": [
+        "aap-predicate-wasm32-v1"
+      ],
+      "candidateTypes": []
+    },
+    "acceptedProofProfiles": {
+      "registryId": "trust.proofProfile",
+      "strategy": "explicitReference",
+      "evidence": [
+        "03.TRUST.MODEL.md: proof profile",
+        "03.TRUST.MODEL.md: proof profile",
+        "04.CANONICAL.OBJECTS.md: proof profile",
+        "04.CANONICAL.OBJECTS.md: proof profile"
+      ],
+      "observedTokens": [
+        "proof_full_disclosure_v1"
+      ],
+      "candidateTypes": []
+    },
+    "acceptedSybilResistanceClasses": {
+      "registryId": "trust.sybilResistanceClass",
+      "strategy": "observedTokens",
+      "evidence": [
+        "stakeBound"
+      ],
+      "observedTokens": [
+        "stakeBound"
+      ],
+      "candidateTypes": [
+        "list<u16>"
+      ]
+    },
+    "ackBaseSequence": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "actionClass": {
+      "registryId": "canonical.actionClass",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: action class"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "admissibleEvidenceKinds": {
+      "registryId": "trust.evidenceKind",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: evidence-kind",
+        "04.CANONICAL.OBJECTS.md: evidence-kind"
+      ],
+      "observedTokens": [
+        "delegateChainProof",
+        "executionLogDigest",
+        "replayCapsuleDigest",
+        "verifierAttestation"
+      ],
+      "candidateTypes": [
+        "list<u16>"
+      ]
+    },
+    "anchoredAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "authorizedRoles": {
+      "registryId": "trust.verifierMembershipRole",
+      "strategy": "encodedRegistry",
+      "evidence": [
+        "03.TRUST.MODEL.md: role",
+        "04.CANONICAL.OBJECTS.md: verifier membership role",
+        "04.CANONICAL.OBJECTS.md: verifier membership role"
+      ],
+      "observedTokens": [
+        "bridgeVerification",
+        "verification"
+      ],
+      "candidateTypes": [
+        "list<u16>"
+      ]
+    },
+    "autoCloseRule": {
+      "registryId": "contract.autoCloseRule",
+      "strategy": "headingName",
+      "evidence": [
+        "autoCloseRule"
+      ],
+      "observedTokens": [
+        "closeAfterDisputeWindow"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "basisClass": {
+      "registryId": "trust.basisClass",
+      "strategy": "headingName",
+      "evidence": [
+        "basisClass"
+      ],
+      "observedTokens": [
+        "stakeEscrow"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "blockedCloseOutcome": {
+      "registryId": "contract.blockedCloseOutcome",
+      "strategy": "headingName",
+      "evidence": [
+        "blockedCloseOutcome"
+      ],
+      "observedTokens": [
+        "failClosed"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "blockedCloseOutcomeApplied": {
+      "registryId": "contract.blockedCloseOutcome",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: blocked-close-outcome",
+        "04.CANONICAL.OBJECTS.md: blocked-close-outcome"
+      ],
+      "observedTokens": [
+        "failClosed"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "bondRuleRef": {
+      "registryId": "contract.bondRule",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: bond rule",
+        "02.CONTRACT.MODEL.md: bond rule",
+        "04.CANONICAL.OBJECTS.md: bond rule",
+        "04.CANONICAL.OBJECTS.md: bond rule"
+      ],
+      "observedTokens": [],
+      "candidateTypes": []
+    },
+    "byteLength": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "byteOffset": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "cancelReasonCode": {
+      "registryId": "wire.cancelReasonCode",
+      "strategy": "explicitReference",
+      "evidence": [
+        "01.WIRE.FORMAT.md: cancel reason code"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "capturedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "causeCode": {
+      "registryId": "contract.transitionCauseCode",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: transition cause-code",
+        "04.CANONICAL.OBJECTS.md: transition cause-code"
+      ],
+      "observedTokens": [
+        "acceptancePredicatePassed",
+        "executionStarted",
+        "readyDeclared",
+        "repairAccepted"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "challengeBondMode": {
+      "registryId": "contract.challengeBondMode",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: challenge-bond mode",
+        "02.CONTRACT.MODEL.md: challenge-bond mode"
+      ],
+      "observedTokens": [
+        "slashOnFrivolousLoss"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "challengeBudgetMax": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "challengeClass": {
+      "registryId": "wire.challengeClass",
+      "strategy": "headingName",
+      "evidence": [
+        "challengeClass"
+      ],
+      "observedTokens": [
+        "missingEvidence"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "challengeCostRef": {
+      "registryId": "contract.challengeCost",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: challenge cost",
+        "02.CONTRACT.MODEL.md: challenge cost",
+        "04.CANONICAL.OBJECTS.md: challenge cost",
+        "04.CANONICAL.OBJECTS.md: challenge cost"
+      ],
+      "observedTokens": [
+        "dispute.compute.0001",
+        "dispute.compute.0004"
+      ],
+      "candidateTypes": []
+    },
+    "challengedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "checkedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "chosenMajor": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "chosenMinor": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "claimedTrustLevel": {
+      "registryId": "trust.claimedTrustLevel",
+      "strategy": "headingName",
+      "evidence": [
+        "claimedTrustLevel"
+      ],
+      "observedTokens": [
+        "quorumVerified"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "closeReasonCode": {
+      "registryId": "wire.closeReasonCode",
+      "strategy": "headingName",
+      "evidence": [
+        "closeReasonCode"
+      ],
+      "observedTokens": [
+        "disputeWindowExpired",
+        "policyFailClosed",
+        "settledFinality",
+        "witnessThresholdMet"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "closeScope": {
+      "registryId": "wire.closeScope",
+      "strategy": "headingName",
+      "evidence": [
+        "closeScope"
+      ],
+      "observedTokens": [
+        "contract"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "congestionSignal": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "consumedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "consumptionMode": {
+      "registryId": "contract.capabilityConsumptionMode",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: capability consumption-mode",
+        "04.CANONICAL.OBJECTS.md: capability consumption-mode"
+      ],
+      "observedTokens": [
+        "singleUseReceipt"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "contractPhase": {
+      "registryId": "wire.statePhase",
+      "strategy": "observedTokens",
+      "evidence": [
+        "accepted",
+        "challenged",
+        "closed",
+        "completed",
+        "countered",
+        "declined",
+        "delivering",
+        "executing",
+        "proposed",
+        "proved",
+        "ready",
+        "settling"
+      ],
+      "observedTokens": [
+        "accepted",
+        "challenged",
+        "closed",
+        "completed",
+        "countered",
+        "declined",
+        "delivering",
+        "executing",
+        "proposed",
+        "proved",
+        "ready",
+        "settling"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "contractRevision": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "counteredAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "counterRevision": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "cumulativeUnits": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "deadlineUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "decidedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "declinedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "declineReasonCode": {
+      "registryId": "wire.declineReasonCode",
+      "strategy": "headingName",
+      "evidence": [
+        "declineReasonCode"
+      ],
+      "observedTokens": [
+        "policyConflict"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "degradedBootstrapMode": {
+      "registryId": "wire.degradedBootstrapMode",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: degraded-bootstrap-mode",
+        "04.CANONICAL.OBJECTS.md: degraded-bootstrap-mode",
+        "04.CANONICAL.OBJECTS.md: degraded-bootstrap-mode",
+        "04.CANONICAL.OBJECTS.md: degraded-bootstrap-mode"
+      ],
+      "observedTokens": [
+        "diagnosticOnly",
+        "domainLimited",
+        "finalityBlocked",
+        "normal"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "delegationDepth": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "delegationDepthRemaining": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "deliveredAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "deliveryClass": {
+      "registryId": "wire.deliveryClass",
+      "strategy": "headingName",
+      "evidence": [
+        "deliveryClass"
+      ],
+      "observedTokens": [
+        "resultSummary"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "disclosedEvidenceKinds": {
+      "registryId": "trust.evidenceKind",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: evidence-kind",
+        "04.CANONICAL.OBJECTS.md: evidence-kind"
+      ],
+      "observedTokens": [
+        "executionLogDigest",
+        "outputDigest",
+        "replayCapsuleDigest",
+        "toolReceipt"
+      ],
+      "candidateTypes": [
+        "list<u16>"
+      ]
+    },
+    "disputeDepth": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "disputeWindowMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "effectiveAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "emittedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "endedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "errorCode": {
+      "registryId": "wire.errorCode",
+      "strategy": "explicitReference",
+      "evidence": [
+        "01.WIRE.FORMAT.md: error code"
+      ],
+      "observedTokens": [
+        "contractReferenceMismatch",
+        "invalidStateTransition",
+        "malformedHeader",
+        "negotiationMismatch",
+        "replayWindowViolation",
+        "unknownCriticalExtension",
+        "unsupportedBaseProfileSchema"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "errorScope": {
+      "registryId": "wire.errorScope",
+      "strategy": "headingName",
+      "evidence": [
+        "errorScope"
+      ],
+      "observedTokens": [
+        "message",
+        "session"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "evidenceKind": {
+      "registryId": "trust.evidenceKind",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: evidence-kind",
+        "04.CANONICAL.OBJECTS.md: evidence-kind"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "exhaustionOutcome": {
+      "registryId": "contract.disputeExhaustionOutcome",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: dispute exhaustion outcome",
+        "02.CONTRACT.MODEL.md: dispute exhaustion outcome"
+      ],
+      "observedTokens": [
+        "failClosed"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "expiresAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "expiryUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "failureClass": {
+      "registryId": "contract.failureClass",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: failure-class",
+        "04.CANONICAL.OBJECTS.md: failure-class"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "failureModeCode": {
+      "registryId": "contract.failureMode",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: failure-mode",
+        "04.CANONICAL.OBJECTS.md: failure-mode"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "failureReasons": {
+      "registryId": "trust.verificationFailureReason",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: verification-failure reason",
+        "04.CANONICAL.OBJECTS.md: verification-failure reason"
+      ],
+      "observedTokens": [
+        "runtimeUnsupported"
+      ],
+      "candidateTypes": [
+        "list<u16>"
+      ]
+    },
+    "feeModelRef": {
+      "registryId": "contract.feeModel",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: fee model",
+        "02.CONTRACT.MODEL.md: fee model",
+        "04.CANONICAL.OBJECTS.md: fee model",
+        "04.CANONICAL.OBJECTS.md: fee model"
+      ],
+      "observedTokens": [],
+      "candidateTypes": []
+    },
+    "finalityExposureMode": {
+      "registryId": "contract.finalityExposureMode",
+      "strategy": "headingName",
+      "evidence": [
+        "finalityExposureMode"
+      ],
+      "observedTokens": [
+        "witnessQuorum"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "finalityMode": {
+      "registryId": "wire.finalityMode",
+      "strategy": "headingName",
+      "evidence": [
+        "finalityMode"
+      ],
+      "observedTokens": [
+        "witnessQuorum"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "finalityStatusCode": {
+      "registryId": "contract.closeDecisionStatus",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: close-decision status",
+        "04.CANONICAL.OBJECTS.md: close-decision status"
+      ],
+      "observedTokens": [
+        "disputeWindowExpired",
+        "finalityWaitExpired",
+        "witnessThresholdMet"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "finalSequence": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "fragmentCount": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "fragmentIndex": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "fromPhase": {
+      "registryId": "wire.statePhase",
+      "strategy": "observedTokens",
+      "evidence": [
+        "accepted",
+        "challenged",
+        "proved",
+        "ready"
+      ],
+      "observedTokens": [
+        "accepted",
+        "challenged",
+        "proved",
+        "ready"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "fundedUnits": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "generatedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "graphVersion": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "inconclusiveResolution": {
+      "registryId": "contract.inconclusiveResolution",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: inconclusive resolution",
+        "02.CONTRACT.MODEL.md: inconclusive resolution"
+      ],
+      "observedTokens": [],
+      "candidateTypes": []
+    },
+    "integrityScope": {
+      "registryId": "trust.evidenceIntegrityScope",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: evidence integrity-scope",
+        "04.CANONICAL.OBJECTS.md: evidence integrity-scope"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "issuedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "keyPurposeRequired": {
+      "registryId": "canonical.keyPurposeBit",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: key purpose bit"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "lateEvidenceDisposition": {
+      "registryId": "contract.lateEvidenceDisposition",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: late-evidence disposition",
+        "04.CANONICAL.OBJECTS.md: late-evidence disposition"
+      ],
+      "observedTokens": [
+        "retainForAuditOnly"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "lineageDepth": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "lowestRetainedMessageId": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "maxBootstrapTranscriptAgeMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "maxBridgeResponseMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "maxBridgeRetries": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "maxBytes": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "maxClockSkewMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "maxDepth": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "maxFinalityWaitMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "maxFrameLength": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u32"
+      ]
+    },
+    "maxIdentityAttestationAgeMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "maxInclusive": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "maxInlineManifestBytes": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u32"
+      ]
+    },
+    "maxLiability": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "maxManifestChainDepth": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u8"
+      ]
+    },
+    "maxRevocationAgeMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "maxStatusAgeMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "maxTrustDomainAttestationAgeMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "maxUses": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u32"
+      ]
+    },
+    "membershipFreshnessMaxMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "messageId": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "meterKind": {
+      "registryId": "wire.meterKind",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: meter-kind",
+        "04.CANONICAL.OBJECTS.md: meter-kind"
+      ],
+      "observedTokens": [
+        "computeMs"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "meterSelector": {
+      "registryId": "contract.meterSelector",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: meter selector",
+        "02.CONTRACT.MODEL.md: meter selector",
+        "04.CANONICAL.OBJECTS.md: meter selector",
+        "04.CANONICAL.OBJECTS.md: meter selector"
+      ],
+      "observedTokens": [],
+      "candidateTypes": []
+    },
+    "minimumDistinctDomains": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "minInclusive": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "negotiatedProtectionProfile": {
+      "registryId": "wire.companionProfile",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: companion profile",
+        "04.CANONICAL.OBJECTS.md: companion profile"
+      ],
+      "observedTokens": [
+        "aap-secure-session-v1"
+      ],
+      "candidateTypes": []
+    },
+    "nextCheckpointAt": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "nextUpdateUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "notAfterUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "observedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "offeredCriticalExtensions": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "list<u16>"
+      ]
+    },
+    "outcome": {
+      "registryId": "wire.settlementOutcome",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: settlement-outcome",
+        "04.CANONICAL.OBJECTS.md: settlement-outcome"
+      ],
+      "observedTokens": [
+        "completed"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "payoutFormula": {
+      "registryId": "contract.payoutFormula",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: payout formula",
+        "02.CONTRACT.MODEL.md: payout formula",
+        "04.CANONICAL.OBJECTS.md: payout formula",
+        "04.CANONICAL.OBJECTS.md: payout formula"
+      ],
+      "observedTokens": [],
+      "candidateTypes": []
+    },
+    "phase": {
+      "registryId": "wire.statePhase",
+      "strategy": "observedTokens",
+      "evidence": [
+        "closed",
+        "completed",
+        "executing",
+        "proved",
+        "ready"
+      ],
+      "observedTokens": [
+        "closed",
+        "completed",
+        "executing",
+        "proved",
+        "ready"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "policyBlockedOutcome": {
+      "registryId": "contract.blockedCloseOutcome",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: blocked-close outcome",
+        "04.CANONICAL.OBJECTS.md: blocked-close outcome"
+      ],
+      "observedTokens": [
+        "failClosed"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "principalClass": {
+      "registryId": "canonical.principalClass",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: principal class"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "priorResultPhase": {
+      "registryId": "wire.statePhase",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: state-phase",
+        "04.CANONICAL.OBJECTS.md: state-phase"
+      ],
+      "observedTokens": [
+        "completed",
+        "failed"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "priorRevision": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "privacyClass": {
+      "registryId": "trust.evidencePrivacyClass",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: evidence privacy-class",
+        "04.CANONICAL.OBJECTS.md: evidence privacy-class",
+        "04.CANONICAL.OBJECTS.md: evidence privacy-class",
+        "04.CANONICAL.OBJECTS.md: evidence privacy-class"
+      ],
+      "observedTokens": [
+        "bridgeMinimalDisclosure"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "producedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "progressCounters": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "list<u64>"
+      ]
+    },
+    "proposedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "provedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "quantity": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "quantityScale": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u32"
+      ]
+    },
+    "ratioDenominator": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "ratioNumerator": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "reasonCode": {
+      "registryId": "contract.challengeReasonCode",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: challenge reason-code",
+        "04.CANONICAL.OBJECTS.md: challenge reason-code"
+      ],
+      "observedTokens": [
+        "requiredVerifierInputAbsent"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "reboundAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "receiptSequence": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "receiveWindowBytes": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u32"
+      ]
+    },
+    "recoveryThreshold": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "reducedUnits": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "reductionFunction": {
+      "registryId": "contract.reductionFunction",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: reduction function",
+        "02.CONTRACT.MODEL.md: reduction function",
+        "04.CANONICAL.OBJECTS.md: settlement"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "refundRule": {
+      "registryId": "contract.refundRule",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: refund rule",
+        "02.CONTRACT.MODEL.md: refund rule"
+      ],
+      "observedTokens": [
+        "refundOnSustainedChallenge"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "refusalReasonCode": {
+      "registryId": "wire.companionProfileV1Refusal",
+      "strategy": "genericReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: v1 refusal"
+      ],
+      "observedTokens": [
+        "peerBindingMismatch",
+        "replayContinuityNotRestorable",
+        "resumeTokenExpired",
+        "trustPolicyMismatch",
+        "versionFamilyMismatch"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "refusedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "relatedMessageId": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "relatedStreamId": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "repairAttempt": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "repairClass": {
+      "registryId": "wire.repairClass",
+      "strategy": "headingName",
+      "evidence": [
+        "repairClass"
+      ],
+      "observedTokens": [
+        "replaceEvidence"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "repairedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "repairExhaustionOutcome": {
+      "registryId": "contract.repairExhaustionOutcome",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: repair exhaustion outcome",
+        "02.CONTRACT.MODEL.md: repair exhaustion outcome"
+      ],
+      "observedTokens": [],
+      "candidateTypes": []
+    },
+    "replayWindowCreatedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "replyEvaluationBudgetMax": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "requestedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "requestedRepair": {
+      "registryId": "contract.requestedRepair",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: requested-repair",
+        "04.CANONICAL.OBJECTS.md: requested-repair"
+      ],
+      "observedTokens": [
+        "attachMissingProof"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "requiredVerificationBindings": {
+      "registryId": "contract.bridgeVerificationBinding",
+      "strategy": "encodedRegistry",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: binding",
+        "04.CANONICAL.OBJECTS.md: bridge verification binding",
+        "04.CANONICAL.OBJECTS.md: bridge verification binding"
+      ],
+      "observedTokens": [
+        "contractRevision",
+        "evaluationScopeDigest",
+        "predicateRuntimeProfileDigest",
+        "proofProfileDigest",
+        "subjectDigest"
+      ],
+      "candidateTypes": [
+        "list<u16>"
+      ]
+    },
+    "result": {
+      "registryId": "trust.verificationResult",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: verification-result",
+        "04.CANONICAL.OBJECTS.md: verification-result"
+      ],
+      "observedTokens": [
+        "inconclusive",
+        "pass"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "resultingAction": {
+      "registryId": "wire.companionProfileV1ResultingAction",
+      "strategy": "genericReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: v1 resulting-action"
+      ],
+      "observedTokens": [
+        "allowDiagnosticsOnly",
+        "closeTransportSession",
+        "requireFreshSession"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "resultTrustFloor": {
+      "registryId": "wire.trustLevel",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: trustLevel"
+      ],
+      "observedTokens": [
+        "verified"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "resumablePhase": {
+      "registryId": "wire.statePhase",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: state-phase",
+        "04.CANONICAL.OBJECTS.md: state-phase"
+      ],
+      "observedTokens": [
+        "proved"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "reviewerThreshold": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "rollbackScope": {
+      "registryId": "contract.rollbackScope",
+      "strategy": "headingName",
+      "evidence": [
+        "rollbackScope"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "rotationReason": {
+      "registryId": "canonical.rotationReason",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: rotation reason"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "roundingMode": {
+      "registryId": "contract.roundingMode",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: rounding-mode",
+        "02.CONTRACT.MODEL.md: rounding-mode",
+        "04.CANONICAL.OBJECTS.md: rounding-mode",
+        "04.CANONICAL.OBJECTS.md: settlement",
+        "04.CANONICAL.OBJECTS.md: rounding-mode"
+      ],
+      "observedTokens": [
+        "exact"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "schemaRevision": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "sequence": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "settlementDisposition": {
+      "registryId": "wire.settlementDisposition",
+      "strategy": "explicitReference",
+      "evidence": [
+        "01.WIRE.FORMAT.md: settlement disposition"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "settlementMode": {
+      "registryId": "contract.settlementMode",
+      "strategy": "headingName",
+      "evidence": [
+        "settlementMode"
+      ],
+      "observedTokens": [
+        "resource-accounting"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "settlementOutcome": {
+      "registryId": "wire.settlementOutcome",
+      "strategy": "headingName",
+      "evidence": [
+        "settlementOutcome"
+      ],
+      "observedTokens": [
+        "completed",
+        "failed"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "sheddingPriorityThreshold": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u8"
+      ]
+    },
+    "signaturePurpose": {
+      "registryId": "canonical.signaturePurpose",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: signature purpose"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "slashRule": {
+      "registryId": "contract.slashRule",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: slash rule",
+        "02.CONTRACT.MODEL.md: slash rule",
+        "04.CANONICAL.OBJECTS.md: dispute-budget"
+      ],
+      "observedTokens": [
+        "slashOnTimeout"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "staleStatusOutcome": {
+      "registryId": "wire.staleStatusOutcome",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: stale-status outcome",
+        "04.CANONICAL.OBJECTS.md: stale-status outcome"
+      ],
+      "observedTokens": [
+        "rejectEvidence"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "stalledCounterpartyRule": {
+      "registryId": "contract.stalledCounterpartyRule",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: stalled counterparty rule",
+        "02.CONTRACT.MODEL.md: stalled counterparty rule"
+      ],
+      "observedTokens": [],
+      "candidateTypes": []
+    },
+    "startedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "stateCauseCode": {
+      "registryId": "contract.transitionCauseCode",
+      "strategy": "genericReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: cause-code"
+      ],
+      "observedTokens": [
+        "policyFailClosed"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "status": {
+      "registryId": "trust.revocationStatus",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: revocation-status",
+        "04.CANONICAL.OBJECTS.md: revocation-status"
+      ],
+      "observedTokens": [
+        "active"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "statusReason": {
+      "registryId": "trust.revocationStatusReason",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: revocation-status reason",
+        "04.CANONICAL.OBJECTS.md: revocation-status reason"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "streamId": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "submittedAtUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "supportedExtensions": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "list<u16>"
+      ]
+    },
+    "supportedMajorVersions": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "list<u16>"
+      ]
+    },
+    "supportedPredicateRuntimes": {
+      "registryId": "contract.predicateRuntimeProfile",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: predicate runtime profile",
+        "02.CONTRACT.MODEL.md: predicate runtime profile",
+        "04.CANONICAL.OBJECTS.md: predicate runtime profile",
+        "04.CANONICAL.OBJECTS.md: predicate runtime profile"
+      ],
+      "observedTokens": [
+        "aap-predicate-wasm32-v1"
+      ],
+      "candidateTypes": []
+    },
+    "sybilResistanceClass": {
+      "registryId": "trust.sybilResistanceClass",
+      "strategy": "headingName",
+      "evidence": [
+        "sybilResistanceClass"
+      ],
+      "observedTokens": [
+        "stakeBound"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "targetPacingRateBytesPerSec": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u32"
+      ]
+    },
+    "thisUpdateUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "thresholdDenominator": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "thresholdNumerator": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "timeoutOutcome": {
+      "registryId": "contract.blockedCloseOutcome",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: blocked-close outcome",
+        "04.CANONICAL.OBJECTS.md: blocked-close outcome"
+      ],
+      "observedTokens": [
+        "failClosed"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "tokenClass": {
+      "registryId": "wire.tokenClass",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: token-class",
+        "04.CANONICAL.OBJECTS.md: token-class"
+      ],
+      "observedTokens": [
+        "executionCapability"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "toPhase": {
+      "registryId": "wire.statePhase",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: state-phase",
+        "04.CANONICAL.OBJECTS.md: state-phase"
+      ],
+      "observedTokens": [
+        "completed",
+        "executing",
+        "proved",
+        "ready"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "totalPayloadLength": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "uvarint"
+      ]
+    },
+    "triggerOutcome": {
+      "registryId": "contract.settlementTriggerOutcome",
+      "strategy": "explicitReference",
+      "evidence": [
+        "02.CONTRACT.MODEL.md: settlement trigger outcome",
+        "02.CONTRACT.MODEL.md: settlement trigger outcome",
+        "04.CANONICAL.OBJECTS.md: settlement trigger outcome",
+        "04.CANONICAL.OBJECTS.md: settlement trigger outcome"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "trustLevel": {
+      "registryId": "wire.trustLevel",
+      "strategy": "headingName",
+      "evidence": [
+        "trustLevel"
+      ],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "trustLevelClaimed": {
+      "registryId": "trust.claimedTrustLevel",
+      "strategy": "explicitReference",
+      "evidence": [
+        "01.WIRE.FORMAT.md: claimed trust level",
+        "01.WIRE.FORMAT.md: claimed trust level"
+      ],
+      "observedTokens": [
+        "verified"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "trustLevelGranted": {
+      "registryId": "wire.trustLevel",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: trustLevel"
+      ],
+      "observedTokens": [
+        "observed",
+        "verified"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    },
+    "units": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "useSequence": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u32"
+      ]
+    },
+    "validFromUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "validUntilUnixMs": {
+      "registryId": null,
+      "strategy": "unbound",
+      "evidence": [],
+      "observedTokens": [],
+      "candidateTypes": [
+        "u64"
+      ]
+    },
+    "verifierClass": {
+      "registryId": "trust.verifierClass",
+      "strategy": "explicitReference",
+      "evidence": [
+        "04.CANONICAL.OBJECTS.md: verifier-class",
+        "04.CANONICAL.OBJECTS.md: verifier-class"
+      ],
+      "observedTokens": [
+        "peer-agent",
+        "quorum-aggregator"
+      ],
+      "candidateTypes": [
+        "u16"
+      ]
+    }
+  },
+  "fieldRegistryMap": {
+    "acceptedAtUnixMs": null,
+    "acceptedCriticalExtensions": null,
+    "acceptedPredicateRuntimeProfiles": "contract.predicateRuntimeProfile",
+    "acceptedProofProfiles": "trust.proofProfile",
+    "acceptedSybilResistanceClasses": "trust.sybilResistanceClass",
+    "ackBaseSequence": null,
+    "actionClass": "canonical.actionClass",
+    "admissibleEvidenceKinds": "trust.evidenceKind",
+    "anchoredAtUnixMs": null,
+    "authorizedRoles": "trust.verifierMembershipRole",
+    "autoCloseRule": "contract.autoCloseRule",
+    "basisClass": "trust.basisClass",
+    "blockedCloseOutcome": "contract.blockedCloseOutcome",
+    "blockedCloseOutcomeApplied": "contract.blockedCloseOutcome",
+    "bondRuleRef": "contract.bondRule",
+    "byteLength": null,
+    "byteOffset": null,
+    "cancelReasonCode": "wire.cancelReasonCode",
+    "capturedAtUnixMs": null,
+    "causeCode": "contract.transitionCauseCode",
+    "challengeBondMode": "contract.challengeBondMode",
+    "challengeBudgetMax": null,
+    "challengeClass": "wire.challengeClass",
+    "challengeCostRef": "contract.challengeCost",
+    "challengedAtUnixMs": null,
+    "checkedAtUnixMs": null,
+    "chosenMajor": null,
+    "chosenMinor": null,
+    "claimedTrustLevel": "trust.claimedTrustLevel",
+    "closeReasonCode": "wire.closeReasonCode",
+    "closeScope": "wire.closeScope",
+    "congestionSignal": null,
+    "consumedAtUnixMs": null,
+    "consumptionMode": "contract.capabilityConsumptionMode",
+    "contractPhase": "wire.statePhase",
+    "contractRevision": null,
+    "counteredAtUnixMs": null,
+    "counterRevision": null,
+    "cumulativeUnits": null,
+    "deadlineUnixMs": null,
+    "decidedAtUnixMs": null,
+    "declinedAtUnixMs": null,
+    "declineReasonCode": "wire.declineReasonCode",
+    "degradedBootstrapMode": "wire.degradedBootstrapMode",
+    "delegationDepth": null,
+    "delegationDepthRemaining": null,
+    "deliveredAtUnixMs": null,
+    "deliveryClass": "wire.deliveryClass",
+    "disclosedEvidenceKinds": "trust.evidenceKind",
+    "disputeDepth": null,
+    "disputeWindowMs": null,
+    "effectiveAtUnixMs": null,
+    "emittedAtUnixMs": null,
+    "endedAtUnixMs": null,
+    "errorCode": "wire.errorCode",
+    "errorScope": "wire.errorScope",
+    "evidenceKind": "trust.evidenceKind",
+    "exhaustionOutcome": "contract.disputeExhaustionOutcome",
+    "expiresAtUnixMs": null,
+    "expiryUnixMs": null,
+    "failureClass": "contract.failureClass",
+    "failureModeCode": "contract.failureMode",
+    "failureReasons": "trust.verificationFailureReason",
+    "feeModelRef": "contract.feeModel",
+    "finalityExposureMode": "contract.finalityExposureMode",
+    "finalityMode": "wire.finalityMode",
+    "finalityStatusCode": "contract.closeDecisionStatus",
+    "finalSequence": null,
+    "fragmentCount": null,
+    "fragmentIndex": null,
+    "fromPhase": "wire.statePhase",
+    "fundedUnits": null,
+    "generatedAtUnixMs": null,
+    "graphVersion": null,
+    "inconclusiveResolution": "contract.inconclusiveResolution",
+    "integrityScope": "trust.evidenceIntegrityScope",
+    "issuedAtUnixMs": null,
+    "keyPurposeRequired": "canonical.keyPurposeBit",
+    "lateEvidenceDisposition": "contract.lateEvidenceDisposition",
+    "lineageDepth": null,
+    "lowestRetainedMessageId": null,
+    "maxBootstrapTranscriptAgeMs": null,
+    "maxBridgeResponseMs": null,
+    "maxBridgeRetries": null,
+    "maxBytes": null,
+    "maxClockSkewMs": null,
+    "maxDepth": null,
+    "maxFinalityWaitMs": null,
+    "maxFrameLength": null,
+    "maxIdentityAttestationAgeMs": null,
+    "maxInclusive": null,
+    "maxInlineManifestBytes": null,
+    "maxLiability": null,
+    "maxManifestChainDepth": null,
+    "maxRevocationAgeMs": null,
+    "maxStatusAgeMs": null,
+    "maxTrustDomainAttestationAgeMs": null,
+    "maxUses": null,
+    "membershipFreshnessMaxMs": null,
+    "messageId": null,
+    "meterKind": "wire.meterKind",
+    "meterSelector": "contract.meterSelector",
+    "minimumDistinctDomains": null,
+    "minInclusive": null,
+    "negotiatedProtectionProfile": "wire.companionProfile",
+    "nextCheckpointAt": null,
+    "nextUpdateUnixMs": null,
+    "notAfterUnixMs": null,
+    "observedAtUnixMs": null,
+    "offeredCriticalExtensions": null,
+    "outcome": "wire.settlementOutcome",
+    "payoutFormula": "contract.payoutFormula",
+    "phase": "wire.statePhase",
+    "policyBlockedOutcome": "contract.blockedCloseOutcome",
+    "principalClass": "canonical.principalClass",
+    "priorResultPhase": "wire.statePhase",
+    "priorRevision": null,
+    "privacyClass": "trust.evidencePrivacyClass",
+    "producedAtUnixMs": null,
+    "progressCounters": null,
+    "proposedAtUnixMs": null,
+    "provedAtUnixMs": null,
+    "quantity": null,
+    "quantityScale": null,
+    "ratioDenominator": null,
+    "ratioNumerator": null,
+    "reasonCode": "contract.challengeReasonCode",
+    "reboundAtUnixMs": null,
+    "receiptSequence": null,
+    "receiveWindowBytes": null,
+    "recoveryThreshold": null,
+    "reducedUnits": null,
+    "reductionFunction": "contract.reductionFunction",
+    "refundRule": "contract.refundRule",
+    "refusalReasonCode": "wire.companionProfileV1Refusal",
+    "refusedAtUnixMs": null,
+    "relatedMessageId": null,
+    "relatedStreamId": null,
+    "repairAttempt": null,
+    "repairClass": "wire.repairClass",
+    "repairedAtUnixMs": null,
+    "repairExhaustionOutcome": "contract.repairExhaustionOutcome",
+    "replayWindowCreatedAtUnixMs": null,
+    "replyEvaluationBudgetMax": null,
+    "requestedAtUnixMs": null,
+    "requestedRepair": "contract.requestedRepair",
+    "requiredVerificationBindings": "contract.bridgeVerificationBinding",
+    "result": "trust.verificationResult",
+    "resultingAction": "wire.companionProfileV1ResultingAction",
+    "resultTrustFloor": "wire.trustLevel",
+    "resumablePhase": "wire.statePhase",
+    "reviewerThreshold": null,
+    "rollbackScope": "contract.rollbackScope",
+    "rotationReason": "canonical.rotationReason",
+    "roundingMode": "contract.roundingMode",
+    "schemaRevision": null,
+    "sequence": null,
+    "settlementDisposition": "wire.settlementDisposition",
+    "settlementMode": "contract.settlementMode",
+    "settlementOutcome": "wire.settlementOutcome",
+    "sheddingPriorityThreshold": null,
+    "signaturePurpose": "canonical.signaturePurpose",
+    "slashRule": "contract.slashRule",
+    "staleStatusOutcome": "wire.staleStatusOutcome",
+    "stalledCounterpartyRule": "contract.stalledCounterpartyRule",
+    "startedAtUnixMs": null,
+    "stateCauseCode": "contract.transitionCauseCode",
+    "status": "trust.revocationStatus",
+    "statusReason": "trust.revocationStatusReason",
+    "streamId": null,
+    "submittedAtUnixMs": null,
+    "supportedExtensions": null,
+    "supportedMajorVersions": null,
+    "supportedPredicateRuntimes": "contract.predicateRuntimeProfile",
+    "sybilResistanceClass": "trust.sybilResistanceClass",
+    "targetPacingRateBytesPerSec": null,
+    "thisUpdateUnixMs": null,
+    "thresholdDenominator": null,
+    "thresholdNumerator": null,
+    "timeoutOutcome": "contract.blockedCloseOutcome",
+    "tokenClass": "wire.tokenClass",
+    "toPhase": "wire.statePhase",
+    "totalPayloadLength": null,
+    "triggerOutcome": "contract.settlementTriggerOutcome",
+    "trustLevel": "wire.trustLevel",
+    "trustLevelClaimed": "trust.claimedTrustLevel",
+    "trustLevelGranted": "wire.trustLevel",
+    "units": null,
+    "useSequence": null,
+    "validFromUnixMs": null,
+    "validUntilUnixMs": null,
+    "verifierClass": "trust.verifierClass"
+  }
+}

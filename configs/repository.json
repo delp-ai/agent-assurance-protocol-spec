@@ -1,0 +1,102 @@
+{
+  "repositoryType": "agent-first-protocol-workspace",
+  "repositoryUrl": "https://github.com/delp-ai/agent-assurance-protocol-spec",
+  "maintainer": {
+    "originalAuthor": "jay@delp.ai",
+    "githubHandle": "delpai",
+    "githubOrg": "delp-ai"
+  },
+  "normativeAuthoredSources": [
+    "README.md",
+    "01.WIRE.FORMAT.md",
+    "02.CONTRACT.MODEL.md",
+    "03.TRUST.MODEL.md",
+    "04.CANONICAL.OBJECTS.md",
+    "05.REFERENCE.STACK.md",
+    "06.CRITICAL.REVIEW.md",
+    "conformances/README.md",
+    "conformances/08.NEGATIVE.CASES.md",
+    "conformances/09.BYTE.CORPUS.md",
+    "conformances/10.BYTE.TRANSCRIPTS.md"
+  ],
+  "generatedArtifacts": [
+    "specs/protocol.json",
+    "specs/registries.json",
+    "specs/objects.json",
+    "specs/bytes.json",
+    "specs/bindings.json"
+  ],
+  "qualityCommands": {
+    "required": [
+      "npm run format",
+      "npm run test:validator",
+      "npm run validate"
+    ],
+    "targeted": [
+      "npm run validate:ssot",
+      "npm run validate:anchors",
+      "npm run validate:protocol",
+      "npm run validate:registries",
+      "npm run validate:objects",
+      "npm run validate:bytes",
+      "npm run validate:bindings",
+      "npm run validate:scenarios",
+      "npm run validate:replay"
+    ]
+  },
+  "changeClasses": {
+    "protocolLaw": {
+      "authoredSources": [
+        "01.WIRE.FORMAT.md",
+        "02.CONTRACT.MODEL.md",
+        "03.TRUST.MODEL.md",
+        "04.CANONICAL.OBJECTS.md",
+        "05.REFERENCE.STACK.md",
+        "README.md"
+      ],
+      "mustAlsoUpdate": [
+        "specs/*",
+        "scripts/validators/* or scripts/core/*"
+      ]
+    },
+    "conformanceCorpus": {
+      "authoredSources": [
+        "conformances/*.md"
+      ],
+      "mustAlsoUpdate": [
+        "specs/bytes.json, specs/objects.json, or specs/bindings.json",
+        "scripts/validators/*"
+      ]
+    },
+    "referenceGuidance": {
+      "authoredSources": [
+        "README.md",
+        "05.REFERENCE.STACK.md",
+        "06.CRITICAL.REVIEW.md",
+        "AGENTS.md",
+        "CONTRIBUTING.md",
+        "SECURITY.md"
+      ],
+      "mustAlsoUpdate": []
+    },
+    "repositoryOperations": {
+      "authoredSources": [
+        "package.json",
+        "configs/repository.json",
+        ".github/**"
+      ],
+      "mustAlsoUpdate": [
+        "related documentation when contributor workflow changes"
+      ]
+    }
+  },
+  "claimBoundary": {
+    "publicUnknownPeerSurface": "AAP Open Core",
+    "doNotWidenWithout": [
+      "authored spec updates",
+      "generated artifact updates",
+      "validator or parser enforcement",
+      "conformance coverage"
+    ]
+  }
+}

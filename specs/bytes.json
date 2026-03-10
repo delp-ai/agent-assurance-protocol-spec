@@ -1,0 +1,1939 @@
+{
+  "docs": {
+    "byteCorpusFile": "conformances/09.BYTE.CORPUS.md",
+    "byteTranscriptsFile": "conformances/10.BYTE.TRANSCRIPTS.md"
+  },
+  "labels": {
+    "vectorId": "Vector id",
+    "sourceVector": "Source vector",
+    "requiredAcceptedVectors": "Required accepted vectors",
+    "requiredAbsentVectors": "Required absent vectors",
+    "dependencyClass": "Declared dependency class",
+    "prerequisiteContexts": "Declared prerequisite contexts",
+    "observationBoundary": "Observation boundary",
+    "orderingKeyFields": "Ordering key fields",
+    "protectedArrivalWinner": "Protected-arrival winner",
+    "canonicalFrameBytes": "Canonical frame bytes",
+    "canonicalMalformedFrameBytes": "Canonical malformed frame bytes",
+    "canonicalPayloadBytes": "Canonical payload bytes",
+    "canonicalSectionBytes": "Canonical section bytes",
+    "canonicalObjectBytes": "Canonical object bytes",
+    "canonicalPayloadBody": "Canonical payload body",
+    "canonicalHeaderSection": "Canonical header section",
+    "canonicalObjectBody": "Canonical object body",
+    "expectedParseSummary": "Expected parse summary",
+    "expectedPerFrameResult": "Expected per-frame result",
+    "expectedTranscriptOutcome": "Expected transcript outcome"
+  },
+  "aliasBindings": {
+    "31": "`31` and `32` bind the bootstrap peer current-key digests shared by the self-contained bootstrap",
+    "32": "`31` and `32` bind the bootstrap peer current-key digests shared by the self-contained bootstrap",
+    "33": "`33` and `34` bind the bootstrap peer identity-attestation digests shared by",
+    "34": "`33` and `34` bind the bootstrap peer identity-attestation digests shared by",
+    "35": "`35` and `36` bind the accepted bootstrap trust-domain root digests shared by",
+    "36": "`35` and `36` bind the accepted bootstrap trust-domain root digests shared by",
+    "39": "`39` and `3A` bind the bootstrap domain-admission digests shared by",
+    "42": "`42` binds `sha256:boot_0001`, the bootstrap transcript digest used by",
+    "44": "`44` and `45` bind the verifier-independence and freshness-policy digests shared by",
+    "45": "`44` and `45` bind the verifier-independence and freshness-policy digests shared by",
+    "46": "`46` and `47` bind the time-profile and revocation-profile digests shared by the self-contained",
+    "47": "`46` and `47` bind the time-profile and revocation-profile digests shared by the self-contained",
+    "51": "`51` binds the accepted trust-policy digest shared by `bytes.caps.minimal_negotiated_v1`,",
+    "52": "`52` binds an alternate accepted trust-policy digest used by",
+    "55": "`55` and `56` bind the proof subject and verification digests shared by `bytes.prove.minimal_v1`,",
+    "56": "`55` and `56` bind the proof subject and verification digests shared by `bytes.prove.minimal_v1`,",
+    "58": "`58` binds `sha256:settle_exec_0001`, the settlement digest shared by",
+    "61": "`61`, `62`, and `63` bind the shared resume token, resume-token binding, and replay-window",
+    "62": "`61`, `62`, and `63` bind the shared resume token, resume-token binding, and replay-window",
+    "63": "`61`, `62`, and `63` bind the shared resume token, resume-token binding, and replay-window",
+    "67": "`67`, `68`, and `69` bind the bridge evaluation scope, predicate-runtime profile, and",
+    "68": "`67`, `68`, and `69` bind the bridge evaluation scope, predicate-runtime profile, and",
+    "69": "`67`, `68`, and `69` bind the bridge evaluation scope, predicate-runtime profile, and",
+    "83": "`83` binds the prior-session capability-token digest shared by",
+    "86": "`86` and `87` bind the granted-scope and allowed-actions digests used by",
+    "87": "`86` and `87` bind the granted-scope and allowed-actions digests used by",
+    "90": "`90` and `91` bind the successful witness digests shared by",
+    "91": "`90` and `91` bind the successful witness digests shared by",
+    "sha256:boot_0001": "`42` binds `sha256:boot_0001`, the bootstrap transcript digest used by",
+    "3A": "`39` and `3A` bind the bootstrap domain-admission digests shared by",
+    "4A": "`4A` and `4B` bind the shared schema-registry and unit-registry manifest digests advertised by",
+    "4B": "`4A` and `4B` bind the shared schema-registry and unit-registry manifest digests advertised by",
+    "bytes.caps.minimal_negotiated_v1": "`51` binds the accepted trust-policy digest shared by `bytes.caps.minimal_negotiated_v1`,",
+    "C2": "`C2` binds the accepted authority-graph digest shared by `bytes.propose.minimal_contract_v1`",
+    "bytes.propose.minimal_contract_v1": "`C3` binds the accepted proposal digest shared by `bytes.propose.minimal_contract_v1` and",
+    "C3": "`C3` binds the accepted proposal digest shared by `bytes.propose.minimal_contract_v1` and",
+    "D5": "`D5` binds `sha256:meter_exec_failed_timeout_0001`, the metering-receipt-set digest shared by",
+    "sha256:meter_exec_failed_timeout_0001": "`D5` binds `sha256:meter_exec_failed_timeout_0001`, the metering-receipt-set digest shared by",
+    "D4": "`D4` binds `sha256:settle_exec_failed_timeout_0001`, the settlement digest shared by",
+    "sha256:settle_exec_failed_timeout_0001": "`D4` binds `sha256:settle_exec_failed_timeout_0001`, the settlement digest shared by",
+    "D7": "`D7` binds the transition digest shared by `bytes.state.completed.minimal_v1` and",
+    "bytes.state.completed.minimal_v1": "`D7` binds the transition digest shared by `bytes.state.completed.minimal_v1` and",
+    "E1": "`E1` and `E2` bind the accepted challenge subject/evidence digests shared by",
+    "E2": "`E1` and `E2` bind the accepted challenge subject/evidence digests shared by",
+    "E3": "`E3` binds the divergent challenge/repair replacement digest used by",
+    "F1": "`F1` binds `sha256:finality_exec_failed_timeout_0001`, the finality digest shared by",
+    "sha256:finality_exec_failed_timeout_0001": "`F1` binds `sha256:finality_exec_failed_timeout_0001`, the finality digest shared by",
+    "F2": "`F2` binds `sha256:close_exec_failed_timeout_0001`, the close-decision digest shared by",
+    "sha256:close_exec_failed_timeout_0001": "`F2` binds `sha256:close_exec_failed_timeout_0001`, the close-decision digest shared by",
+    "bytes.prove.minimal_v1": "`55` and `56` bind the proof subject and verification digests shared by `bytes.prove.minimal_v1`,",
+    "sha256:settle_exec_0001": "`58` binds `sha256:settle_exec_0001`, the settlement digest shared by",
+    "5A": "`5A` binds `sha256:finality_exec_completed_0001`, the finality digest shared by",
+    "sha256:finality_exec_completed_0001": "`5A` binds `sha256:finality_exec_completed_0001`, the finality digest shared by",
+    "5B": "`5B` binds `sha256:close_exec_completed_0001`, the close-decision digest shared by",
+    "sha256:close_exec_completed_0001": "`5B` binds `sha256:close_exec_completed_0001`, the close-decision digest shared by",
+    "5C": "`5C` binds `sha256:witness_set_exec_0001`, the witness-set digest shared by",
+    "sha256:witness_set_exec_0001": "`5C` binds `sha256:witness_set_exec_0001`, the witness-set digest shared by",
+    "6C": "`6C` binds the current bridge verifier-membership digest shared by",
+    "6A": "`6A` binds the bridge-submission digest shared by `bytes.object.bridge_submission.minimal_v1`",
+    "bytes.object.bridge_submission.minimal_v1": "`6A` binds the bridge-submission digest shared by `bytes.object.bridge_submission.minimal_v1`",
+    "9A": "`9A`, `9B`, `9C`, and `9D` bind the successful terminal-event digests shared by",
+    "9B": "`9A`, `9B`, `9C`, and `9D` bind the successful terminal-event digests shared by",
+    "9C": "`9A`, `9B`, `9C`, and `9D` bind the successful terminal-event digests shared by",
+    "9D": "`9A`, `9B`, `9C`, and `9D` bind the successful terminal-event digests shared by",
+    "7E": "`7E` binds the stale verifier-membership digest shared by",
+    "A1": "`A1` binds `sha256:graph_exec_0001`, the authority-basis digest shared by",
+    "sha256:graph_exec_0001": "`A1` binds `sha256:graph_exec_0001`, the authority-basis digest shared by",
+    "B0": "`B0` binds `sha256:net_transfer_exec_0001`, the transfer-set digest shared by",
+    "sha256:net_transfer_exec_0001": "`B0` binds `sha256:net_transfer_exec_0001`, the transfer-set digest shared by"
+  },
+  "vectors": [
+    {
+      "heading": "Vector 1: Minimal Bootstrap `HELLO`",
+      "id": "bytes.hello.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01\n00 00\n26\n71\n00 01\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n00\n01\n01\n00\n10\n64\n00 00 00 00\n01 49\n01 01 61\n02 04 01 02 00 01\n03 08 01 06 01 01 00 02 01 00\n04 01 00\n06 2E 01 01 AA 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01\n08 01 42",
+      "canonicalPayloadBytes": "01 49\n01 01 61\n02 04 01 02 00 01\n03 08 01 06 01 01 00 02 01 00\n04 01 00\n06 2E\n  01 01 AA\n  02 01 73\n  03 01 6D\n  04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31\n  06 01 00\n  07 01 01\n  08 08 00 00 00 00 00 00 00 01\n08 01 42",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "HelloBody {\n  peerAgentId: \"a\"\n  supportedMajorVersions: [1]\n  supportedMinorRanges: [{minInclusive: 0, maxInclusive: 0}]\n  resumeTokenPresent: false\n  identityManifestRef {\n    manifestDigest: aa\n    digestAlgorithm: \"s\"\n    mediaType: \"m\"\n    retrievalProfile: \"inline-handshake-v1\"\n    inlineAllowed: false\n    maxBytes: 1\n    notAfterUnixMs: 1\n  }\n  bootstrapTranscriptDigest: 42\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 0.0\n  frameType: HELLO\n  flags: ackRequired\n  streamId: 0\n  messageId: 1\n  payload.peerAgentId: \"a\"\n  payload.supportedMajorVersions: [1]\n  payload.resumeTokenPresent: false\n}"
+    },
+    {
+      "heading": "Vector 2: Contract-Bound `PROPOSE`",
+      "id": "bytes.propose.minimal_contract_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n3D\n95 01\n00 04\n01 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n02\n01\n01\n00\n20\n64\n00 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 01\n01 56\n01 01 63\n02 08 00 00 00 00 00 00 00 01\n03 01 C1\n04 2E 01 01 BB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01\n06 01 C2\n07 01 C3\n08 01 61\n09 08 00 00 00 00 00 00 00 01\n0A 01 99",
+      "canonicalPayloadBytes": "01 56\n01 01 63\n02 08 00 00 00 00 00 00 00 01\n03 01 C1\n04 2E\n  01 01 BB\n  02 01 73\n  03 01 6D\n  04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31\n  06 01 00\n  07 01 01\n  08 08 00 00 00 00 00 00 00 01\n06 01 C2\n07 01 C3\n08 01 61\n09 08 00 00 00 00 00 00 00 01\n0A 01 99",
+      "canonicalSectionBytes": "04 14\n01 01 61\n02 01 63\n03 08 00 00 00 00 00 00 00 01\n04 02 00 01",
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "ProposeBody {\n  contractId: \"c\"\n  contractRevision: 1\n  contractDigest: c1\n  contractSchemaRef {\n    manifestDigest: bb\n    digestAlgorithm: \"s\"\n    mediaType: \"m\"\n    retrievalProfile: \"inline-handshake-v1\"\n    inlineAllowed: false\n    maxBytes: 1\n    notAfterUnixMs: 1\n  }\n  authorityGraphDigest: c2\n  proposalDigest: c3\n  proposerAgentId: \"a\"\n  proposedAtUnixMs: 1\n  proposalSignature: 99\n}",
+      "canonicalHeaderSection": "ContractRefSection {\n  issuerAgentId: \"a\"\n  contractId: \"c\"\n  contractRevision: 1\n  contractPhase: proposed\n}",
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: PROPOSE\n  flags: ackRequired|contractBound\n  streamId: 2\n  messageId: 1\n  contractRef.issuerAgentId: \"a\"\n  contractRef.contractId: \"c\"\n  contractRef.contractRevision: 1\n  payload.contractId: \"c\"\n}"
+    },
+    {
+      "heading": "Vector 3: `WIRE_ERROR` For Contract Reference Mismatch",
+      "id": "bytes.wire_error.contract_ref_mismatch_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n26\n47\n00 17\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n00\n02\n02\n01\n10\n64\n00 00 00 00\n01 1F\n01 02 00 72\n02 02 00 03\n03 08 00 00 00 00 00 00 00 02\n04 08 00 00 00 00 00 00 00 01\n05 01 00",
+      "canonicalPayloadBytes": "01 1F\n01 02 00 72\n02 02 00 03\n03 08 00 00 00 00 00 00 00 02\n04 08 00 00 00 00 00 00 00 01\n05 01 00",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "WireErrorBody {\n  errorCode: contractReferenceMismatch\n  errorScope: message\n  relatedStreamId: 2\n  relatedMessageId: 1\n  retryable: false\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: WIRE_ERROR\n  flags: ackRequired\n  streamId: 0\n  messageId: 2\n  payload.errorCode: contractReferenceMismatch\n  payload.errorScope: message\n  payload.relatedStreamId: 2\n  payload.relatedMessageId: 1\n}"
+    },
+    {
+      "heading": "Vector 4: Minimal `AgentIdentityAttestation`",
+      "id": "bytes.object.agent_identity.minimal_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 01 61\n02 01 AA\n03 04 00 00 00 0F\n06 01 72\n07 08 00 00 00 00 00 00 00 01\n08 08 00 00 00 00 00 00 00 09\n0A 01 D1\n0B 01 99",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "AgentIdentityAttestation {\n  agentId: \"a\"\n  currentKeyDigest: AA\n  keyPurposeBitmap: 0000000F\n  revocationRef: \"r\"\n  validFromUnixMs: 1\n  validUntilUnixMs: 9\n  attestationDigest: D1\n  signature: 99\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 5: Minimal `FinalityWitness`",
+      "id": "bytes.object.finality_witness.minimal_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 01 77\n02 01 64\n03 06 01 01 61 02 01 63\n04 08 00 00 00 00 00 00 00 01\n05 01 F1\n06 06 01 01 F3 01 01 F4\n07 08 00 00 00 00 00 00 00 01\n08 01 DA\n09 01 F2\n0A 01 77",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "FinalityWitness {\n  witnessId: \"w\"\n  witnessDomain: \"d\"\n  contractRef: {issuerAgentId: \"a\", contractId: \"c\"}\n  contractRevision: 1\n  finalityCandidateDigest: F1\n  observedTerminalEventDigests: [F3, F4]\n  generatedAtUnixMs: 1\n  canonicalDigest: F2\n  domainAttestation: DA\n  signature: 77\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: FinalityWitness\n  contractRef.contractId: \"c\"\n  observedTerminalEventDigests: [F3, F4]\n}"
+    },
+    {
+      "heading": "Vector 6: Minimal `VerifierBridgeProfile`",
+      "id": "bytes.object.verifier_bridge_profile.minimal_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 01 62\n02 01 64\n03 19 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31\n04 04 01 02 00 09\n05 02 00 04\n06 08 00 00 00 00 00 00 4E 20\n07 02 00 01\n08 02 00 01\n09 02 00 01\n0A 02 00 02\n0B 01 B2\n0C 14 01 02 00 01 01 02 00 02 01 02 00 03 01 02 00 04 01 02 00 05\n0E 01 B3\n11 01 B1\n12 0C 01 0A 01 05 67 61 6D 6D 61 02 01 55",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "VerifierBridgeProfile {\n  bridgeProfileId: \"b\"\n  bridgeDomain: \"d\"\n  supportedPredicateRuntimes: [\"aap-predicate-wasm32-v1\"]\n  admissibleEvidenceKinds: [delegateChainProof]\n  resultTrustFloor: verified\n  maxBridgeResponseMs: 20000\n  maxBridgeRetries: 1\n  timeoutOutcome: failClosed\n  policyBlockedOutcome: failClosed\n  privacyClass: bridgeMinimalDisclosure\n  bridgeAuthorityPolicyDigest: B2\n  requiredVerificationBindings: [subjectDigest, evaluationScopeDigest, predicateRuntimeProfileDigest, proofProfileDigest, contractRevision]\n  submissionSchemaDigest: B3\n  canonicalDigest: B1\n  signatureSet: [{signerId: \"gamma\", signature: 55}]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 7: Minimal `STATE phase=completed`",
+      "id": "bytes.state.completed.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n3C\n72\n00 09\n01 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n03\n03\n03\n00\n20\n64\n00 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 09\n01 34 01 01 63 02 08 00 00 00 00 00 00 00 01 03 02 00 09 04 01 D7 07 1E 01 08 00 00 00 00 00 00 00 01 01 08 00 00 00 00 00 00 00 01 01 08 00 00 00 00 00 00 00 01",
+      "canonicalPayloadBytes": "01 34\n01 01 63\n02 08 00 00 00 00 00 00 00 01\n03 02 00 09\n04 01 D7\n07 1E 01 08 00 00 00 00 00 00 00 01 01 08 00 00 00 00 00 00 00 01 01 08 00 00 00 00 00 00 00 01",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "StateBody {\n  contractId: \"c\"\n  contractRevision: 1\n  phase: completed\n  stateTransitionDigest: D7\n  progressCounters: [1, 1, 1]\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: STATE\n  contractRef.contractPhase: completed\n  payload.phase: completed\n  payload.stateTransitionDigest: D7\n}"
+    },
+    {
+      "heading": "Vector 8: Minimal `CHALLENGE`",
+      "id": "bytes.challenge.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n3D\n92 01\n00 0C\n01 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n03\n04\n04\n00\n20\n64\n00 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 06\n01 53 01 01 63 02 08 00 00 00 00 00 00 00 01 03 01 71 04 06 01 01 04 02 01 02 05 01 E1 06 06 01 01 E1 01 01 E2 07 02 00 01 08 02 00 01 09 02 00 01 0A 08 00 00 00 00 00 00 00 01 0B 02 00 01 0D 01 A1 0E 01 C1 0F 08 00 00 00 00 00 00 00 01 10 01 61 11 01 91",
+      "canonicalPayloadBytes": "01 53\n01 01 63\n02 08 00 00 00 00 00 00 00 01\n03 01 71\n04 06 01 01 04 02 01 02\n05 01 E1\n06 06 01 01 E1 01 01 E2\n07 02 00 01\n08 02 00 01\n09 02 00 01\n0A 08 00 00 00 00 00 00 00 01\n0B 02 00 01\n0D 01 A1\n0E 01 C1\n0F 08 00 00 00 00 00 00 00 01\n10 01 61\n11 01 91",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "ChallengeBody {\n  contractId: \"c\"\n  contractRevision: 1\n  challengeId: \"q\"\n  subjectMessageRef: {streamId: 4, messageId: 2}\n  subjectDigest: E1\n  coveredDigests: [E1, E2]\n  challengeClass: missingEvidence\n  reasonCode: requiredVerifierInputAbsent\n  requestedRepair: attachMissingProof\n  deadlineUnixMs: 1\n  disputeDepth: 1\n  authorityBasisDigest: A1\n  canonicalDigest: C1\n  challengedAtUnixMs: 1\n  challengerId: \"a\"\n  challengeSignature: 91\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: CHALLENGE\n  contractRef.contractPhase: challenged\n  payload.challengeId: \"q\"\n  payload.subjectMessageRef: {streamId: 4, messageId: 2}\n  payload.canonicalDigest: C1\n}"
+    },
+    {
+      "heading": "Vector 9: Minimal `REPAIR`",
+      "id": "bytes.repair.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n3D\nBC 01\n00 0D\n01 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n03\n05\n05\n00\n20\n64\n00 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 06\n01 7D 01 01 72 02 01 63 03 08 00 00 00 00 00 00 00 01 04 01 71 05 02 00 02 06 06 01 01 04 02 01 02 07 01 E3 08 06 01 01 E1 01 01 E2 09 30 01 2E 01 01 BB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 0A 01 E3 0B 02 00 08 0C 01 A1 0D 01 C2 0E 02 00 01 0F 08 00 00 00 00 00 00 00 01 10 01 62 11 01 92",
+      "canonicalPayloadBytes": "01 7D\n01 01 72\n02 01 63\n03 08 00 00 00 00 00 00 00 01\n04 01 71\n05 02 00 02\n06 06 01 01 04 02 01 02\n07 01 E3\n08 06 01 01 E1 01 01 E2\n09 30 01 2E 01 01 BB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01\n0A 01 E3\n0B 02 00 08\n0C 01 A1\n0D 01 C2\n0E 02 00 01\n0F 08 00 00 00 00 00 00 00 01\n10 01 62\n11 01 92",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "RepairBody {\n  repairId: \"r\"\n  contractId: \"c\"\n  contractRevision: 1\n  challengeId: \"q\"\n  repairClass: replaceEvidence\n  repairedSubjectMessageRef: {streamId: 4, messageId: 2}\n  repairedSubjectDigest: E3\n  replacedDigests: [E1, E2]\n  replacementArtifactRefs: [{\n    manifestDigest: BB,\n    digestAlgorithm: \"s\",\n    mediaType: \"m\",\n    retrievalProfile: \"inline-handshake-v1\",\n    inlineAllowed: false,\n    maxBytes: 1,\n    notAfterUnixMs: 1\n  }]\n  replacementEvidenceDigest: E3\n  resumablePhase: proved\n  authorityBasisDigest: A1\n  canonicalDigest: C2\n  repairAttempt: 1\n  repairedAtUnixMs: 1\n  repairerId: \"b\"\n  repairSignature: 92\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: REPAIR\n  contractRef.contractPhase: challenged\n  payload.challengeId: \"q\"\n  payload.resumablePhase: proved\n  payload.canonicalDigest: C2\n}"
+    },
+    {
+      "heading": "Vector 10: Minimal Fail-Closed `SETTLE`",
+      "id": "bytes.settle.fail_closed.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n3C\n58\n00 0F\n01 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n02\n03\n03\n00\n20\n64\n00 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 0E\n01 1A 01 01 63 02 01 D4 03 02 00 04 04 08 00 00 00 00 00 00 EA 60 05 01 D5 06 01 F1",
+      "canonicalPayloadBytes": "01 1A\n01 01 63\n02 01 D4\n03 02 00 04\n04 08 00 00 00 00 00 00 EA 60\n05 01 D5\n06 01 F1",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "SettleBody {\n  contractId: \"c\"\n  settlementDigest: D4\n  settlementOutcome: failed\n  disputeWindowMs: 60000\n  meteringReceiptSetDigest: D5\n  finalityCandidateDigest: F1\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: SETTLE\n  contractRef.contractPhase: settling\n  payload.settlementOutcome: failed\n  payload.finalityCandidateDigest: F1\n}"
+    },
+    {
+      "heading": "Vector 11: Minimal Fail-Closed `CLOSE`",
+      "id": "bytes.close.fail_closed.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n4B\n72\n00 10\n05 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n02\n04\n04\n00\n20\n64\n00 00 10 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 0F\n1A 0D 01 02 00 01 02 01 F1 03 01 F3 04 01 F4\n01 25 01 02 00 02 02 02 00 06 03 01 63 04 08 00 00 00 00 00 00 00 01 05 08 00 00 00 00 00 00 00 04 06 01 F1 07 01 F2",
+      "canonicalPayloadBytes": "01 25\n01 02 00 02\n02 02 00 06\n03 01 63\n04 08 00 00 00 00 00 00 00 01\n05 08 00 00 00 00 00 00 00 04\n06 01 F1\n07 01 F2",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "CloseBody {\n  closeScope: contract\n  closeReasonCode: policyFailClosed\n  contractId: \"c\"\n  contractRevision: 1\n  finalSequence: 4\n  finalityDigest: F1\n  closeTraceDigest: F2\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: CLOSE\n  flags: ackRequired|contractBound|policySensitive\n  contractRef.contractPhase: closed\n  finalityContext.finalityDigest: F1\n  payload.closeScope: contract\n  payload.closeReasonCode: policyFailClosed\n  payload.closeTraceDigest: F2\n}"
+    },
+    {
+      "heading": "Vector 12: `WIRE_ERROR` For Replay Violation",
+      "id": "bytes.wire_error.replay_violation_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n26\n47\n00 17\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n00\n07\n07\n01\n10\n64\n00 00 00 00\n01 1F 01 02 00 6C 02 02 00 03 03 08 00 00 00 00 00 00 00 03 04 08 00 00 00 00 00 00 00 04 05 01 00",
+      "canonicalPayloadBytes": "01 1F\n01 02 00 6C\n02 02 00 03\n03 08 00 00 00 00 00 00 00 03\n04 08 00 00 00 00 00 00 00 04\n05 01 00",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "WireErrorBody {\n  errorCode: replayWindowViolation\n  errorScope: message\n  relatedStreamId: 3\n  relatedMessageId: 4\n  retryable: false\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: WIRE_ERROR\n  payload.errorCode: replayWindowViolation\n  payload.errorScope: message\n  payload.relatedStreamId: 3\n  payload.relatedMessageId: 4\n}"
+    },
+    {
+      "heading": "Vector 13: Divergent Duplicate `CHALLENGE`",
+      "id": "bytes.challenge.divergent_duplicate_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n3D\n92 01\n00 0C\n01 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n03\n04\n04\n00\n20\n64\n00 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 06\n01 53 01 01 63 02 08 00 00 00 00 00 00 00 01 03 01 71 04 06 01 01 04 02 01 02 05 01 E3 06 06 01 01 E1 01 01 E2 07 02 00 01 08 02 00 01 09 02 00 01 0A 08 00 00 00 00 00 00 00 01 0B 02 00 01 0D 01 A1 0E 01 C3 0F 08 00 00 00 00 00 00 00 01 10 01 61 11 01 91",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: CHALLENGE\n  contractRef.contractPhase: challenged\n  payload.subjectDigest: E3\n  payload.canonicalDigest: C3\n}"
+    },
+    {
+      "heading": "Vector 14: Minimal `StateTransitionRecord`",
+      "id": "bytes.object.state_transition_record.minimal_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 01 74\n02 06 01 01 61 02 01 63\n03 08 00 00 00 00 00 00 00 01\n04 02 00 08\n05 02 00 09\n06 02 00 01\n07 06 01 01 E1 01 01 E2\n08 01 A1\n09 08 00 00 00 00 00 00 00 01\n0A 01 D7\n0B 17 01 0A 01 05 61 6C 70 68 61 02 01 81 01 09 01 04 62 65 74 61 02 01 82",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "StateTransitionRecord {\n  transitionId: \"t\"\n  contractRef: {issuerAgentId: \"a\", contractId: \"c\"}\n  contractRevision: 1\n  fromPhase: proved\n  toPhase: completed\n  causeCode: acceptancePredicatePassed\n  supportingDigests: [E1, E2]\n  authorityBasisDigest: A1\n  emittedAtUnixMs: 1\n  canonicalDigest: D7\n  signatureSet: [\n    {signerId: \"alpha\", signature: 81},\n    {signerId: \"beta\", signature: 82}\n  ]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: StateTransitionRecord\n  contractRef.contractId: \"c\"\n  fromPhase: proved\n  toPhase: completed\n  causeCode: acceptancePredicatePassed\n}"
+    },
+    {
+      "heading": "Vector 15: Minimal `CloseDecision`",
+      "id": "bytes.object.close_decision.minimal_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 01 7A\n02 06 01 01 61 02 01 63\n03 08 00 00 00 00 00 00 00 01\n04 02 00 0C\n05 01 D4\n06 01 F1\n07 02 00 03\n08 02 00 01\n09 02 00 01\n0A 02 00 06\n0B 06 01 01 D5 01 01 F1\n0C 08 00 00 00 00 00 00 00 01\n0D 01 F2\n0E 18 01 0A 01 05 61 6C 70 68 61 02 01 83 01 0A 01 05 64 65 6C 74 61 02 01 84",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "CloseDecision {\n  closeDecisionId: \"z\"\n  contractRef: {issuerAgentId: \"a\", contractId: \"c\"}\n  contractRevision: 1\n  priorResultPhase: failed\n  settlementDigest: D4\n  finalityCandidateDigest: F1\n  finalityStatusCode: disputeWindowExpired\n  blockedCloseOutcomeApplied: failClosed\n  lateEvidenceDisposition: retainForAuditOnly\n  closeReasonCode: policyFailClosed\n  supportingDigests: [D5, F1]\n  decidedAtUnixMs: 1\n  canonicalDigest: F2\n  signatureSet: [\n    {signerId: \"alpha\", signature: 83},\n    {signerId: \"delta\", signature: 84}\n  ]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: CloseDecision\n  contractRef.contractId: \"c\"\n  priorResultPhase: failed\n  finalityStatusCode: disputeWindowExpired\n  blockedCloseOutcomeApplied: failClosed\n  lateEvidenceDisposition: retainForAuditOnly\n  closeReasonCode: policyFailClosed\n}"
+    },
+    {
+      "heading": "Vector 16: `WIRE_ERROR` For Unknown Critical Extension",
+      "id": "bytes.wire_error.unknown_critical_extension_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n26\n47\n00 17\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n00\n02\n02\n01\n10\n64\n00 00 00 00\n01 1F\n01 02 00 66\n02 02 00 03\n03 08 00 00 00 00 00 00 00 02\n04 08 00 00 00 00 00 00 00 01\n05 01 00",
+      "canonicalPayloadBytes": "01 1F\n01 02 00 66\n02 02 00 03\n03 08 00 00 00 00 00 00 00 02\n04 08 00 00 00 00 00 00 00 01\n05 01 00",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "WireErrorBody {\n  errorCode: unknownCriticalExtension\n  errorScope: message\n  relatedStreamId: 2\n  relatedMessageId: 1\n  retryable: false\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: WIRE_ERROR\n  flags: ackRequired\n  streamId: 0\n  messageId: 2\n  payload.errorCode: unknownCriticalExtension\n  payload.errorScope: message\n  payload.relatedStreamId: 2\n  payload.relatedMessageId: 1\n}"
+    },
+    {
+      "heading": "Vector 17: Negotiated `CAPS`",
+      "id": "bytes.caps.minimal_negotiated_v1",
+      "canonicalFrameBytes": "41 41 50 01 01 00 27 B6 03 00 02 00 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 01 01 01 00 10 64 00 00 00 00 01 8C 03 01 01 CA 02 2E 01 01 CB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 04 00 05 2E 01 13 61 61 70 2D 62 61 73 65 2D 70 72 6F 66 69 6C 65 2D 76 31 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 06 02 00 01 07 02 00 00 08 2E 01 13 61 61 70 2D 62 61 73 65 2D 70 72 6F 66 69 6C 65 2D 76 31 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 09 00 0A 01 CC 0B 2E 01 01 CD 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 0D 01 CE 0E 2E 01 01 CF 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 10 2E 01 01 D0 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 12 2E 01 01 D1 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 14 04 00 00 10 00 15 01 04 16 09 75 74 63 2D 6D 73 2D 76 31 17 08 72 65 76 6F 63 2D 76 31 18 04 00 01 00 00 19 01 51",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: CAPS\n  flags: ackRequired\n  streamId: 1\n  messageId: 1\n  payload.chosenMajor: 1\n  payload.chosenMinor: 0\n  payload.acceptedTrustPolicyDigest: 51\n}"
+    },
+    {
+      "heading": "Vector 18: Minimal `ACCEPT`",
+      "id": "bytes.accept.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01 01 00 3C 64 00 06 01 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 02 02 02 00 20 64 00 00 00 02 04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 03 01 26 01 01 63 02 08 00 00 00 00 00 00 00 01 03 01 C3 04 01 C2 05 01 53 06 08 00 00 00 00 00 00 00 01 07 01 62 08 01 98",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: ACCEPT\n  flags: ackRequired|contractBound\n  streamId: 2\n  messageId: 2\n  contractRef.contractPhase: accepted\n  payload.acceptedProposalDigest: C3\n}"
+    },
+    {
+      "heading": "Vector 19: Minimal `DELIVER`",
+      "id": "bytes.deliver.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01 01 00 3D 93 01 00 0A 01 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 04 01 01 00 20 64 00 00 00 02 04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 07 01 54 01 01 63 02 08 00 00 00 00 00 00 00 01 03 02 00 02 04 01 54 05 2E 01 01 D2 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 07 01 01 08 08 00 00 00 00 00 00 00 01 09 01 97",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: DELIVER\n  flags: ackRequired|contractBound\n  streamId: 4\n  messageId: 1\n  contractRef.contractPhase: delivering\n  payload.deliveryClass: resultSummary\n  payload.terminalCandidate: true\n}"
+    },
+    {
+      "heading": "Vector 20: Minimal `PROVE`",
+      "id": "bytes.prove.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01 01 00 3D A0 01 00 0B 01 81 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 04 02 02 00 20 64 00 00 00 02 04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 08 01 61 01 01 63 02 08 00 00 00 00 00 00 00 01 03 06 01 01 04 02 01 01 04 01 55 05 2E 01 01 D3 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 06 03 01 01 56 07 01 57 08 02 00 04 09 08 00 00 00 00 00 00 00 01 0A 01 96",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: PROVE\n  flags: ackRequired|proofAttached|contractBound\n  streamId: 4\n  messageId: 2\n  contractRef.contractPhase: proved\n  payload.subjectMessageRef: {streamId: 4, messageId: 1}\n  payload.trustLevelClaimed: verified\n}"
+    },
+    {
+      "heading": "Vector 21: Minimal Successful `SETTLE`",
+      "id": "bytes.settle.completed.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01 01 00 3C 58 00 0F 07 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 02 03 03 00 20 64 00 00 00 02 04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 0E 01 1A 01 01 63 02 01 58 03 02 00 01 04 08 00 00 00 00 00 00 EA 60 05 01 59 06 01 5A",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: SETTLE\n  flags: ackRequired|contractBound|budgetSensitive|policySensitive\n  streamId: 2\n  messageId: 3\n  contractRef.contractPhase: settling\n  payload.settlementOutcome: completed\n  payload.finalityCandidateDigest: 5A\n}"
+    },
+    {
+      "heading": "Vector 22: Minimal Successful `CLOSE`",
+      "id": "bytes.close.completed.minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01 01 00 4B 72 00 10 05 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 02 04 04 00 20 64 00 00 10 02 04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 0F 1A 0D 01 02 00 02 02 01 5A 03 01 5C 04 01 5D 01 25 01 02 00 02 02 02 00 04 03 01 63 04 08 00 00 00 00 00 00 00 01 05 08 00 00 00 00 00 00 00 04 06 01 5A 07 01 5B",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: CLOSE\n  flags: ackRequired|contractBound|policySensitive\n  streamId: 2\n  messageId: 4\n  contractRef.contractPhase: closed\n  finalityContext.finalityDigest: 5A\n  payload.closeReasonCode: witnessThresholdMet\n}"
+    },
+    {
+      "heading": "Vector 23: Minimal `ResumeAcceptance`",
+      "id": "bytes.object.resume_acceptance.minimal_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 0E 6C 69 6E 65 61 67 65 2E 62 6F 6F 74 2E 31 02 10 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 03 01 42 04 01 61 05 01 62 06 01 51 07 02 00 01 08 01 63 09 08 01 06 01 01 04 02 01 02 0A 08 00 00 00 00 00 00 00 01 0B 01 64 0C 08 01 06 01 01 61 02 01 95",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "ResumeAcceptance {\n  priorSessionLineageId: lineage.boot.1\n  newSessionId: 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F\n  bootstrapTranscriptDigest: 42\n  resumeTokenDigest: 61\n  resumeTokenBindingDigest: 62\n  acceptedTrustPolicyDigest: 51\n  degradedBootstrapMode: normal\n  restoredReplayWindowDigest: 63\n  restoredReliableMessageFloor: [{streamId: 4, lowestRetainedMessageId: 2}]\n  acceptedAtUnixMs: 1\n  canonicalDigest: 64\n  signatureSet: [{signerId: a, signature: 95}]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 24: Minimal `ResumeRefusal`",
+      "id": "bytes.object.resume_refusal.minimal_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 0E 6C 69 6E 65 61 67 65 2E 62 6F 6F 74 2E 31 02 01 42 03 01 62 04 01 51 05 02 00 06 06 02 00 01 07 08 00 00 00 00 00 00 00 01 08 01 65 09 08 01 06 01 01 61 02 01 94",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "ResumeRefusal {\n  priorSessionLineageId: lineage.boot.1\n  attemptedBootstrapTranscriptDigest: 42\n  resumeTokenBindingDigest: 62\n  attemptedTrustPolicyDigest: 51\n  refusalReasonCode: replayContinuityNotRestorable\n  resultingAction: requireFreshSession\n  refusedAtUnixMs: 1\n  canonicalDigest: 65\n  signatureSet: [{signerId: a, signature: 94}]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 25: Minimal `BridgeSubmission`",
+      "id": "bytes.object.bridge_submission.minimal_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 08 62 72 69 64 67 65 2E 31 02 01 B1 03 06 01 01 61 02 01 63 04 08 00 00 00 00 00 00 00 01 05 01 61 06 01 55 07 01 67 08 01 68 09 01 69 0A 08 01 02 00 01 01 02 00 04 0B 06 01 01 55 01 01 56 0D 01 AA 0E 08 00 00 00 00 00 00 00 01 0F 01 6A 10 08 01 06 01 01 61 02 01 93",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "BridgeSubmission {\n  bridgeSubmissionId: bridge.1\n  bridgeProfileDigest: B1\n  contractRef: {issuerAgentId: a, contractId: c}\n  contractRevision: 1\n  requesterId: a\n  subjectDigest: 55\n  evaluationScopeDigest: 67\n  predicateRuntimeProfileDigest: 68\n  proofProfileDigest: 69\n  disclosedEvidenceKinds: [executionLogDigest, outputDigest]\n  disclosedArtifactDigests: [55, 56]\n  nonce: AA\n  requestedAtUnixMs: 1\n  canonicalDigest: 6A\n  signatureSet: [{signerId: a, signature: 93}]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 26: Minimal Bridge `VerificationRecord`",
+      "id": "bytes.object.verification_record.bridge_success_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 0F 76 65 72 69 66 79 2E 62 72 69 64 67 65 2E 31 02 13 6D 61 6E 69 66 65 73 74 2E 65 76 69 64 65 6E 63 65 2E 31 03 01 55 04 0B 62 72 69 64 67 65 2E 63 65 6C 6C 05 0D 62 72 69 64 67 65 2E 64 6F 6D 61 69 6E 06 02 00 05 07 0C 62 72 69 64 67 65 52 65 70 6C 61 79 08 08 00 00 00 00 00 00 00 01 09 01 67 0A 01 68 0B 01 69 0C 1A 01 0B 64 69 67 65 73 74 4D 61 74 63 68 01 0B 70 6F 6C 69 63 79 43 68 65 63 6B 0D 02 00 01 0E 02 00 04 10 08 00 00 00 00 00 00 00 01 11 06 01 01 55 01 01 56 13 01 6C 14 01 6A 15 01 6B 17 01 92",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "VerificationRecord {\n  verificationId: verify.bridge.1\n  evidenceBundleRef: manifest.evidence.1\n  subjectDigest: 55\n  verifierId: bridge.cell\n  verifierDomain: bridge.domain\n  verifierClass: quorum-aggregator\n  verificationMethod: bridgeReplay\n  contractRevision: 1\n  evaluationScopeDigest: 67\n  predicateRuntimeProfileDigest: 68\n  proofProfileDigest: 69\n  checksPerformed: [digestMatch, policyCheck]\n  result: pass\n  trustLevelGranted: verified\n  generatedAtUnixMs: 1\n  coveredDigests: [55, 56]\n  verifierMembershipDigest: 6C\n  bridgeSubmissionDigest: 6A\n  canonicalDigest: 6B\n  signature: 92\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 27: `WIRE_ERROR` For Unsupported Base-Profile Schema",
+      "id": "bytes.wire_error.unsupported_base_profile_schema_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n26\n47\n00 17\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n00\n02\n02\n01\n10\n64\n00 00 00 00\n01 1F\n01 02 00 6D\n02 02 00 03\n03 08 00 00 00 00 00 00 00 02\n04 08 00 00 00 00 00 00 00 01\n05 01 00",
+      "canonicalPayloadBytes": "01 1F\n01 02 00 6D\n02 02 00 03\n03 08 00 00 00 00 00 00 00 02\n04 08 00 00 00 00 00 00 00 01\n05 01 00",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "WireErrorBody {\n  errorCode: unsupportedBaseProfileSchema\n  errorScope: message\n  relatedStreamId: 2\n  relatedMessageId: 1\n  retryable: false\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: WIRE_ERROR\n  flags: ackRequired\n  streamId: 0\n  messageId: 2\n  payload.errorCode: unsupportedBaseProfileSchema\n  payload.errorScope: message\n  payload.relatedStreamId: 2\n  payload.relatedMessageId: 1\n}"
+    },
+    {
+      "heading": "Vector 28: `WIRE_ERROR` For Invalid State Transition",
+      "id": "bytes.wire_error.invalid_state_transition_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n26\n47\n00 17\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n00\n02\n02\n01\n10\n64\n00 00 00 00\n01 1F\n01 02 00 73\n02 02 00 03\n03 08 00 00 00 00 00 00 00 02\n04 08 00 00 00 00 00 00 00 04\n05 01 00",
+      "canonicalPayloadBytes": "01 1F\n01 02 00 73\n02 02 00 03\n03 08 00 00 00 00 00 00 00 02\n04 08 00 00 00 00 00 00 00 04\n05 01 00",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "WireErrorBody {\n  errorCode: invalidStateTransition\n  errorScope: message\n  relatedStreamId: 2\n  relatedMessageId: 4\n  retryable: false\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: WIRE_ERROR\n  flags: ackRequired\n  streamId: 0\n  messageId: 2\n  payload.errorCode: invalidStateTransition\n  payload.errorScope: message\n  payload.relatedStreamId: 2\n  payload.relatedMessageId: 4\n}"
+    },
+    {
+      "heading": "Vector 29: Minimal Resume `HELLO`",
+      "id": "bytes.hello.resume_minimal_v1",
+      "canonicalFrameBytes": "41 41 50 01\n00 00\n26\n77\n00 01\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n00\n01\n01\n00\n10\n64\n00 00 00 00\n01 4F\n01 01 61\n02 04 01 02 00 01\n03 08 01 06 01 01 00 02 01 00\n04 01 01\n05 01 62\n06 2E 01 01 AA 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01\n08 01 42\n09 01 51",
+      "canonicalPayloadBytes": "01 4F\n01 01 61\n02 04 01 02 00 01\n03 08 01 06 01 01 00 02 01 00\n04 01 01\n05 01 62\n06 2E\n  01 01 AA\n  02 01 73\n  03 01 6D\n  04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31\n  06 01 00\n  07 01 01\n  08 08 00 00 00 00 00 00 00 01\n08 01 42\n09 01 51",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "HelloBody {\n  peerAgentId: \"a\"\n  supportedMajorVersions: [1]\n  supportedMinorRanges: [{minInclusive: 0, maxInclusive: 0}]\n  resumeTokenPresent: true\n  resumeTokenBindingDigest: 62\n  identityManifestRef {\n    manifestDigest: aa\n    digestAlgorithm: \"s\"\n    mediaType: \"m\"\n    retrievalProfile: \"inline-handshake-v1\"\n    inlineAllowed: false\n    maxBytes: 1\n    notAfterUnixMs: 1\n  }\n  bootstrapTranscriptDigest: 42\n  trustPolicyDigest: 51\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 0.0\n  frameType: HELLO\n  flags: ackRequired\n  streamId: 0\n  messageId: 1\n  payload.peerAgentId: \"a\"\n  payload.resumeTokenPresent: true\n  payload.resumeTokenBindingDigest: 62\n  payload.bootstrapTranscriptDigest: 42\n  payload.trustPolicyDigest: 51\n}"
+    },
+    {
+      "heading": "Vector 30: `WIRE_ERROR` For Resume Negotiation Mismatch",
+      "id": "bytes.wire_error.negotiation_mismatch_v1",
+      "canonicalFrameBytes": "41 41 50 01\n01 00\n26\n47\n00 17\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n00\n02\n02\n01\n10\n64\n00 00 00 00\n01 1F\n01 02 00 6F\n02 02 00 01\n03 08 00 00 00 00 00 00 00 00\n04 08 00 00 00 00 00 00 00 01\n05 01 00",
+      "canonicalPayloadBytes": "01 1F\n01 02 00 6F\n02 02 00 01\n03 08 00 00 00 00 00 00 00 00\n04 08 00 00 00 00 00 00 00 01\n05 01 00",
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": "WireErrorBody {\n  errorCode: negotiationMismatch\n  errorScope: session\n  relatedStreamId: 0\n  relatedMessageId: 1\n  retryable: false\n}",
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: WIRE_ERROR\n  flags: ackRequired\n  streamId: 0\n  messageId: 2\n  payload.errorCode: negotiationMismatch\n  payload.errorScope: session\n  payload.relatedStreamId: 0\n  payload.relatedMessageId: 1\n}"
+    },
+    {
+      "heading": "Vector 31: Stale Active `RevocationStatusObject`",
+      "id": "bytes.object.revocation_status.stale_active_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 0D 72 65 76 2E 77 2E 64 65 6C 74 61 2E 38\n02 08 74 64 2E 64 65 6C 74 61\n03 01 74\n04 02 00 01\n06 08 00 00 01 9C D1 00 8C 40\n07 08 00 00 01 9C D1 09 B4 00\n08 08 00 00 00 00 00 00 00 08\n0A 01 75\n0B 01 76",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "RevocationStatusObject {\n  revocationObjectId: rev.w.delta.8\n  issuerDomain: td.delta\n  subjectDigest: 74\n  status: active\n  thisUpdateUnixMs: 1773033000000\n  nextUpdateUnixMs: 1773033600000\n  sequence: 8\n  canonicalDigest: 75\n  signature: 76\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 32: Negotiated `CAPS` With Mismatched Trust Policy",
+      "id": "bytes.caps.trust_policy_mismatch_v1",
+      "canonicalFrameBytes": "41 41 50 01 00 00 27 E6 03 00 02 00 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 01 01 01 00 10 64 00 00 00 00 01 BC 03 01 01 CA 02 2E 01 01 CB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 04 00 05 2E 01 13 61 61 70 2D 62 61 73 65 2D 70 72 6F 66 69 6C 65 2D 76 31 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 06 02 00 01 07 02 00 00 08 2E 01 13 61 61 70 2D 62 61 73 65 2D 70 72 6F 66 69 6C 65 2D 76 31 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 09 00 0A 01 CC 0B 2E 01 01 CD 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 0D 01 CE 0E 2E 01 01 CF 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 10 2E 01 01 D0 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 12 2E 01 01 D1 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 14 04 00 00 10 00 15 01 04 16 09 75 74 63 2D 6D 73 2D 76 31 17 08 72 65 76 6F 63 2D 76 31 18 04 00 01 00 00 19 01 52 1A 2E 01 01 78 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 0.0\n  frameType: CAPS\n  flags: ackRequired\n  streamId: 1\n  messageId: 1\n  payload.chosenMajor: 1\n  payload.chosenMinor: 0\n  payload.acceptedTrustPolicyDigest: 52\n}"
+    },
+    {
+      "heading": "Vector 33: Resume `HELLO` With Mismatched Trust Policy",
+      "id": "bytes.hello.resume_trust_policy_mismatch_v1",
+      "canonicalFrameBytes": "41 41 50 01 00 00 27 A8 01 00 01 00 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 00 01 01 00 10 64 00 00 00 00 01 7F 01 01 61 02 04 01 02 00 01 03 08 01 06 01 01 00 02 01 00 04 01 01 05 01 62 06 2E 01 01 AA 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 08 01 42 09 01 52 0A 2E 01 01 78 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 0.0\n  frameType: HELLO\n  flags: ackRequired\n  streamId: 0\n  messageId: 1\n  payload.resumeTokenPresent: true\n  payload.resumeTokenBindingDigest: 62\n  payload.bootstrapTranscriptDigest: 42\n  payload.trustPolicyDigest: 52\n}"
+    },
+    {
+      "heading": "Vector 34: `ResumeRefusal` For Peer Binding Mismatch",
+      "id": "bytes.object.resume_refusal.peer_binding_mismatch_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 0E 6C 69 6E 65 61 67 65 2E 62 6F 6F 74 2E 31 02 01 42 03 01 62 04 01 51 05 02 00 03 06 02 00 02 07 08 00 00 01 9C D1 1F 33 E8 08 01 7A 09 08 01 06 01 01 61 02 01 97",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "ResumeRefusal {\n  priorSessionLineageId: lineage.boot.1\n  attemptedBootstrapTranscriptDigest: 42\n  resumeTokenBindingDigest: 62\n  attemptedTrustPolicyDigest: 51\n  refusalReasonCode: peerBindingMismatch\n  resultingAction: closeTransportSession\n  refusedAtUnixMs: 1773035009000\n  canonicalDigest: 7A\n  signatureSet: [{signerId: a, signature: 97}]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 35: `ResumeRefusal` For Trust Policy Mismatch",
+      "id": "bytes.object.resume_refusal.trust_policy_mismatch_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 0E 6C 69 6E 65 61 67 65 2E 62 6F 6F 74 2E 31 02 01 42 03 01 62 04 01 52 05 02 00 07 06 02 00 01 07 08 00 00 01 9C D1 1F 24 48 08 01 7B 09 08 01 06 01 01 61 02 01 98",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "ResumeRefusal {\n  priorSessionLineageId: lineage.boot.1\n  attemptedBootstrapTranscriptDigest: 42\n  resumeTokenBindingDigest: 62\n  attemptedTrustPolicyDigest: 52\n  refusalReasonCode: trustPolicyMismatch\n  resultingAction: requireFreshSession\n  refusedAtUnixMs: 1773035005000\n  canonicalDigest: 7B\n  signatureSet: [{signerId: a, signature: 98}]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 36: Stale Bridge `VerifierMembershipAttestation`",
+      "id": "bytes.object.verifier_membership.stale_bridge_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 1D 6D 65 6D 62 65 72 73 68 69 70 2E 76 65 72 69 66 79 2E 67 61 6D 6D 61 2E 73 74 61 6C 65 02 0E 76 65 72 69 66 69 65 72 2E 67 61 6D 6D 61 03 08 74 64 2E 67 61 6D 6D 61 04 01 79 05 08 01 02 00 01 01 02 00 02 06 01 51 07 08 00 00 01 9C CF 09 02 00 08 08 00 00 01 9C D1 10 DC 08 09 14 72 65 76 2E 67 61 6D 6D 61 2E 6D 65 6D 62 65 72 73 68 69 70 0A 01 7E 0B 08 01 06 01 01 67 02 01 91",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "VerifierMembershipAttestation {\n  membershipId: membership.verify.gamma.stale\n  verifierId: verifier.gamma\n  verifierDomain: td.gamma\n  verifierKeyDigest: 79\n  authorizedRoles: [verification, bridgeVerification]\n  authorityScopeDigest: 51\n  validFromUnixMs: 1773000000000\n  validUntilUnixMs: 1773034069000\n  revocationRef: rev.gamma.membership\n  canonicalDigest: 7E\n  signatureSet: [{signerId: g, signature: 91}]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 37: Bridge `VerificationRecord` With Stale Membership",
+      "id": "bytes.object.verification_record.bridge_stale_membership_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 19 76 65 72 69 66 79 2E 62 72 69 64 67 65 2E 67 61 6D 6D 61 2E 73 74 61 6C 65 02 22 6D 61 6E 69 66 65 73 74 2E 65 76 69 64 65 6E 63 65 2E 65 78 65 63 2E 62 72 69 64 67 65 2E 30 30 30 31 03 01 55 04 0E 76 65 72 69 66 69 65 72 2E 67 61 6D 6D 61 05 08 74 64 2E 67 61 6D 6D 61 06 02 00 02 07 0C 62 72 69 64 67 65 52 65 70 6C 61 79 08 08 00 00 00 00 00 00 00 01 09 01 67 0A 01 68 0B 01 69 0C 11 01 0F 70 72 65 64 69 63 61 74 65 52 65 70 6C 61 79 0D 02 00 01 0E 02 00 04 0F 00 10 08 00 00 01 9C D1 10 E7 C0 11 03 01 01 55 13 01 7E 14 01 6A 15 01 7F 17 01 90",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "VerificationRecord {\n  verificationId: verify.bridge.gamma.stale\n  evidenceBundleRef: manifest.evidence.exec.bridge.0001\n  subjectDigest: 55\n  verifierId: verifier.gamma\n  verifierDomain: td.gamma\n  verifierClass: peer-agent\n  verificationMethod: bridgeReplay\n  contractRevision: 1\n  evaluationScopeDigest: 67\n  predicateRuntimeProfileDigest: 68\n  proofProfileDigest: 69\n  checksPerformed: [predicateReplay]\n  result: pass\n  trustLevelGranted: verified\n  failureReasons: []\n  generatedAtUnixMs: 1773034072000\n  coveredDigests: [55]\n  verifierMembershipDigest: 7E\n  bridgeSubmissionDigest: 6A\n  canonicalDigest: 7F\n  signature: 90\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 38: `WIRE_ERROR` For Invalid Completed-State Transition",
+      "id": "bytes.wire_error.invalid_completed_state_transition_v1",
+      "canonicalFrameBytes": "41 41 50 01 01 00 26 47 00 17 00 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 00 02 02 01 10 64 00 00 00 00 01 1F 01 02 00 73 02 02 00 03 03 08 00 00 00 00 00 00 00 03 04 08 00 00 00 00 00 00 00 03 05 01 00",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: WIRE_ERROR\n  flags: ackRequired\n  streamId: 0\n  messageId: 2\n  payload.errorCode: invalidStateTransition\n  payload.errorScope: message\n  payload.relatedStreamId: 3\n  payload.relatedMessageId: 3\n}"
+    },
+    {
+      "heading": "Vector 39: Late `FinalityWitness`",
+      "id": "bytes.object.finality_witness.late_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 0D 77 69 74 6E 65 73 73 2E 64 65 6C 74 61 02 08 74 64 2E 64 65 6C 74 61 03 06 01 01 61 02 01 63 04 08 00 00 00 00 00 00 00 01 05 01 F1 06 06 01 01 F3 01 01 F4 07 08 00 00 01 9C D1 1C 17 09 08 01 DA 09 01 80 0A 01 81",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "FinalityWitness {\n  witnessId: witness.delta\n  witnessDomain: td.delta\n  contractRef: {issuerAgentId: a, contractId: c}\n  contractRevision: 1\n  finalityCandidateDigest: F1\n  observedTerminalEventDigests: [F3, F4]\n  generatedAtUnixMs: 1773034805001\n  domainAttestation: DA\n  canonicalDigest: 80\n  signature: 81\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 40: `CloseDecision` For Finality-Wait Expiry",
+      "id": "bytes.object.close_decision.finality_wait_expired_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 06 7A 2E 77 61 69 74 02 06 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 0C 05 01 D4 06 01 F1 07 02 00 04 08 02 00 01 09 02 00 01 0A 02 00 06 0B 03 01 01 75 0C 08 00 00 01 9C D1 1C 03 80 0D 01 82 0E 18 01 0A 01 05 61 6C 70 68 61 02 01 85 01 0A 01 05 64 65 6C 74 61 02 01 86",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "CloseDecision {\n  closeDecisionId: z.wait\n  contractRef: {issuerAgentId: a, contractId: c}\n  contractRevision: 1\n  priorResultPhase: failed\n  settlementDigest: D4\n  finalityCandidateDigest: F1\n  finalityStatusCode: finalityWaitExpired\n  blockedCloseOutcomeApplied: failClosed\n  lateEvidenceDisposition: retainForAuditOnly\n  closeReasonCode: policyFailClosed\n  supportingDigests: [75]\n  decidedAtUnixMs: 1773034800000\n  canonicalDigest: 82\n  signatureSet: [\n    {signerId: alpha, signature: 85},\n    {signerId: delta, signature: 86}\n  ]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 41: No-Op `REPAIR`",
+      "id": "bytes.repair.noop_v1",
+      "canonicalFrameBytes": "41 41 50 01 01 00 3D B9 01 00 0D 01 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 03 05 05 00 20 64 00 00 00 02 04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 06 01 7A 01 01 73 02 01 63 03 08 00 00 00 00 00 00 00 01 04 01 71 05 02 00 02 06 06 01 01 04 02 01 02 07 01 E1 08 03 01 01 E1 09 30 01 2E 01 01 BB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 0A 01 E1 0B 02 00 08 0C 01 A1 0D 01 C4 0E 02 00 01 0F 08 00 00 00 00 00 00 00 01 10 01 62 11 01 8F",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: REPAIR\n  contractRef.contractPhase: challenged\n  payload.challengeId: \"q\"\n  payload.repairedSubjectDigest: E1\n  payload.replacementEvidenceDigest: E1\n  payload.canonicalDigest: C4\n}"
+    },
+    {
+      "heading": "Vector 42: Prior-Session `CapabilityToken`",
+      "id": "bytes.object.capability_token.prior_session_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 0A 63 61 70 2E 65 78 65 63 2E 31 02 02 00 01 03 01 61 04 01 62 05 0E 6C 69 6E 65 61 67 65 2E 62 6F 6F 74 2E 31 06 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 07 06 01 01 61 02 01 63 08 01 86 09 01 87 0A 02 00 00 0C 01 01 0D 02 00 02 12 08 00 00 01 9C D1 09 B4 00 13 08 00 00 01 9C D1 25 2B 40 14 08 72 65 76 2E 62 61 73 65 15 01 89",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "CapabilityToken {\n  tokenId: cap.exec.1\n  tokenClass: executionCapability\n  issuerAgentId: a\n  audienceAgentId: b\n  sessionLineageId: lineage.boot.1\n  sessionId: 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n  contractRef: {issuerAgentId: a, contractId: c}\n  grantedScopeDigest: 86\n  allowedActionsDigest: 87\n  delegationDepthRemaining: 0\n  nonce: 01\n  consumptionMode: singleUseReceipt\n  validFromUnixMs: 1773033600000\n  validUntilUnixMs: 1773035400000\n  revocationRef: rev.base\n  signature: 89\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 43: Minimal `CapabilityTokenRebinding`",
+      "id": "bytes.object.capability_token_rebinding.minimal_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 01 83 02 0E 6C 69 6E 65 61 67 65 2E 62 6F 6F 74 2E 31 03 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 04 10 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 05 08 00 00 01 9C D1 1F 11 24 06 01 61 07 01 64 08 01 84 09 01 8A",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "CapabilityTokenRebinding {\n  tokenDigest: 83\n  sessionLineageId: lineage.boot.1\n  priorSessionId: 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n  reboundSessionId: 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F\n  reboundAtUnixMs: 1773035000100\n  reboundByAgentId: a\n  resumeAcceptanceDigest: 64\n  canonicalDigest: 84\n  signature: 8A\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 44: Resumed `DELIVER` With Prior-Session `CapabilityRef`",
+      "id": "bytes.deliver.resumed_prior_session_capability_v1",
+      "canonicalFrameBytes": "41 41 50 01 01 00 4D A3 01 00 0A 01 01 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 04 01 01 00 20 64 00 00 08 02 04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 07 18 0E 01 01 83 02 02 00 01 03 01 86 04 02 00 00 01 54 01 01 63 02 08 00 00 00 00 00 00 00 01 03 02 00 02 04 01 54 05 2E 01 01 D2 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01 07 01 01 08 08 00 00 00 00 00 00 00 01 09 01 97",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 1.0\n  frameType: DELIVER\n  contractRef.contractPhase: delivering\n  capabilityRef.capabilityTokenDigest: 83\n  capabilityRef.tokenClass: executionCapability\n  capabilityRef.grantedScopeDigest: 86\n}"
+    },
+    {
+      "heading": "Vector 45: Completed `FinalityWitnessSet`",
+      "id": "bytes.object.finality_witness_set.completed_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 07 77 2E 73 65 74 2E 31 02 06 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 01 5A 05 06 01 01 90 01 01 91 06 02 00 02 07 02 00 02 08 01 44 09 01 5C 0A 24 01 0A 01 05 61 6C 70 68 61 02 01 94 01 0A 01 05 64 65 6C 74 61 02 01 95 01 0A 01 05 67 61 6D 6D 61 02 01 96",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "FinalityWitnessSet {\n  witnessSetId: w.set.1\n  contractRef: {issuerAgentId: a, contractId: c}\n  contractRevision: 1\n  finalityCandidateDigest: 5A\n  memberWitnessDigests: [90, 91]\n  thresholdNumerator: 2\n  thresholdDenominator: 2\n  independencePolicyDigest: 44\n  canonicalDigest: 5C\n  signatureSet: [\n    {signerId: alpha, signature: 94},\n    {signerId: delta, signature: 95},\n    {signerId: gamma, signature: 96}\n  ]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: FinalityWitnessSet\n  finalityCandidateDigest: 5A\n  memberWitnessDigests: [90, 91]\n  canonicalDigest: 5C\n}"
+    },
+    {
+      "heading": "Vector 46: Bootstrap `AgentIdentityAttestation` For Peer Alpha",
+      "id": "bytes.object.agent_identity.bootstrap_alpha_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 02 61 61 02 01 31 03 04 00 00 00 0F 05 03 74 64 61 06 06 72 65 76 61 2E 31 07 08 00 00 00 00 00 00 00 01 08 08 00 00 00 00 00 00 00 09 0A 01 33 0B 01 81",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "AgentIdentityAttestation {\n  agentId: aa\n  currentKeyDigest: 31\n  keyPurposeBitmap: 0000000F\n  trustDomainRef: tda\n  revocationRef: reva.1\n  validFromUnixMs: 1\n  validUntilUnixMs: 9\n  attestationDigest: 33\n  signature: 81\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: AgentIdentityAttestation\n  agentId: aa\n  trustDomainRef: tda\n  attestationDigest: 33\n}"
+    },
+    {
+      "heading": "Vector 47: Bootstrap `AgentIdentityAttestation` For Peer Beta",
+      "id": "bytes.object.agent_identity.bootstrap_beta_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 02 61 62 02 01 32 03 04 00 00 00 0F 05 03 74 64 62 06 06 72 65 76 62 2E 32 07 08 00 00 00 00 00 00 00 01 08 08 00 00 00 00 00 00 00 09 0A 01 34 0B 01 82",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "AgentIdentityAttestation {\n  agentId: ab\n  currentKeyDigest: 32\n  keyPurposeBitmap: 0000000F\n  trustDomainRef: tdb\n  revocationRef: revb.2\n  validFromUnixMs: 1\n  validUntilUnixMs: 9\n  attestationDigest: 34\n  signature: 82\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: AgentIdentityAttestation\n  agentId: ab\n  trustDomainRef: tdb\n  attestationDigest: 34\n}"
+    },
+    {
+      "heading": "Vector 48: Bootstrap `TrustDomainAttestation` For Domain Alpha",
+      "id": "bytes.object.trust_domain.bootstrap_alpha_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 03 74 64 61 02 01 35 03 01 37 04 02 00 03 05 01 39 07 08 00 00 00 00 00 00 00 01 08 08 00 00 00 00 00 00 00 09 09 03 72 6C 61 0A 01 3B 0B 01 83",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "TrustDomainAttestation {\n  domainId: tda\n  rootKeyDigest: 35\n  controlRootDigest: 37\n  sybilResistanceClass: stakeBound\n  admissionBasisDigest: 39\n  validFromUnixMs: 1\n  validUntilUnixMs: 9\n  revocationListRef: rla\n  attestationDigest: 3B\n  signature: 83\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: TrustDomainAttestation\n  domainId: tda\n  admissionBasisDigest: 39\n  attestationDigest: 3B\n}"
+    },
+    {
+      "heading": "Vector 49: Bootstrap `TrustDomainAttestation` For Domain Beta",
+      "id": "bytes.object.trust_domain.bootstrap_beta_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 03 74 64 62 02 01 36 03 01 38 04 02 00 03 05 01 3A 07 08 00 00 00 00 00 00 00 01 08 08 00 00 00 00 00 00 00 09 09 03 72 6C 62 0A 01 3C 0B 01 84",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "TrustDomainAttestation {\n  domainId: tdb\n  rootKeyDigest: 36\n  controlRootDigest: 38\n  sybilResistanceClass: stakeBound\n  admissionBasisDigest: 3A\n  validFromUnixMs: 1\n  validUntilUnixMs: 9\n  revocationListRef: rlb\n  attestationDigest: 3C\n  signature: 84\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: TrustDomainAttestation\n  domainId: tdb\n  admissionBasisDigest: 3A\n  attestationDigest: 3C\n}"
+    },
+    {
+      "heading": "Vector 50: Bootstrap `DomainAdmissionBasis` For Domain Alpha",
+      "id": "bytes.object.domain_admission.bootstrap_alpha_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 03 61 64 61 02 03 74 64 61 03 02 00 02 06 03 65 63 61 08 08 00 00 00 00 00 00 00 01 09 08 00 00 00 00 00 00 00 09 0A 01 39 0B 09 01 07 01 02 61 61 02 01 85",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "DomainAdmissionBasis {\n  basisId: ada\n  domainId: tda\n  basisClass: stakeEscrow\n  economicCostRef: eca\n  validFromUnixMs: 1\n  validUntilUnixMs: 9\n  canonicalDigest: 39\n  signatureSet: [{signerId: aa, signature: 85}]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: DomainAdmissionBasis\n  domainId: tda\n  basisClass: stakeEscrow\n  canonicalDigest: 39\n}"
+    },
+    {
+      "heading": "Vector 51: Bootstrap `DomainAdmissionBasis` For Domain Beta",
+      "id": "bytes.object.domain_admission.bootstrap_beta_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 03 61 64 62 02 03 74 64 62 03 02 00 02 06 03 65 63 62 08 08 00 00 00 00 00 00 00 01 09 08 00 00 00 00 00 00 00 09 0A 01 3A 0B 09 01 07 01 02 61 62 02 01 86",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "DomainAdmissionBasis {\n  basisId: adb\n  domainId: tdb\n  basisClass: stakeEscrow\n  economicCostRef: ecb\n  validFromUnixMs: 1\n  validUntilUnixMs: 9\n  canonicalDigest: 3A\n  signatureSet: [{signerId: ab, signature: 86}]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: DomainAdmissionBasis\n  domainId: tdb\n  basisClass: stakeEscrow\n  canonicalDigest: 3A\n}"
+    },
+    {
+      "heading": "Vector 52: Bootstrap Active `RevocationStatusObject` For Peer Alpha",
+      "id": "bytes.object.revocation_status.bootstrap_alpha_active_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 06 72 65 76 61 2E 31 02 03 74 64 61 03 01 31 04 02 00 01 06 08 00 00 00 00 00 00 00 01 07 08 00 00 00 00 00 00 00 09 08 08 00 00 00 00 00 00 00 01 0A 01 3D 0B 01 87",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "RevocationStatusObject {\n  revocationObjectId: reva.1\n  issuerDomain: tda\n  subjectDigest: 31\n  status: active\n  thisUpdateUnixMs: 1\n  nextUpdateUnixMs: 9\n  sequence: 1\n  canonicalDigest: 3D\n  signature: 87\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: RevocationStatusObject\n  issuerDomain: tda\n  subjectDigest: 31\n  status: active\n}"
+    },
+    {
+      "heading": "Vector 53: Bootstrap Active `RevocationStatusObject` For Peer Beta",
+      "id": "bytes.object.revocation_status.bootstrap_beta_active_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 06 72 65 76 62 2E 32 02 03 74 64 62 03 01 32 04 02 00 01 06 08 00 00 00 00 00 00 00 01 07 08 00 00 00 00 00 00 00 09 08 08 00 00 00 00 00 00 00 02 0A 01 3E 0B 01 88",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "RevocationStatusObject {\n  revocationObjectId: revb.2\n  issuerDomain: tdb\n  subjectDigest: 32\n  status: active\n  thisUpdateUnixMs: 1\n  nextUpdateUnixMs: 9\n  sequence: 2\n  canonicalDigest: 3E\n  signature: 88\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: RevocationStatusObject\n  issuerDomain: tdb\n  subjectDigest: 32\n  status: active\n}"
+    },
+    {
+      "heading": "Vector 54: Open-Core `VerifierIndependencePolicy`",
+      "id": "bytes.object.verifier_independence.open_core_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 05 76 69 70 2E 31 02 02 00 02 03 08 00 00 00 00 00 00 EA 60 04 01 01 05 01 01 06 01 01 07 01 44 08 12 01 07 01 02 61 61 02 01 8B 01 07 01 02 61 62 02 01 8C",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "VerifierIndependencePolicy {\n  policyId: vip.1\n  minimumDistinctDomains: 2\n  membershipFreshnessMaxMs: 60000\n  administrativeRootDiversityRequired: true\n  economicControlDiversityRequired: true\n  forbidSameAgentFamily: true\n  canonicalDigest: 44\n  signatureSet: [\n    {signerId: aa, signature: 8B},\n    {signerId: ab, signature: 8C}\n  ]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: VerifierIndependencePolicy\n  minimumDistinctDomains: 2\n  canonicalDigest: 44\n}"
+    },
+    {
+      "heading": "Vector 55: Open-Core `FreshnessPolicy`",
+      "id": "bytes.object.freshness_policy.open_core_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 04 66 70 2E 31 02 08 00 00 00 00 00 00 13 88 03 08 00 00 00 00 05 26 5C 00 04 08 00 00 00 00 05 26 5C 00 05 08 00 00 00 00 00 36 EE 80 06 08 00 00 00 00 05 26 5C 00 07 01 01 08 01 45 09 12 01 07 01 02 61 61 02 01 8D 01 07 01 02 61 62 02 01 8E",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "FreshnessPolicy {\n  policyId: fp.1\n  maxClockSkewMs: 5000\n  maxIdentityAttestationAgeMs: 86400000\n  maxTrustDomainAttestationAgeMs: 86400000\n  maxRevocationAgeMs: 3600000\n  maxBootstrapTranscriptAgeMs: 86400000\n  requireRevocationFreshnessForResume: true\n  canonicalDigest: 45\n  signatureSet: [\n    {signerId: aa, signature: 8D},\n    {signerId: ab, signature: 8E}\n  ]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: FreshnessPolicy\n  maxClockSkewMs: 5000\n  canonicalDigest: 45\n}"
+    },
+    {
+      "heading": "Vector 56: Base `TimeProfileManifest`",
+      "id": "bytes.object.time_profile.base_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 10 61 61 70 2D 74 69 6D 65 2D 62 61 73 65 2D 76 31 02 08 00 00 00 00 00 00 13 88 03 01 01 04 01 01 05 01 01 06 01 46 07 12 01 07 01 02 61 61 02 01 8F 01 07 01 02 61 62 02 01 90",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "TimeProfileManifest {\n  profileId: aap-time-base-v1\n  maxClockSkewMs: 5000\n  absoluteTimeRequired: true\n  notBeforeFieldRequired: true\n  notAfterFieldRequired: true\n  canonicalDigest: 46\n  signatureSet: [\n    {signerId: aa, signature: 8F},\n    {signerId: ab, signature: 90}\n  ]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: TimeProfileManifest\n  profileId: aap-time-base-v1\n  canonicalDigest: 46\n}"
+    },
+    {
+      "heading": "Vector 57: Base `RevocationProfileManifest`",
+      "id": "bytes.object.revocation_profile.base_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 16 61 61 70 2D 72 65 76 6F 63 61 74 69 6F 6E 2D 62 61 73 65 2D 76 31 02 18 61 61 70 2D 72 65 76 6F 63 61 74 69 6F 6E 2D 73 74 61 74 75 73 2D 76 31 03 08 00 00 00 00 00 00 00 64 04 01 01 05 02 00 01 06 01 47 07 12 01 07 01 02 61 61 02 01 91 01 07 01 02 61 62 02 01 92",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "RevocationProfileManifest {\n  profileId: aap-revocation-base-v1\n  statusObjectProfileId: aap-revocation-status-v1\n  maxStatusAgeMs: 100\n  requireOnlineStatusForHighRisk: true\n  staleStatusOutcome: rejectEvidence\n  canonicalDigest: 47\n  signatureSet: [\n    {signerId: aa, signature: 91},\n    {signerId: ab, signature: 92}\n  ]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: RevocationProfileManifest\n  profileId: aap-revocation-base-v1\n  canonicalDigest: 47\n}"
+    },
+    {
+      "heading": "Vector 58: Open-Core `TrustPolicyManifest`",
+      "id": "bytes.object.trust_policy.open_core_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 07 74 70 2E 6F 63 2E 31 02 06 01 01 21 01 01 22 03 06 01 01 35 01 01 36 04 06 01 01 23 01 01 24 06 04 01 02 00 03 07 01 44 08 01 45 09 1A 01 18 70 72 6F 6F 66 5F 66 75 6C 6C 5F 64 69 73 63 6C 6F 73 75 72 65 5F 76 31 0A 19 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 0B 08 00 00 00 00 00 00 00 01 0C 08 00 00 00 00 00 00 00 09 0D 01 51 0E 12 01 07 01 02 61 61 02 01 89 01 07 01 02 61 62 02 01 8A",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "TrustPolicyManifest {\n  policyId: tp.oc.1\n  acceptedIdentityRootDigests: [21, 22]\n  acceptedTrustDomainRootDigests: [35, 36]\n  acceptedRevocationAuthorityDigests: [23, 24]\n  acceptedSybilResistanceClasses: [stakeBound]\n  verifierIndependencePolicyDigest: 44\n  freshnessPolicyDigest: 45\n  acceptedProofProfiles: [proof_full_disclosure_v1]\n  acceptedPredicateRuntimeProfiles: [aap-predicate-wasm32-v1]\n  validFromUnixMs: 1\n  validUntilUnixMs: 9\n  canonicalDigest: 51\n  signatureSet: [\n    {signerId: aa, signature: 89},\n    {signerId: ab, signature: 8A}\n  ]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: TrustPolicyManifest\n  policyId: tp.oc.1\n  verifierIndependencePolicyDigest: 44\n  freshnessPolicyDigest: 45\n  canonicalDigest: 51\n}"
+    },
+    {
+      "heading": "Vector 59: Open-Core `BootstrapTrustBundle`",
+      "id": "bytes.object.bootstrap_bundle.open_core_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 07 62 62 2E 6F 63 2E 31 02 15 61 61 70 2D 73 65 63 75 72 65 2D 73 65 73 73 69 6F 6E 2D 76 31 03 01 51 04 01 51 05 03 01 01 53 06 08 00 00 00 00 00 00 00 01 07 08 00 00 00 00 00 00 00 09 08 01 43 09 12 01 07 01 02 61 61 02 01 95 01 07 01 02 61 62 02 01 96",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "BootstrapTrustBundle {\n  bundleId: bb.oc.1\n  protectionProfileId: aap-secure-session-v1\n  bootstrapPolicyDigest: 51\n  trustPolicyManifestDigest: 51\n  authorizedSuccessorBundleDigests: [53]\n  validFromUnixMs: 1\n  validUntilUnixMs: 9\n  canonicalDigest: 43\n  signatureSet: [\n    {signerId: aa, signature: 95},\n    {signerId: ab, signature: 96}\n  ]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: BootstrapTrustBundle\n  protectionProfileId: aap-secure-session-v1\n  trustPolicyManifestDigest: 51\n  canonicalDigest: 43\n}"
+    },
+    {
+      "heading": "Vector 60: Open-Core `BootstrapAcceptance`",
+      "id": "bytes.object.bootstrap_acceptance.open_core_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 05 6C 69 6E 2E 31 02 01 42 03 08 01 02 61 61 01 02 61 62 04 15 61 61 70 2D 73 65 63 75 72 65 2D 73 65 73 73 69 6F 6E 2D 76 31 05 01 51 06 02 00 01 07 01 63 08 08 00 00 00 00 00 00 00 01 09 01 4D 0A 12 01 07 01 02 61 61 02 01 97 01 07 01 02 61 62 02 01 98",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "BootstrapAcceptance {\n  sessionLineageId: lin.1\n  bootstrapTranscriptDigest: 42\n  authenticatedPeerIds: [aa, ab]\n  negotiatedProtectionProfile: aap-secure-session-v1\n  acceptedTrustPolicyDigest: 51\n  degradedBootstrapMode: normal\n  replayWindowDigest: 63\n  replayWindowCreatedAtUnixMs: 1\n  canonicalDigest: 4D\n  signatureSet: [\n    {signerId: aa, signature: 97},\n    {signerId: ab, signature: 98}\n  ]\n}",
+      "expectedParseSummary": "ParsedObject {\n  objectType: BootstrapAcceptance\n  bootstrapTranscriptDigest: 42\n  acceptedTrustPolicyDigest: 51\n  canonicalDigest: 4D\n}"
+    },
+    {
+      "heading": "Vector 61: Self-Contained Bootstrap `HELLO` From Peer Alpha",
+      "id": "bytes.hello.bootstrap_alpha_self_contained_v1",
+      "canonicalFrameBytes": "41 41 50 01 00 00 27 F0 02 00 01 00 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 00 01 01 00 10 64 00 00 00 00 01 C6 02 01 02 61 61 02 04 01 02 00 01 03 08 01 06 01 01 00 02 01 00 04 01 00 06 2E 01 01 33 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 34 08 08 00 00 00 00 00 00 00 09 07 34 01 02 61 61 02 01 31 03 04 00 00 00 0F 05 03 74 64 61 06 06 72 65 76 61 2E 31 07 08 00 00 00 00 00 00 00 01 08 08 00 00 00 00 00 00 00 09 0A 01 33 0B 01 81 08 01 42 09 01 51 0A 2F 01 01 51 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 02 8F 01 08 08 00 00 00 00 00 00 00 09 0B 8F 01 01 07 74 70 2E 6F 63 2E 31 02 06 01 01 21 01 01 22 03 06 01 01 35 01 01 36 04 06 01 01 23 01 01 24 06 04 01 02 00 03 07 01 44 08 01 45 09 1A 01 18 70 72 6F 6F 66 5F 66 75 6C 6C 5F 64 69 73 63 6C 6F 73 75 72 65 5F 76 31 0A 19 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 0B 08 00 00 00 00 00 00 00 01 0C 08 00 00 00 00 00 00 00 09 0D 01 51 0E 12 01 07 01 02 61 61 02 01 89 01 07 01 02 61 62 02 01 8A",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 0.0\n  frameType: HELLO\n  messageId: 1\n  payload.peerAgentId: aa\n  payload.identityManifestRef.manifestDigest: 33\n  payload.trustPolicyDigest: 51\n}"
+    },
+    {
+      "heading": "Vector 62: Self-Contained Bootstrap `HELLO` From Peer Beta",
+      "id": "bytes.hello.bootstrap_beta_self_contained_v1",
+      "canonicalFrameBytes": "41 41 50 01 00 00 27 F0 02 00 01 00 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 00 02 02 00 10 64 00 00 00 00 01 C6 02 01 02 61 62 02 04 01 02 00 01 03 08 01 06 01 01 00 02 01 00 04 01 00 06 2E 01 01 34 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 34 08 08 00 00 00 00 00 00 00 09 07 34 01 02 61 62 02 01 32 03 04 00 00 00 0F 05 03 74 64 62 06 06 72 65 76 62 2E 32 07 08 00 00 00 00 00 00 00 01 08 08 00 00 00 00 00 00 00 09 0A 01 34 0B 01 82 08 01 42 09 01 51 0A 2F 01 01 51 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 02 8F 01 08 08 00 00 00 00 00 00 00 09 0B 8F 01 01 07 74 70 2E 6F 63 2E 31 02 06 01 01 21 01 01 22 03 06 01 01 35 01 01 36 04 06 01 01 23 01 01 24 06 04 01 02 00 03 07 01 44 08 01 45 09 1A 01 18 70 72 6F 6F 66 5F 66 75 6C 6C 5F 64 69 73 63 6C 6F 73 75 72 65 5F 76 31 0A 19 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 0B 08 00 00 00 00 00 00 00 01 0C 08 00 00 00 00 00 00 00 09 0D 01 51 0E 12 01 07 01 02 61 61 02 01 89 01 07 01 02 61 62 02 01 8A",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 0.0\n  frameType: HELLO\n  messageId: 2\n  payload.peerAgentId: ab\n  payload.identityManifestRef.manifestDigest: 34\n  payload.trustPolicyDigest: 51\n}"
+    },
+    {
+      "heading": "Vector 63: Self-Contained Bootstrap `CAPS` From Peer Alpha",
+      "id": "bytes.caps.bootstrap_alpha_self_contained_v1",
+      "canonicalFrameBytes": "41 41 50 01 00 00 27 D1 06 00 02 00 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 01 01 01 00 10 64 00 00 00 00 01 A7 06 01 01 48 02 2E 01 01 48 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 09 08 08 00 00 00 00 00 00 00 09 03 09 63 61 70 73 2E 61 2E 76 31 04 00 05 2E 01 13 61 61 70 2D 62 61 73 65 2D 70 72 6F 66 69 6C 65 2D 76 31 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 06 02 00 01 07 02 00 00 08 2E 01 13 61 61 70 2D 62 61 73 65 2D 70 72 6F 66 69 6C 65 2D 76 31 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 09 00 0A 01 4A 0B 2E 01 01 4A 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 0E 08 08 00 00 00 00 00 00 00 09 0C 0E 73 63 68 65 6D 61 2E 63 6F 72 65 2E 76 31 0D 01 4B 0E 2E 01 01 4B 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 0C 08 08 00 00 00 00 00 00 00 09 0F 0C 75 6E 69 74 2E 63 6F 72 65 2E 76 31 10 2E 01 01 46 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 3C 08 08 00 00 00 00 00 00 00 09 11 3C 01 10 61 61 70 2D 74 69 6D 65 2D 62 61 73 65 2D 76 31 02 08 00 00 00 00 00 00 00 05 03 01 01 04 01 01 05 01 01 06 01 46 07 12 01 07 01 02 61 61 02 01 8F 01 07 01 02 61 62 02 01 90 12 2E 01 01 47 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 5A 08 08 00 00 00 00 00 00 00 09 13 5A 01 16 61 61 70 2D 72 65 76 6F 63 61 74 69 6F 6E 2D 62 61 73 65 2D 76 31 02 18 61 61 70 2D 72 65 76 6F 63 61 74 69 6F 6E 2D 73 74 61 74 75 73 2D 76 31 03 08 00 00 00 00 00 00 00 64 04 01 01 05 02 00 01 06 01 47 07 12 01 07 01 02 61 61 02 01 91 01 07 01 02 61 62 02 01 92 14 04 00 01 00 00 15 01 04 16 10 61 61 70 2D 74 69 6D 65 2D 62 61 73 65 2D 76 31 17 16 61 61 70 2D 72 65 76 6F 63 61 74 69 6F 6E 2D 62 61 73 65 2D 76 31 18 04 00 10 00 00 19 01 51 1A 2F 01 01 51 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 02 8F 01 08 08 00 00 00 00 00 00 00 09 1B 8F 01 01 07 74 70 2E 6F 63 2E 31 02 06 01 01 21 01 01 22 03 06 01 01 35 01 01 36 04 06 01 01 23 01 01 24 06 04 01 02 00 03 07 01 44 08 01 45 09 1A 01 18 70 72 6F 6F 66 5F 66 75 6C 6C 5F 64 69 73 63 6C 6F 73 75 72 65 5F 76 31 0A 19 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 0B 08 00 00 00 00 00 00 00 01 0C 08 00 00 00 00 00 00 00 09 0D 01 51 0E 12 01 07 01 02 61 61 02 01 89 01 07 01 02 61 62 02 01 8A",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 0.0\n  frameType: CAPS\n  messageId: 1\n  payload.capabilitySetDigest: 48\n  payload.schemaRegistryDigest: 4A\n  payload.unitRegistryDigest: 4B\n  payload.timeProfileId: aap-time-base-v1\n  payload.revocationProfileId: aap-revocation-base-v1\n  payload.acceptedTrustPolicyDigest: 51\n}"
+    },
+    {
+      "heading": "Vector 64: Self-Contained Bootstrap `CAPS` From Peer Beta",
+      "id": "bytes.caps.bootstrap_beta_self_contained_v1",
+      "canonicalFrameBytes": "41 41 50 01 00 00 27 D1 06 00 02 00 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 01 02 02 00 10 64 00 00 00 00 01 A7 06 01 01 49 02 2E 01 01 49 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 09 08 08 00 00 00 00 00 00 00 09 03 09 63 61 70 73 2E 62 2E 76 31 04 00 05 2E 01 13 61 61 70 2D 62 61 73 65 2D 70 72 6F 66 69 6C 65 2D 76 31 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 06 02 00 01 07 02 00 00 08 2E 01 13 61 61 70 2D 62 61 73 65 2D 70 72 6F 66 69 6C 65 2D 76 31 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 09 00 0A 01 4A 0B 2E 01 01 4A 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 0E 08 08 00 00 00 00 00 00 00 09 0C 0E 73 63 68 65 6D 61 2E 63 6F 72 65 2E 76 31 0D 01 4B 0E 2E 01 01 4B 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 0C 08 08 00 00 00 00 00 00 00 09 0F 0C 75 6E 69 74 2E 63 6F 72 65 2E 76 31 10 2E 01 01 46 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 3C 08 08 00 00 00 00 00 00 00 09 11 3C 01 10 61 61 70 2D 74 69 6D 65 2D 62 61 73 65 2D 76 31 02 08 00 00 00 00 00 00 00 05 03 01 01 04 01 01 05 01 01 06 01 46 07 12 01 07 01 02 61 61 02 01 8F 01 07 01 02 61 62 02 01 90 12 2E 01 01 47 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 5A 08 08 00 00 00 00 00 00 00 09 13 5A 01 16 61 61 70 2D 72 65 76 6F 63 61 74 69 6F 6E 2D 62 61 73 65 2D 76 31 02 18 61 61 70 2D 72 65 76 6F 63 61 74 69 6F 6E 2D 73 74 61 74 75 73 2D 76 31 03 08 00 00 00 00 00 00 00 64 04 01 01 05 02 00 01 06 01 47 07 12 01 07 01 02 61 61 02 01 91 01 07 01 02 61 62 02 01 92 14 04 00 01 00 00 15 01 04 16 10 61 61 70 2D 74 69 6D 65 2D 62 61 73 65 2D 76 31 17 16 61 61 70 2D 72 65 76 6F 63 61 74 69 6F 6E 2D 62 61 73 65 2D 76 31 18 04 00 10 00 00 19 01 51 1A 2F 01 01 51 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 02 8F 01 08 08 00 00 00 00 00 00 00 09 1B 8F 01 01 07 74 70 2E 6F 63 2E 31 02 06 01 01 21 01 01 22 03 06 01 01 35 01 01 36 04 06 01 01 23 01 01 24 06 04 01 02 00 03 07 01 44 08 01 45 09 1A 01 18 70 72 6F 6F 66 5F 66 75 6C 6C 5F 64 69 73 63 6C 6F 73 75 72 65 5F 76 31 0A 19 01 17 61 61 70 2D 70 72 65 64 69 63 61 74 65 2D 77 61 73 6D 33 32 2D 76 31 0B 08 00 00 00 00 00 00 00 01 0C 08 00 00 00 00 00 00 00 09 0D 01 51 0E 12 01 07 01 02 61 61 02 01 89 01 07 01 02 61 62 02 01 8A",
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": null,
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": null,
+      "expectedParseSummary": "ParsedFrame {\n  version: 0.0\n  frameType: CAPS\n  messageId: 2\n  payload.capabilitySetDigest: 49\n  payload.schemaRegistryDigest: 4A\n  payload.unitRegistryDigest: 4B\n  payload.timeProfileId: aap-time-base-v1\n  payload.revocationProfileId: aap-revocation-base-v1\n  payload.acceptedTrustPolicyDigest: 51\n}"
+    },
+    {
+      "heading": "Vector 65: Successful `CloseDecision`",
+      "id": "bytes.object.close_decision.completed_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 04 7A 2E 6F 6B 02 06 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 09 05 01 58 06 01 5A 07 02 00 02 09 02 00 01 0A 02 00 04 0B 06 01 01 59 01 01 5A 0C 08 00 00 00 00 00 00 00 01 0D 01 5B 0E 18 01 0A 01 05 61 6C 70 68 61 02 01 97 01 0A 01 05 64 65 6C 74 61 02 01 98",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "CloseDecision {\n  closeDecisionId: z.ok\n  contractRef: {issuerAgentId: a, contractId: c}\n  contractRevision: 1\n  priorResultPhase: completed\n  settlementDigest: 58\n  finalityCandidateDigest: 5A\n  finalityStatusCode: witnessThresholdMet\n  lateEvidenceDisposition: retainForAuditOnly\n  closeReasonCode: witnessThresholdMet\n  supportingDigests: [59, 5A]\n  decidedAtUnixMs: 1\n  canonicalDigest: 5B\n  signatureSet: [\n    {signerId: alpha, signature: 97},\n    {signerId: delta, signature: 98}\n  ]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 66: Successful `FinalityWitness` From Delta",
+      "id": "bytes.object.finality_witness.completed_delta_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 02 77 64 02 08 74 64 2E 64 65 6C 74 61 03 06 01 01 61 02 01 63 04 08 00 00 00 00 00 00 00 01 05 01 5A 06 0C 01 01 9A 01 01 9B 01 01 9C 01 01 9D 07 08 00 00 00 00 00 00 00 01 08 01 DB 09 01 90 0A 01 97",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "FinalityWitness {\n  witnessId: wd\n  witnessDomain: td.delta\n  contractRef: {issuerAgentId: a, contractId: c}\n  contractRevision: 1\n  finalityCandidateDigest: 5A\n  observedTerminalEventDigests: [9A, 9B, 9C, 9D]\n  generatedAtUnixMs: 1\n  canonicalDigest: 90\n  domainAttestation: DB\n  signature: 97\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 67: Successful `FinalityWitness` From Gamma",
+      "id": "bytes.object.finality_witness.completed_gamma_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 02 77 67 02 08 74 64 2E 67 61 6D 6D 61 03 06 01 01 61 02 01 63 04 08 00 00 00 00 00 00 00 01 05 01 5A 06 0C 01 01 9A 01 01 9B 01 01 9C 01 01 9D 07 08 00 00 00 00 00 00 00 01 08 01 DC 09 01 91 0A 01 98",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "FinalityWitness {\n  witnessId: wg\n  witnessDomain: td.gamma\n  contractRef: {issuerAgentId: a, contractId: c}\n  contractRevision: 1\n  finalityCandidateDigest: 5A\n  observedTerminalEventDigests: [9A, 9B, 9C, 9D]\n  generatedAtUnixMs: 1\n  canonicalDigest: 91\n  domainAttestation: DC\n  signature: 98\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 68: Current Bridge `VerifierMembershipAttestation`",
+      "id": "bytes.object.verifier_membership.bridge_current_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 06 6D 76 67 2E 6F 6B 02 0E 76 65 72 69 66 69 65 72 2E 67 61 6D 6D 61 03 08 74 64 2E 67 61 6D 6D 61 04 01 79 05 08 01 02 00 01 01 02 00 02 06 01 51 07 08 00 00 00 00 00 00 00 01 08 08 00 00 00 00 00 00 00 09 09 14 72 65 76 2E 67 61 6D 6D 61 2E 6D 65 6D 62 65 72 73 68 69 70 0A 01 6C 0B 08 01 06 01 01 67 02 01 91",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "VerifierMembershipAttestation {\n  membershipId: mvg.ok\n  verifierId: verifier.gamma\n  verifierDomain: td.gamma\n  verifierKeyDigest: 79\n  authorizedRoles: [verification, bridgeVerification]\n  authorityScopeDigest: 51\n  validFromUnixMs: 1\n  validUntilUnixMs: 9\n  revocationRef: rev.gamma.membership\n  canonicalDigest: 6C\n  signatureSet: [{signerId: g, signature: 91}]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 69: Completed `CapabilityUseReceipt`",
+      "id": "bytes.object.capability_use_receipt.completed_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 09 63 61 70 2E 75 73 65 2E 31 02 01 83 03 06 01 01 61 02 01 63 04 01 8B 05 01 8C 06 04 00 00 00 01 07 08 00 00 01 9C D1 10 91 D0 08 01 8D 0A 01 8E 0B 01 62 0C 01 99",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "CapabilityUseReceipt {\n  useReceiptId: cap.use.1\n  tokenDigest: 83\n  contractRef: {issuerAgentId: a, contractId: c}\n  actionDigest: 8B\n  resourceInstanceDigest: 8C\n  useSequence: 1\n  consumedAtUnixMs: 1773034050000\n  resultDigest: 8D\n  canonicalDigest: 8E\n  signerId: b\n  signature: 99\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 70: Completed `SettlementComputation`",
+      "id": "bytes.object.settlement_computation.completed_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 0B 73 65 74 74 6C 65 2E 6F 6B 2E 31 02 06 01 01 61 02 01 63 03 01 9E 04 01 9F 05 08 00 00 00 00 00 00 07 30 08 02 00 01 09 01 B0 0A 01 58 0B 10 01 06 01 01 61 02 01 97 01 06 01 01 62 02 01 98",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "SettlementComputation {\n  computationId: settle.ok.1\n  contractRef: {issuerAgentId: a, contractId: c}\n  ruleSetDigest: 9E\n  meteringReceiptSetDigest: 9F\n  reducedUnits: 1840\n  outcome: completed\n  netTransferSetDigest: B0\n  canonicalDigest: 58\n  signatureSet: [{signerId: a, signature: 97}, {signerId: b, signature: 98}]\n}",
+      "expectedParseSummary": null
+    },
+    {
+      "heading": "Vector 71: Completed `NetTransferSet`",
+      "id": "bytes.object.net_transfer_set.completed_v1",
+      "canonicalFrameBytes": null,
+      "canonicalPayloadBytes": null,
+      "canonicalSectionBytes": null,
+      "canonicalObjectBytes": "01 08 6E 65 74 2E 6F 6B 2E 31 02 06 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 0F 75 6E 69 74 2E 63 6F 6D 70 75 74 65 2E 6D 73 05 3A 01 38 01 06 78 66 65 72 2E 31 02 06 69 73 73 75 65 72 03 08 65 78 65 63 75 74 6F 72 04 08 00 00 00 00 00 00 07 30 05 0F 75 6E 69 74 2E 63 6F 6D 70 75 74 65 2E 6D 73 06 01 58 06 01 B0 07 10 01 06 01 01 61 02 01 97 01 06 01 01 62 02 01 98",
+      "canonicalPayloadBody": null,
+      "canonicalHeaderSection": null,
+      "canonicalObjectBody": "NetTransferSet {\n  transferSetId: net.ok.1\n  contractRef: {issuerAgentId: a, contractId: c}\n  contractRevision: 1\n  settlementUnitRef: unit.compute.ms\n  entries: [{entryId: xfer.1, fromPartyRole: issuer, toPartyRole: executor, units: 1840, unitRef: unit.compute.ms, supportingDigest: 58}]\n  canonicalDigest: B0\n  signatureSet: [{signerId: a, signature: 97}, {signerId: b, signature: 98}]\n}",
+      "expectedParseSummary": null
+    }
+  ],
+  "transcripts": [
+    {
+      "heading": "Transcript 1: Bootstrap Single-Frame Admission",
+      "id": "bytes.transcript.bootstrap.single_hello",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.bootstrap.single_hello.fresh_bootstrap_lineage"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T1.F1",
+          "heading": "T1.F1 `HELLO`",
+          "sourceVectorId": "bytes.hello.minimal_v1",
+          "canonicalFrameBytes": "41 41 50 01\n00 00\n26\n71\n00 01\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n00\n01\n01\n00\n10\n64\n00 00 00 00\n01 49\n01 01 61\n02 04 01 02 00 01\n03 08 01 06 01 01 00 02 01 00\n04 01 00\n06 2E 01 01 AA 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01\n08 01 42",
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T1.F1]\n  currentHandshakeState: helloAccepted\n  contractTrafficPermitted: false\n}"
+    },
+    {
+      "heading": "Transcript 2: Contract Proposal Admission",
+      "id": "bytes.transcript.contract.single_propose",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.contract.single_propose.handshake_converged"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T2.F1",
+          "heading": "T2.F1 `PROPOSE`",
+          "sourceVectorId": "bytes.propose.minimal_contract_v1",
+          "canonicalFrameBytes": "41 41 50 01\n01 00\n3D\n95 01\n00 04\n01 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n02\n01\n01\n00\n20\n64\n00 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 01\n01 56\n01 01 63\n02 08 00 00 00 00 00 00 00 01\n03 01 C1\n04 2E 01 01 BB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01\n06 01 C2\n07 01 C3\n08 01 61\n09 08 00 00 00 00 00 00 00 01\n0A 01 99",
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T2.F1]\n  contractStateAfterFrame: Proposed\n  emittedWireErrors: []\n}"
+    },
+    {
+      "heading": "Transcript 3: Contract Reference Mismatch Rejection",
+      "id": "bytes.transcript.contract_ref_mismatch_with_wire_error",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.contract_ref_mismatch_with_wire_error.handshake_converged"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T3.F1",
+          "heading": "T3.F1 malformed `PROPOSE`",
+          "sourceVectorId": null,
+          "canonicalFrameBytes": "41 41 50 01\n01 00\n3D\n95 01\n00 04\n01 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n02\n01\n01\n00\n20\n64\n00 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 01\n01 56\n01 01 64\n02 08 00 00 00 00 00 00 00 01\n03 01 C1\n04 2E 01 01 BB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01\n06 01 C2\n07 01 C3\n08 01 61\n09 08 00 00 00 00 00 00 00 01\n0A 01 99",
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 114\n}"
+        },
+        {
+          "id": "T3.F2",
+          "heading": "T3.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.contract_ref_mismatch_v1",
+          "canonicalFrameBytes": "41 41 50 01\n01 00\n26\n47\n00 17\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n00\n02\n02\n01\n10\n64\n00 00 00 00\n01 1F\n01 02 00 72\n02 02 00 03\n03 08 00 00 00 00 00 00 00 02\n04 08 00 00 00 00 00 00 00 01\n05 01 00",
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T3.F2]\n  rejectedFrames: [T3.F1]\n  emittedWireErrors: [114]\n  contractStateMutation: none\n}"
+    },
+    {
+      "heading": "Transcript 4: Fail-Closed Settlement And Close",
+      "id": "bytes.transcript.contract.fail_closed_terminal_slice",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.contract.fail_closed_terminal_slice.handshake_converged"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T4.F1",
+          "heading": "T4.F1 `SETTLE`",
+          "sourceVectorId": "bytes.settle.fail_closed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: contractEntersSettling\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T4.F2",
+          "heading": "T4.F2 `CLOSE`",
+          "sourceVectorId": "bytes.close.fail_closed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: contractEntersClosed\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T4.F1, T4.F2]\n  finalContractState: Closed\n  terminalCloseReason: policyFailClosed\n  closeTraceBound: true\n}"
+    },
+    {
+      "heading": "Transcript 5: Challenge Remains Blocking After Repair",
+      "id": "bytes.transcript.challenge.repair_requires_resolving_state",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.challenge.repair_requires_resolving_state.handshake_converged"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T5.F1",
+          "heading": "T5.F1 `CHALLENGE`",
+          "sourceVectorId": "bytes.challenge.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: contractEntersChallenged\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T5.F2",
+          "heading": "T5.F2 `REPAIR`",
+          "sourceVectorId": "bytes.repair.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: noImmediateStateClear\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T5.F1, T5.F2]\n  contractStateAfterFrame: Challenged\n  challengeStillBlocking: true\n  completionPermitted: false\n}"
+    },
+    {
+      "heading": "Transcript 6: Divergent Duplicate After Resume",
+      "id": "bytes.transcript.resume.divergent_duplicate_rejected",
+      "requiredAcceptedVectorIds": [
+        "bytes.object.resume_acceptance.minimal_v1"
+      ],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.resume.divergent_duplicate_rejected.resume_acceptance_admitted"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T6.F1",
+          "heading": "T6.F1 divergent duplicate `CHALLENGE`",
+          "sourceVectorId": "bytes.challenge.divergent_duplicate_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 108\n}"
+        },
+        {
+          "id": "T6.F2",
+          "heading": "T6.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.replay_violation_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T6.F2]\n  rejectedFrames: [T6.F1]\n  emittedWireErrors: [108]\n  replayWindowWidened: false\n}"
+    },
+    {
+      "heading": "Transcript 7: Unknown Critical Section Rejected",
+      "id": "bytes.transcript.contract.unknown_critical_section_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.contract.unknown_critical_section_rejected.handshake_converged"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T7.F1",
+          "heading": "T7.F1 malformed `PROPOSE`",
+          "sourceVectorId": null,
+          "canonicalFrameBytes": "41 41 50 01\n01 00\n41\n99 01\n00 04\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n02\n01\n01\n00\n20\n64\n40 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 01\n3F 02 AA BB\n01 56\n01 01 63\n02 08 00 00 00 00 00 00 00 01\n03 01 C1\n04 2E 01 01 BB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01\n06 01 C2\n07 01 C3\n08 01 61\n09 08 00 00 00 00 00 00 00 01\n0A 01 99",
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 102\n}"
+        },
+        {
+          "id": "T7.F2",
+          "heading": "T7.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.unknown_critical_extension_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T7.F2]\n  rejectedFrames: [T7.F1]\n  emittedWireErrors: [102]\n  contractStateMutation: none\n}"
+    },
+    {
+      "heading": "Transcript 8: Unknown Non-Critical Section Preserved",
+      "id": "bytes.transcript.contract.unknown_noncritical_section_preserved",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.contract.unknown_noncritical_section_preserved.handshake_converged"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T8.F1",
+          "heading": "T8.F1 `PROPOSE` with opaque extension section",
+          "sourceVectorId": null,
+          "canonicalFrameBytes": "41 41 50 01\n01 00\n41\n99 01\n00 04\n00 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n02\n01\n01\n00\n20\n64\n40 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 01\n3E 02 AA BB\n01 56\n01 01 63\n02 08 00 00 00 00 00 00 00 01\n03 01 C1\n04 2E 01 01 BB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01\n06 01 C2\n07 01 C3\n08 01 61\n09 08 00 00 00 00 00 00 00 01\n0A 01 99",
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T8.F1]\n  contractStateAfterFrame: Proposed\n  opaqueSectionsPreserved: [31]\n  emittedWireErrors: []\n}"
+    },
+    {
+      "heading": "Transcript 9: `CAPS` Admission",
+      "id": "bytes.transcript.bootstrap.single_caps",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.bootstrap.single_caps.hello_converged"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T9.F1",
+          "heading": "T9.F1 `CAPS`",
+          "sourceVectorId": "bytes.caps.minimal_negotiated_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: handshakeConverged\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T9.F1]\n  currentHandshakeState: capsAccepted\n  contractTrafficPermitted: true\n}"
+    },
+    {
+      "heading": "Transcript 10: Contract Acceptance Admission",
+      "id": "bytes.transcript.contract.single_accept",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.contract.single_accept.handshake_converged"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T10.F1",
+          "heading": "T10.F1 `ACCEPT`",
+          "sourceVectorId": "bytes.accept.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: contractEntersAccepted\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T10.F1]\n  contractStateAfterFrame: Accepted\n  authorityGraphActivated: true\n}"
+    },
+    {
+      "heading": "Transcript 11: Successful Delivery Through Close",
+      "id": "bytes.transcript.contract.completed_terminal_slice",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.contract.completed_terminal_slice.handshake_converged"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T11.F1",
+          "heading": "T11.F1 `DELIVER`",
+          "sourceVectorId": "bytes.deliver.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: contractEntersDelivering\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T11.F2",
+          "heading": "T11.F2 `PROVE`",
+          "sourceVectorId": "bytes.prove.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: contractEntersProved\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T11.F3",
+          "heading": "T11.F3 `STATE phase=completed`",
+          "sourceVectorId": "bytes.state.completed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: contractEntersCompleted\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T11.F4",
+          "heading": "T11.F4 `SETTLE`",
+          "sourceVectorId": "bytes.settle.completed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: contractEntersSettling\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T11.F5",
+          "heading": "T11.F5 `CLOSE`",
+          "sourceVectorId": "bytes.close.completed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: contractEntersClosed\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T11.F1, T11.F2, T11.F3, T11.F4, T11.F5]\n  finalContractState: Closed\n  terminalCloseReason: witnessThresholdMet\n  closeTraceBound: true\n}"
+    },
+    {
+      "heading": "Transcript 12: Post-Resume Proposal Admission",
+      "id": "bytes.transcript.resume.post_resume_propose",
+      "requiredAcceptedVectorIds": [
+        "bytes.object.resume_acceptance.minimal_v1"
+      ],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.resume.post_resume_propose.resume_acceptance_admitted"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T12.F1",
+          "heading": "T12.F1 `PROPOSE`",
+          "sourceVectorId": "bytes.propose.minimal_contract_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: contractEntersProposed\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T12.F1]\n  contractStateAfterFrame: Proposed\n  resumedReplayContinuityPreserved: true\n}"
+    },
+    {
+      "heading": "Transcript 13: Reserved Extension Frame Rejected",
+      "id": "bytes.transcript.extension.reserved_frame_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.extension.reserved_frame_rejected.handshake_converged"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T13.F1",
+          "heading": "T13.F1 reserved extension frame",
+          "sourceVectorId": null,
+          "canonicalFrameBytes": "41 41 50 01\n01 00\n3D\n95 01\n00 18\n01 01\n00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F\n02\n01\n01\n00\n20\n64\n00 00 00 02\n04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 01 04 02 00 01\n01 56\n01 01 63\n02 08 00 00 00 00 00 00 00 01\n03 01 C1\n04 2E 01 01 BB 02 01 73 03 01 6D 04 13 69 6E 6C 69 6E 65 2D 68 61 6E 64 73 68 61 6B 65 2D 76 31 06 01 00 07 01 01 08 08 00 00 00 00 00 00 00 01\n06 01 C2\n07 01 C3\n08 01 61\n09 08 00 00 00 00 00 00 00 01\n0A 01 99",
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 109\n}"
+        },
+        {
+          "id": "T13.F2",
+          "heading": "T13.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.unsupported_base_profile_schema_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T13.F2]\n  rejectedFrames: [T13.F1]\n  emittedWireErrors: [109]\n  contractStateMutation: none\n}"
+    },
+    {
+      "heading": "Transcript 14: `domainLimited` Rejects Quorum-Gated Close",
+      "id": "bytes.transcript.bootstrap.domain_limited_close_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.bootstrap.domain_limited_close_rejected.domain_limited_mode"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T14.F1",
+          "heading": "T14.F1 `CLOSE`",
+          "sourceVectorId": "bytes.close.completed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 115\n}"
+        },
+        {
+          "id": "T14.F2",
+          "heading": "T14.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.invalid_state_transition_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T14.F2]\n  rejectedFrames: [T14.F1]\n  emittedWireErrors: [115]\n  contractStateMutation: none\n}"
+    },
+    {
+      "heading": "Transcript 15: `finalityBlocked` Rejects Contract `CLOSE`",
+      "id": "bytes.transcript.bootstrap.finality_blocked_close_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.bootstrap.finality_blocked_close_rejected.finality_blocked_mode"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T15.F1",
+          "heading": "T15.F1 `CLOSE`",
+          "sourceVectorId": "bytes.close.completed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 115\n}"
+        },
+        {
+          "id": "T15.F2",
+          "heading": "T15.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.invalid_state_transition_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T15.F2]\n  rejectedFrames: [T15.F1]\n  emittedWireErrors: [115]\n  contractStateMutation: none\n}"
+    },
+    {
+      "heading": "Transcript 16: Resume Token Expired",
+      "id": "bytes.transcript.resume.token_expired_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.resume.token_expired_rejected.resume_refusal_token_expired"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T16.F1",
+          "heading": "T16.F1 resume `HELLO`",
+          "sourceVectorId": "bytes.hello.resume_minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 111\n}"
+        },
+        {
+          "id": "T16.F2",
+          "heading": "T16.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.negotiation_mismatch_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T16.F2]\n  rejectedFrames: [T16.F1]\n  emittedWireErrors: [111]\n  resumedSessionAccepted: false\n  resultingAction: requireFreshSession\n  contractTrafficPermitted: false\n}"
+    },
+    {
+      "heading": "Transcript 17: Stale Revocation Blocks Irreversible Close",
+      "id": "bytes.transcript.trust.stale_revocation_close_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.trust.stale_revocation_close_rejected.stale_revocation_context"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T17.F1",
+          "heading": "T17.F1 `CLOSE`",
+          "sourceVectorId": "bytes.close.completed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 115\n}"
+        },
+        {
+          "id": "T17.F2",
+          "heading": "T17.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.invalid_state_transition_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T17.F2]\n  rejectedFrames: [T17.F1]\n  emittedWireErrors: [115]\n  contractStateRemains: Settling\n  finalityAccepted: false\n  failClosedReason: staleRevocationEvidence\n  nextRequiredAction: waitOrResolveBlockedCloseOutcome\n}"
+    },
+    {
+      "heading": "Transcript 18: Bootstrap Trust Policy Mismatch",
+      "id": "bytes.transcript.bootstrap.trust_policy_mismatch_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.bootstrap.trust_policy_mismatch_rejected.bootstrap_policy_mismatch"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T18.F1",
+          "heading": "T18.F1 `CAPS`",
+          "sourceVectorId": "bytes.caps.trust_policy_mismatch_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: sessionFails\n  generatedWireError: 111\n}"
+        },
+        {
+          "id": "T18.F2",
+          "heading": "T18.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.negotiation_mismatch_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T18.F2]\n  rejectedFrames: [T18.F1]\n  emittedWireErrors: [111]\n  currentHandshakeState: failed\n  contractTrafficPermitted: false\n}"
+    },
+    {
+      "heading": "Transcript 19: Replay Continuity Not Restorable",
+      "id": "bytes.transcript.resume.replay_restore_not_restorable",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.resume.replay_restore_not_restorable.resume_restore_failure"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T19.F1",
+          "heading": "T19.F1 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.negotiation_mismatch_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: sessionFails\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T19.F1]\n  emittedWireErrors: [111]\n  resumedSessionAccepted: false\n  replayWindowWidened: false\n  resultingAction: requireFreshSession\n}"
+    },
+    {
+      "heading": "Transcript 20: Peer Binding Mismatch",
+      "id": "bytes.transcript.resume.peer_binding_mismatch_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.resume.peer_binding_mismatch_rejected.resume_peer_binding_mismatch"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T20.F1",
+          "heading": "T20.F1 resume `HELLO`",
+          "sourceVectorId": "bytes.hello.resume_minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 111\n}"
+        },
+        {
+          "id": "T20.F2",
+          "heading": "T20.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.negotiation_mismatch_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T20.F2]\n  rejectedFrames: [T20.F1]\n  emittedWireErrors: [111]\n  resumedSessionAccepted: false\n  resultingAction: closeTransportSession\n  contractTrafficPermitted: false\n}"
+    },
+    {
+      "heading": "Transcript 21: Resume Trust Policy Mismatch",
+      "id": "bytes.transcript.resume.trust_policy_mismatch_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.resume.trust_policy_mismatch_rejected.resume_policy_mismatch"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T21.F1",
+          "heading": "T21.F1 resume `HELLO`",
+          "sourceVectorId": "bytes.hello.resume_trust_policy_mismatch_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 111\n}"
+        },
+        {
+          "id": "T21.F2",
+          "heading": "T21.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.negotiation_mismatch_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T21.F2]\n  rejectedFrames: [T21.F1]\n  emittedWireErrors: [111]\n  resumedSessionAccepted: false\n  resultingAction: requireFreshSession\n  contractTrafficPermitted: false\n}"
+    },
+    {
+      "heading": "Transcript 22: Blocking Challenge Rejects Completed `STATE`",
+      "id": "bytes.transcript.challenge.completed_state_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.challenge.completed_state_rejected.active_blocking_challenge"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T22.F1",
+          "heading": "T22.F1 `STATE`",
+          "sourceVectorId": "bytes.state.completed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 115\n}"
+        },
+        {
+          "id": "T22.F2",
+          "heading": "T22.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.invalid_completed_state_transition_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T22.F2]\n  rejectedFrames: [T22.F1]\n  emittedWireErrors: [115]\n  contractStateRemains: Challenged\n  completionPermitted: false\n  semanticEffect: noContractStateMutation\n}"
+    },
+    {
+      "heading": "Transcript 23: No-Op `REPAIR` Rejected",
+      "id": "bytes.transcript.challenge.noop_repair_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.challenge.noop_repair_rejected.noop_repair_context"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T23.F1",
+          "heading": "T23.F1 `REPAIR`",
+          "sourceVectorId": "bytes.repair.noop_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: none\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: []\n  rejectedFrames: [T23.F1]\n  emittedWireErrors: []\n  contractStateRemains: Challenged\n  failClosedReason: repairDidNotChangeCoveredDigest\n}"
+    },
+    {
+      "heading": "Transcript 24: Prior-Session Capability Reuse Rejected After Resume",
+      "id": "bytes.transcript.resume.prior_session_capability_rejected",
+      "requiredAcceptedVectorIds": [
+        "bytes.object.resume_acceptance.minimal_v1",
+        "bytes.object.capability_token.prior_session_v1"
+      ],
+      "requiredAbsentVectorIds": [
+        "bytes.object.capability_token_rebinding.minimal_v1"
+      ],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.resume.prior_session_capability_rejected.resumed_session_pre_rebinding"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T24.F1",
+          "heading": "T24.F1 `DELIVER`",
+          "sourceVectorId": "bytes.deliver.resumed_prior_session_capability_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: none\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: []\n  rejectedFrames: [T24.F1]\n  emittedWireErrors: []\n  resumedSessionAccepted: true\n  contractTrafficPermittedByToken: false\n  authoritySource: none\n}"
+    },
+    {
+      "heading": "Transcript 25: Rebound Capability Admitted After Resume",
+      "id": "bytes.transcript.resume.rebound_capability_admitted",
+      "requiredAcceptedVectorIds": [
+        "bytes.object.resume_acceptance.minimal_v1",
+        "bytes.object.capability_token.prior_session_v1",
+        "bytes.object.capability_token_rebinding.minimal_v1"
+      ],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.resume.rebound_capability_admitted.resumed_session_post_rebinding"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T25.F1",
+          "heading": "T25.F1 `DELIVER`",
+          "sourceVectorId": "bytes.deliver.resumed_prior_session_capability_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  accepted: true\n  semanticEffect: resumedCapabilityAccepted\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T25.F1]\n  rejectedFrames: []\n  emittedWireErrors: []\n  resumedSessionAccepted: true\n  contractTrafficPermittedByToken: true\n  authoritySource: capabilityTokenRebinding\n}"
+    },
+    {
+      "heading": "Transcript 26: Successful Open-Core Replay Bundle",
+      "id": "bytes.transcript.open_core.success_replay_bundle",
+      "requiredAcceptedVectorIds": [
+        "bytes.hello.bootstrap_alpha_self_contained_v1",
+        "bytes.hello.bootstrap_beta_self_contained_v1",
+        "bytes.caps.bootstrap_alpha_self_contained_v1",
+        "bytes.caps.bootstrap_beta_self_contained_v1",
+        "bytes.propose.minimal_contract_v1",
+        "bytes.accept.minimal_v1",
+        "bytes.deliver.minimal_v1",
+        "bytes.prove.minimal_v1",
+        "bytes.state.completed.minimal_v1",
+        "bytes.settle.completed.minimal_v1",
+        "bytes.close.completed.minimal_v1",
+        "bytes.object.agent_identity.bootstrap_alpha_v1",
+        "bytes.object.agent_identity.bootstrap_beta_v1",
+        "bytes.object.trust_domain.bootstrap_alpha_v1",
+        "bytes.object.trust_domain.bootstrap_beta_v1",
+        "bytes.object.domain_admission.bootstrap_alpha_v1",
+        "bytes.object.domain_admission.bootstrap_beta_v1",
+        "bytes.object.revocation_status.bootstrap_alpha_active_v1",
+        "bytes.object.revocation_status.bootstrap_beta_active_v1",
+        "bytes.object.verifier_independence.open_core_v1",
+        "bytes.object.freshness_policy.open_core_v1",
+        "bytes.object.time_profile.base_v1",
+        "bytes.object.revocation_profile.base_v1",
+        "bytes.object.trust_policy.open_core_v1",
+        "bytes.object.bootstrap_bundle.open_core_v1",
+        "bytes.object.bootstrap_acceptance.open_core_v1",
+        "bytes.object.capability_use_receipt.completed_v1",
+        "bytes.object.settlement_computation.completed_v1",
+        "bytes.object.net_transfer_set.completed_v1",
+        "bytes.object.state_transition_record.minimal_v1",
+        "bytes.object.close_decision.completed_v1",
+        "bytes.object.finality_witness.completed_delta_v1",
+        "bytes.object.finality_witness.completed_gamma_v1",
+        "bytes.object.finality_witness_set.completed_v1"
+      ],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "selfContainedByteReplay",
+      "declaredPrerequisiteContextIds": [],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T26.F1",
+          "heading": "T26.F1 Initiator `HELLO`",
+          "sourceVectorId": "bytes.hello.bootstrap_alpha_self_contained_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T26.F2",
+          "heading": "T26.F2 Responder `HELLO`",
+          "sourceVectorId": "bytes.hello.bootstrap_beta_self_contained_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T26.F3",
+          "heading": "T26.F3 Initiator `CAPS`",
+          "sourceVectorId": "bytes.caps.bootstrap_alpha_self_contained_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T26.F4",
+          "heading": "T26.F4 Responder `CAPS`",
+          "sourceVectorId": "bytes.caps.bootstrap_beta_self_contained_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T26.F5",
+          "heading": "T26.F5 `PROPOSE`",
+          "sourceVectorId": "bytes.propose.minimal_contract_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T26.F6",
+          "heading": "T26.F6 `ACCEPT`",
+          "sourceVectorId": "bytes.accept.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T26.F7",
+          "heading": "T26.F7 `DELIVER`",
+          "sourceVectorId": "bytes.deliver.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T26.F8",
+          "heading": "T26.F8 `PROVE`",
+          "sourceVectorId": "bytes.prove.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T26.F9",
+          "heading": "T26.F9 `STATE phase=completed`",
+          "sourceVectorId": "bytes.state.completed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T26.F10",
+          "heading": "T26.F10 `SETTLE`",
+          "sourceVectorId": "bytes.settle.completed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T26.F11",
+          "heading": "T26.F11 `CLOSE`",
+          "sourceVectorId": "bytes.close.completed.minimal_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T26.F1, T26.F2, T26.F3, T26.F4, T26.F5, T26.F6, T26.F7, T26.F8, T26.F9, T26.F10, T26.F11]\n  orderedAcceptedVectors: [bytes.hello.bootstrap_alpha_self_contained_v1, bytes.hello.bootstrap_beta_self_contained_v1, bytes.caps.bootstrap_alpha_self_contained_v1, bytes.caps.bootstrap_beta_self_contained_v1, bytes.propose.minimal_contract_v1, bytes.accept.minimal_v1, bytes.deliver.minimal_v1, bytes.prove.minimal_v1, bytes.state.completed.minimal_v1, bytes.settle.completed.minimal_v1, bytes.close.completed.minimal_v1]\n  supportingObjectVectors: [bytes.object.agent_identity.bootstrap_alpha_v1, bytes.object.agent_identity.bootstrap_beta_v1, bytes.object.trust_domain.bootstrap_alpha_v1, bytes.object.trust_domain.bootstrap_beta_v1, bytes.object.domain_admission.bootstrap_alpha_v1, bytes.object.domain_admission.bootstrap_beta_v1, bytes.object.revocation_status.bootstrap_alpha_active_v1, bytes.object.revocation_status.bootstrap_beta_active_v1, bytes.object.verifier_independence.open_core_v1, bytes.object.freshness_policy.open_core_v1, bytes.object.time_profile.base_v1, bytes.object.revocation_profile.base_v1, bytes.object.trust_policy.open_core_v1, bytes.object.bootstrap_bundle.open_core_v1, bytes.object.bootstrap_acceptance.open_core_v1, bytes.object.capability_use_receipt.completed_v1, bytes.object.settlement_computation.completed_v1, bytes.object.net_transfer_set.completed_v1, bytes.object.state_transition_record.minimal_v1, bytes.object.close_decision.completed_v1, bytes.object.finality_witness.completed_delta_v1, bytes.object.finality_witness.completed_gamma_v1, bytes.object.finality_witness_set.completed_v1]\n  finalContractState: Closed\n  terminalCloseReason: witnessThresholdMet\n  replayBundleDependencyClass: selfContainedByteReplay\n  byteReplayBundleComplete: true\n}"
+    },
+    {
+      "heading": "Transcript 27: Exact Deadline Admission Boundary",
+      "id": "bytes.transcript.challenge.deadline_boundary_inclusive",
+      "requiredAcceptedVectorIds": [
+        "bytes.challenge.minimal_v1",
+        "bytes.repair.minimal_v1"
+      ],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.challenge.deadline_boundary_inclusive.challenge_deadline_boundary"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  boundaryRule: inclusive\n  observedAtDeadline: true\n  stale: false\n  acceptedRepairVector: bytes.repair.minimal_v1\n  resultingState: Challenged\n}"
+    },
+    {
+      "heading": "Transcript 28: Same-Batch Protected-Arrival-Order Tie Break",
+      "id": "bytes.transcript.contract.same_batch_protected_arrival_order",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.contract.same_batch_protected_arrival_order.same_batch_conflict"
+      ],
+      "observationBoundary": "protectedArrivalOrder",
+      "orderingKeyFields": [
+        "sequence",
+        "streamId",
+        "messageId"
+      ],
+      "protectedArrivalWinnerFrameId": "T28.F1",
+      "frames": [
+        {
+          "id": "T28.F1",
+          "heading": "T28.F1 First Arriving `DECLINE`",
+          "sourceVectorId": null,
+          "canonicalFrameBytes": "41 41 50 01 01 00 3C 65 00 07 01 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 02 07 28 00 20 64 00 00 00 02 04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 02 04 02 00 10 01 27 01 01 63 02 08 00 00 00 00 00 00 00 02 03 01 C3 04 02 00 02 05 01 00 07 08 00 00 00 00 00 00 00 02 08 01 61 09 01 71",
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T28.F2",
+          "heading": "T28.F2 Later Arriving `DECLINE`",
+          "sourceVectorId": null,
+          "canonicalFrameBytes": "41 41 50 01 01 00 3C 65 00 07 01 01 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 02 08 29 00 20 64 00 00 00 02 04 14 01 01 61 02 01 63 03 08 00 00 00 00 00 00 00 02 04 02 00 10 01 27 01 01 63 02 08 00 00 00 00 00 00 00 02 03 01 C3 04 02 00 02 05 01 00 07 08 00 00 00 00 00 00 00 02 08 01 61 09 01 72",
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T28.F1, T28.F2]\n  finalContractState: Declined\n  observationBoundary: protectedArrivalOrder\n  orderingKey: sequence|streamId|messageId\n  protectedArrivalOrderWinner: T28.F1\n}"
+    },
+    {
+      "heading": "Transcript 29: Self-Contained Unknown-Peer Bootstrap",
+      "id": "bytes.transcript.bootstrap.self_contained_open_core_v1",
+      "requiredAcceptedVectorIds": [
+        "bytes.hello.bootstrap_alpha_self_contained_v1",
+        "bytes.hello.bootstrap_beta_self_contained_v1",
+        "bytes.caps.bootstrap_alpha_self_contained_v1",
+        "bytes.caps.bootstrap_beta_self_contained_v1",
+        "bytes.object.agent_identity.bootstrap_alpha_v1",
+        "bytes.object.agent_identity.bootstrap_beta_v1",
+        "bytes.object.trust_domain.bootstrap_alpha_v1",
+        "bytes.object.trust_domain.bootstrap_beta_v1",
+        "bytes.object.domain_admission.bootstrap_alpha_v1",
+        "bytes.object.domain_admission.bootstrap_beta_v1",
+        "bytes.object.revocation_status.bootstrap_alpha_active_v1",
+        "bytes.object.revocation_status.bootstrap_beta_active_v1",
+        "bytes.object.verifier_independence.open_core_v1",
+        "bytes.object.freshness_policy.open_core_v1",
+        "bytes.object.time_profile.base_v1",
+        "bytes.object.revocation_profile.base_v1",
+        "bytes.object.trust_policy.open_core_v1",
+        "bytes.object.bootstrap_bundle.open_core_v1",
+        "bytes.object.bootstrap_acceptance.open_core_v1"
+      ],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "selfContainedByteReplay",
+      "declaredPrerequisiteContextIds": [],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T29.F1",
+          "heading": "T29.F1 Initiator `HELLO`",
+          "sourceVectorId": "bytes.hello.bootstrap_alpha_self_contained_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T29.F2",
+          "heading": "T29.F2 Responder `HELLO`",
+          "sourceVectorId": "bytes.hello.bootstrap_beta_self_contained_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T29.F3",
+          "heading": "T29.F3 Initiator `CAPS`",
+          "sourceVectorId": "bytes.caps.bootstrap_alpha_self_contained_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        },
+        {
+          "id": "T29.F4",
+          "heading": "T29.F4 Responder `CAPS`",
+          "sourceVectorId": "bytes.caps.bootstrap_beta_self_contained_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameResult {\n  accepted: true\n  parsedSuccessfully: true\n  generatedWireError: none\n}"
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T29.F1, T29.F2, T29.F3, T29.F4]\n  currentHandshakeState: handshakeConverged\n  contractTrafficPermitted: true\n  orderedAcceptedVectors: [bytes.hello.bootstrap_alpha_self_contained_v1, bytes.hello.bootstrap_beta_self_contained_v1, bytes.caps.bootstrap_alpha_self_contained_v1, bytes.caps.bootstrap_beta_self_contained_v1]\n  supportingObjectVectors: [bytes.object.agent_identity.bootstrap_alpha_v1, bytes.object.agent_identity.bootstrap_beta_v1, bytes.object.trust_domain.bootstrap_alpha_v1, bytes.object.trust_domain.bootstrap_beta_v1, bytes.object.domain_admission.bootstrap_alpha_v1, bytes.object.domain_admission.bootstrap_beta_v1, bytes.object.revocation_status.bootstrap_alpha_active_v1, bytes.object.revocation_status.bootstrap_beta_active_v1, bytes.object.verifier_independence.open_core_v1, bytes.object.freshness_policy.open_core_v1, bytes.object.time_profile.base_v1, bytes.object.revocation_profile.base_v1, bytes.object.trust_policy.open_core_v1, bytes.object.bootstrap_bundle.open_core_v1, bytes.object.bootstrap_acceptance.open_core_v1]\n  replayBundleDependencyClass: selfContainedByteReplay\n  byteReplayBundleComplete: true\n}"
+    },
+    {
+      "heading": "Transcript 30: `diagnosticOnly` Rejects Contract Traffic",
+      "id": "bytes.transcript.bootstrap.diagnostic_only_contract_rejected",
+      "requiredAcceptedVectorIds": [],
+      "requiredAbsentVectorIds": [],
+      "dependencyClass": "declaredBootstrapContext",
+      "declaredPrerequisiteContextIds": [
+        "ctx.bytes.transcript.bootstrap.diagnostic_only_contract_rejected.diagnostic_only_mode"
+      ],
+      "observationBoundary": null,
+      "orderingKeyFields": [],
+      "protectedArrivalWinnerFrameId": null,
+      "frames": [
+        {
+          "id": "T30.F1",
+          "heading": "T30.F1 `PROPOSE`",
+          "sourceVectorId": "bytes.propose.minimal_contract_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": "FrameOutcome {\n  parsedSuccessfully: true\n  accepted: false\n  semanticEffect: none\n  generatedWireError: 115\n}"
+        },
+        {
+          "id": "T30.F2",
+          "heading": "T30.F2 `WIRE_ERROR`",
+          "sourceVectorId": "bytes.wire_error.invalid_state_transition_v1",
+          "canonicalFrameBytes": null,
+          "expectedPerFrameResult": null
+        }
+      ],
+      "expectedTranscriptOutcome": "TranscriptOutcome {\n  acceptedFrames: [T30.F2]\n  rejectedFrames: [T30.F1]\n  emittedWireErrors: [115]\n}"
+    }
+  ]
+}

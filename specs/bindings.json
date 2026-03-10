@@ -1,0 +1,340 @@
+{
+  "agentManagementMode": "agent-native",
+  "corpusFiles": [
+    "conformances/01.BOOTSTRAP.TRANSCRIPT.md",
+    "conformances/02.HAPPY.PATH.md",
+    "conformances/03.CHALLENGE.REPAIR.md",
+    "conformances/04.SAFE.RESUME.md",
+    "conformances/05.NEGOTIATION.RACES.md",
+    "conformances/06.END.TO.END.TRANSCRIPTS.md",
+    "conformances/07.VERIFIER.BRIDGE.md",
+    "conformances/08.NEGATIVE.CASES.md",
+    "conformances/09.BYTE.CORPUS.md",
+    "conformances/10.BYTE.TRANSCRIPTS.md",
+    "conformances/README.md"
+  ],
+  "anchorReferences": [],
+  "transcriptLinks": [
+    {
+      "transcriptId": "bytes.transcript.bootstrap.single_hello",
+      "frameId": "T1.F1",
+      "sourceVectorId": "bytes.hello.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract.single_propose",
+      "frameId": "T2.F1",
+      "sourceVectorId": "bytes.propose.minimal_contract_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract_ref_mismatch_with_wire_error",
+      "frameId": "T3.F2",
+      "sourceVectorId": "bytes.wire_error.contract_ref_mismatch_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract.fail_closed_terminal_slice",
+      "frameId": "T4.F1",
+      "sourceVectorId": "bytes.settle.fail_closed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract.fail_closed_terminal_slice",
+      "frameId": "T4.F2",
+      "sourceVectorId": "bytes.close.fail_closed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.challenge.repair_requires_resolving_state",
+      "frameId": "T5.F1",
+      "sourceVectorId": "bytes.challenge.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.challenge.repair_requires_resolving_state",
+      "frameId": "T5.F2",
+      "sourceVectorId": "bytes.repair.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.divergent_duplicate_rejected",
+      "frameId": "T6.F1",
+      "sourceVectorId": "bytes.challenge.divergent_duplicate_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.divergent_duplicate_rejected",
+      "frameId": "T6.F2",
+      "sourceVectorId": "bytes.wire_error.replay_violation_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract.unknown_critical_section_rejected",
+      "frameId": "T7.F2",
+      "sourceVectorId": "bytes.wire_error.unknown_critical_extension_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.single_caps",
+      "frameId": "T9.F1",
+      "sourceVectorId": "bytes.caps.minimal_negotiated_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract.single_accept",
+      "frameId": "T10.F1",
+      "sourceVectorId": "bytes.accept.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract.completed_terminal_slice",
+      "frameId": "T11.F1",
+      "sourceVectorId": "bytes.deliver.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract.completed_terminal_slice",
+      "frameId": "T11.F2",
+      "sourceVectorId": "bytes.prove.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract.completed_terminal_slice",
+      "frameId": "T11.F3",
+      "sourceVectorId": "bytes.state.completed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract.completed_terminal_slice",
+      "frameId": "T11.F4",
+      "sourceVectorId": "bytes.settle.completed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.contract.completed_terminal_slice",
+      "frameId": "T11.F5",
+      "sourceVectorId": "bytes.close.completed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.post_resume_propose",
+      "frameId": "T12.F1",
+      "sourceVectorId": "bytes.propose.minimal_contract_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.extension.reserved_frame_rejected",
+      "frameId": "T13.F2",
+      "sourceVectorId": "bytes.wire_error.unsupported_base_profile_schema_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.domain_limited_close_rejected",
+      "frameId": "T14.F1",
+      "sourceVectorId": "bytes.close.completed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.domain_limited_close_rejected",
+      "frameId": "T14.F2",
+      "sourceVectorId": "bytes.wire_error.invalid_state_transition_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.finality_blocked_close_rejected",
+      "frameId": "T15.F1",
+      "sourceVectorId": "bytes.close.completed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.finality_blocked_close_rejected",
+      "frameId": "T15.F2",
+      "sourceVectorId": "bytes.wire_error.invalid_state_transition_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.token_expired_rejected",
+      "frameId": "T16.F1",
+      "sourceVectorId": "bytes.hello.resume_minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.token_expired_rejected",
+      "frameId": "T16.F2",
+      "sourceVectorId": "bytes.wire_error.negotiation_mismatch_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.trust.stale_revocation_close_rejected",
+      "frameId": "T17.F1",
+      "sourceVectorId": "bytes.close.completed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.trust.stale_revocation_close_rejected",
+      "frameId": "T17.F2",
+      "sourceVectorId": "bytes.wire_error.invalid_state_transition_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.trust_policy_mismatch_rejected",
+      "frameId": "T18.F1",
+      "sourceVectorId": "bytes.caps.trust_policy_mismatch_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.trust_policy_mismatch_rejected",
+      "frameId": "T18.F2",
+      "sourceVectorId": "bytes.wire_error.negotiation_mismatch_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.replay_restore_not_restorable",
+      "frameId": "T19.F1",
+      "sourceVectorId": "bytes.wire_error.negotiation_mismatch_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.peer_binding_mismatch_rejected",
+      "frameId": "T20.F1",
+      "sourceVectorId": "bytes.hello.resume_minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.peer_binding_mismatch_rejected",
+      "frameId": "T20.F2",
+      "sourceVectorId": "bytes.wire_error.negotiation_mismatch_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.trust_policy_mismatch_rejected",
+      "frameId": "T21.F1",
+      "sourceVectorId": "bytes.hello.resume_trust_policy_mismatch_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.trust_policy_mismatch_rejected",
+      "frameId": "T21.F2",
+      "sourceVectorId": "bytes.wire_error.negotiation_mismatch_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.challenge.completed_state_rejected",
+      "frameId": "T22.F1",
+      "sourceVectorId": "bytes.state.completed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.challenge.completed_state_rejected",
+      "frameId": "T22.F2",
+      "sourceVectorId": "bytes.wire_error.invalid_completed_state_transition_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.challenge.noop_repair_rejected",
+      "frameId": "T23.F1",
+      "sourceVectorId": "bytes.repair.noop_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.prior_session_capability_rejected",
+      "frameId": "T24.F1",
+      "sourceVectorId": "bytes.deliver.resumed_prior_session_capability_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.resume.rebound_capability_admitted",
+      "frameId": "T25.F1",
+      "sourceVectorId": "bytes.deliver.resumed_prior_session_capability_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F1",
+      "sourceVectorId": "bytes.hello.bootstrap_alpha_self_contained_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F2",
+      "sourceVectorId": "bytes.hello.bootstrap_beta_self_contained_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F3",
+      "sourceVectorId": "bytes.caps.bootstrap_alpha_self_contained_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F4",
+      "sourceVectorId": "bytes.caps.bootstrap_beta_self_contained_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F5",
+      "sourceVectorId": "bytes.propose.minimal_contract_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F6",
+      "sourceVectorId": "bytes.accept.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F7",
+      "sourceVectorId": "bytes.deliver.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F8",
+      "sourceVectorId": "bytes.prove.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F9",
+      "sourceVectorId": "bytes.state.completed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F10",
+      "sourceVectorId": "bytes.settle.completed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.open_core.success_replay_bundle",
+      "frameId": "T26.F11",
+      "sourceVectorId": "bytes.close.completed.minimal_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.self_contained_open_core_v1",
+      "frameId": "T29.F1",
+      "sourceVectorId": "bytes.hello.bootstrap_alpha_self_contained_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.self_contained_open_core_v1",
+      "frameId": "T29.F2",
+      "sourceVectorId": "bytes.hello.bootstrap_beta_self_contained_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.self_contained_open_core_v1",
+      "frameId": "T29.F3",
+      "sourceVectorId": "bytes.caps.bootstrap_alpha_self_contained_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.self_contained_open_core_v1",
+      "frameId": "T29.F4",
+      "sourceVectorId": "bytes.caps.bootstrap_beta_self_contained_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.diagnostic_only_contract_rejected",
+      "frameId": "T30.F1",
+      "sourceVectorId": "bytes.propose.minimal_contract_v1"
+    },
+    {
+      "transcriptId": "bytes.transcript.bootstrap.diagnostic_only_contract_rejected",
+      "frameId": "T30.F2",
+      "sourceVectorId": "bytes.wire_error.invalid_state_transition_v1"
+    }
+  ],
+  "claimManifests": {
+    "aapOpenCore": {
+      "requiredSpecs": [
+        "README.md",
+        "01.WIRE.FORMAT.md",
+        "02.CONTRACT.MODEL.md",
+        "03.TRUST.MODEL.md",
+        "04.CANONICAL.OBJECTS.md",
+        "05.REFERENCE.STACK.md",
+        "conformances/README.md",
+        "conformances/09.BYTE.CORPUS.md",
+        "conformances/10.BYTE.TRANSCRIPTS.md"
+      ],
+      "requiredCorpusFiles": [
+        "conformances/README.md",
+        "conformances/01.BOOTSTRAP.TRANSCRIPT.md",
+        "conformances/02.HAPPY.PATH.md",
+        "conformances/03.CHALLENGE.REPAIR.md",
+        "conformances/04.SAFE.RESUME.md",
+        "conformances/05.NEGOTIATION.RACES.md",
+        "conformances/06.END.TO.END.TRANSCRIPTS.md",
+        "conformances/07.VERIFIER.BRIDGE.md",
+        "conformances/08.NEGATIVE.CASES.md",
+        "conformances/09.BYTE.CORPUS.md",
+        "conformances/10.BYTE.TRANSCRIPTS.md"
+      ],
+      "requiredValidators": [
+        "validate:protocol",
+        "validate:registries",
+        "validate:objects",
+        "validate:bytes",
+        "validate:bindings",
+        "validate:scenarios",
+        "validate:replay"
+      ],
+      "requiredByteTranscripts": [
+        "bytes.transcript.bootstrap.self_contained_open_core_v1",
+        "bytes.transcript.open_core.success_replay_bundle"
+      ]
+    }
+  }
+}

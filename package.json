@@ -1,0 +1,50 @@
+{
+  "name": "agent-assurance-protocol-spec",
+  "private": true,
+  "type": "module",
+  "author": {
+    "name": "delpai",
+    "email": "jay@delp.ai",
+    "url": "https://github.com/delpai"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/delp-ai/agent-assurance-protocol-spec.git"
+  },
+  "homepage": "https://github.com/delp-ai/agent-assurance-protocol-spec",
+  "bugs": {
+    "url": "https://github.com/delp-ai/agent-assurance-protocol-spec/issues"
+  },
+  "scripts": {
+    "sync:protocol": "node scripts/specs/protocol.mjs --write",
+    "check:protocol": "node scripts/specs/protocol.mjs",
+    "sync:registries": "node scripts/specs/registries.mjs --write",
+    "check:registries": "node scripts/specs/registries.mjs",
+    "sync:objects": "node scripts/specs/objects.mjs --write",
+    "check:objects": "node scripts/specs/objects.mjs",
+    "sync:bytes": "node scripts/specs/bytes.mjs --write",
+    "check:bytes": "node scripts/specs/bytes.mjs",
+    "sync:bindings": "node scripts/specs/bindings.mjs --write",
+    "check:bindings": "node scripts/specs/bindings.mjs",
+    "validate:anchors": "node scripts/validators/anchors.mjs",
+    "validate:protocol": "node scripts/validators/protocol.mjs",
+    "validate:registries": "node scripts/validators/registries.mjs",
+    "validate:bindings": "node scripts/validators/bindings.mjs",
+    "validate:scenarios": "node scripts/validators/scenarios.mjs",
+    "validate:bytes": "node scripts/validators/bytes.mjs",
+    "validate:objects": "node scripts/validators/objects.mjs",
+    "validate:replay": "node scripts/replay/harness.mjs --claim aapOpenCore",
+    "replay:open-core": "node scripts/replay/harness.mjs --claim aapOpenCore",
+    "replay:all": "node scripts/replay/harness.mjs --all-transcripts",
+    "validate:ssot": "node scripts/validators/index.mjs",
+    "test:validator": "node scripts/tests/validator.mjs",
+    "lint": "node scripts/quality/lint.mjs",
+    "format": "node scripts/quality/format.mjs",
+    "validate": "npm run validate:ssot && npm run validate:replay && npm run lint"
+  },
+  "devDependencies": {
+    "dprint": "^0.52.0",
+    "markdownlint-cli2": "^0.21.0"
+  }
+}

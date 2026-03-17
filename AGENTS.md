@@ -39,11 +39,11 @@ Use these supporting references as needed:
 ## Where Protocol Truth Lives
 
 - Published protocol documents in the repository root are the normative authored source.
-- `specs/protocol.json`: generated SSOT for wire schema, canonical object schema, composite types, and workflow invariants
-- `specs/registries.json`: generated SSOT for numeric registries and symbolic mappings
-- `specs/objects.json`: generated SSOT for canonical object representations extracted from the docs
-- `specs/bytes.json`: generated SSOT for maintained byte vectors and transcript fixtures
-- `specs/bindings.json`: generated SSOT for conformance and corpus bindings
+- `artifacts/protocol.json`: generated SSOT for wire schema, canonical object schema, composite types, and workflow invariants
+- `artifacts/registries.json`: generated SSOT for numeric registries and symbolic mappings
+- `artifacts/objects.json`: generated SSOT for canonical object representations extracted from the docs
+- `artifacts/bytes.json`: generated SSOT for maintained byte vectors and transcript fixtures
+- `artifacts/bindings.json`: generated SSOT for conformance and corpus bindings
 
 Runtime parsers and validators must load executable protocol truth from generated SSOT files, not
 from duplicated handwritten tables.
@@ -83,7 +83,7 @@ document set is possible.
 When changing protocol behavior, update all of the following in the same change:
 
 1. The published spec document
-2. The generated SSOT output in `specs/`
+2. The generated SSOT output in `artifacts/`
 3. The validator or parser that enforces it
 
 Do not weaken validation to make documents pass. Tighten the document and SSOT until they match
@@ -93,7 +93,7 @@ When the change is corpus-specific rather than wire-schema-specific, update the 
 surfaces at the corpus layer:
 
 1. The authored `conformances/*.md` source
-2. The generated `specs/bytes.json`, `specs/objects.json`, or `specs/bindings.json` artifacts that reflect it
+2. The generated `artifacts/bytes.json`, `artifacts/objects.json`, or `artifacts/bindings.json` artifacts that reflect it
 3. The validator logic that enforces the invariant
 
 ## Editing Workflow
@@ -101,7 +101,7 @@ surfaces at the corpus layer:
 Before editing:
 
 1. Identify which authored document is the normative source for the behavior.
-2. Check whether the same behavior is also represented in `specs/` or `scripts/validators/`.
+2. Check whether the same behavior is also represented in `artifacts/` or `scripts/validators/`.
 3. Decide whether the change belongs in public protocol law, conformance corpus, or reference guidance.
 
 While editing:
@@ -113,7 +113,7 @@ While editing:
 
 After editing:
 
-1. Regenerate affected `specs/*` artifacts.
+1. Regenerate affected `artifacts/*` artifacts.
 2. Run the relevant validators.
 3. Ensure the final repository state is formatted and lint-clean.
 
@@ -130,7 +130,7 @@ After editing:
 - Preserve uppercase document names.
 - Keep numbered reading-order prefixes for ordered documents such as `01.*`, `02.*`, `03.*`.
 - Keep corpus entry documents as `README.md` when they are the root document of a directory.
-- Prefer plural structural directory names such as `specs/`, `configs/`, and `conformances/`.
+- Prefer plural structural directory names such as `artifacts/`, `configs/`, and `conformances/`.
 - Prefer short file names without dashes; if a multi-part name is needed, prefer `.` over `-`.
 - When renaming or moving files or directories, use filesystem moves such as `mv`, not rewrite-and-delete flows.
 
@@ -144,27 +144,27 @@ After editing:
 ## Current Hardening Baseline
 
 - Optional header sections are fully promoted into field tables.
-- Header-section structural rules are living in `specs/protocol.json` under
+- Header-section structural rules are living in `artifacts/protocol.json` under
   `wire.headerSectionPolicies`.
 - Handshake, negotiation, session-resumption, bridge, finality, and cross-document transition
-  invariants are living in `specs/protocol.json` under `workflow`.
-- `specs/*` artifacts are being regenerated from scanned protocol documents rather than maintained
+  invariants are living in `artifacts/protocol.json` under `workflow`.
+- `artifacts/*` artifacts are being regenerated from scanned protocol documents rather than maintained
   by hand.
-- `specs/bindings.json` is projecting the maintained `AAP Open Core` claim surface and required
+- `artifacts/bindings.json` is projecting the maintained `AAP Open Core` claim surface and required
   artifact set from authored documentation.
-- `specs/bytes.json` is carrying transcript dependency classes and declared prerequisite contexts
+- `artifacts/bytes.json` is carrying transcript dependency classes and declared prerequisite contexts
   for maintained byte transcripts.
 - `scripts/replay/harness.mjs` is driving subprocess-based replay checks against the maintained
-  public transcript set declared in `specs/bindings.json`.
+  public transcript set declared in `artifacts/bindings.json`.
 - `scripts/core/protocol.mjs` is resolving protocol sections through generic document queries and
   projection plans rather than fixed document-location maps.
-- `scripts/core/objects.mjs` and `scripts/specs/objects.mjs` are deriving canonical object truth
+- `scripts/core/objects.mjs` and `scripts/artifacts/objects.mjs` are deriving canonical object truth
   from the published document set.
-- `scripts/core/fixtures.mjs` and `scripts/specs/bytes.mjs` are deriving byte-vector and transcript
+- `scripts/core/fixtures.mjs` and `scripts/artifacts/bytes.mjs` are deriving byte-vector and transcript
   truth from the maintained corpus docs.
 - Header-section parsing and policy enforcement are living in `scripts/core/parser.mjs`.
 - `scripts/validators/protocol.mjs` is regenerating protocol state from the documents and comparing that
-  regenerated state against `specs/protocol.json`.
+  regenerated state against `artifacts/protocol.json`.
 - `scripts/validators/objects.mjs` is validating canonical object vectors and object-schema usage,
   including list-ordering semantics derived from normative field-table notes.
 - `scripts/validators/bytes.mjs` is validating maintained frame/object bytes, transcript fixtures,
@@ -237,8 +237,8 @@ When changing formatting or linting behavior:
 
 ## Key Validator Surfaces
 
-- `scripts/validators/protocol.mjs`: regenerate protocol state from docs and compare it against `specs/protocol.json`
-- `scripts/validators/registries.mjs`: exact-match published registries against `specs/registries.json`
+- `scripts/validators/protocol.mjs`: regenerate protocol state from docs and compare it against `artifacts/protocol.json`
+- `scripts/validators/registries.mjs`: exact-match published registries against `artifacts/registries.json`
 - `scripts/validators/objects.mjs`: validate canonical object vectors and object-schema consistency
 - `scripts/validators/bindings.mjs`: validate corpus and binding references
 - `scripts/validators/scenarios.mjs`: scenario-level expectations

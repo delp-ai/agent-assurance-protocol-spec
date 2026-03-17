@@ -20,11 +20,11 @@
     "conformances/10.BYTE.TRANSCRIPTS.md"
   ],
   "generatedArtifacts": [
-    "specs/protocol.json",
-    "specs/registries.json",
-    "specs/objects.json",
-    "specs/bytes.json",
-    "specs/bindings.json"
+    "artifacts/protocol.json",
+    "artifacts/registries.json",
+    "artifacts/objects.json",
+    "artifacts/bytes.json",
+    "artifacts/bindings.json"
   ],
   "qualityCommands": {
     "required": [
@@ -55,7 +55,7 @@
         "README.md"
       ],
       "mustAlsoUpdate": [
-        "specs/*",
+        "artifacts/*",
         "scripts/validators/* or scripts/core/*"
       ]
     },
@@ -64,7 +64,7 @@
         "conformances/*.md"
       ],
       "mustAlsoUpdate": [
-        "specs/bytes.json, specs/objects.json, or specs/bindings.json",
+        "artifacts/bytes.json, artifacts/objects.json, or artifacts/bindings.json",
         "scripts/validators/*"
       ]
     },

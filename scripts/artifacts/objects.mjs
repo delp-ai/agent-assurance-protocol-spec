@@ -11,14 +11,14 @@ function main() {
     write,
     artifacts: [
       {
-        path: repoPath('specs', 'objects.json'),
-        current: loadJson('specs/objects.json'),
+        path: repoPath('artifacts', 'objects.json'),
+        current: loadJson('artifacts/objects.json'),
         next: nextState.generatedObjects,
       },
     ],
     staleMessage:
-      'generated objects artifact is stale; run `node scripts/specs/objects.mjs --write`',
-    updateMessage: 'updated specs/objects.json',
+      'generated objects artifact is stale; run `node scripts/artifacts/objects.mjs --write`',
+    updateMessage: 'updated artifacts/objects.json',
   });
 }
 

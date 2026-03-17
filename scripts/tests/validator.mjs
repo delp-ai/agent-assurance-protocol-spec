@@ -53,7 +53,10 @@ function countOccurrences(content, needle) {
 
 function syncGeneratedSpecs(repoDirectory) {
   for (const script of generatedSpecScripts) {
-    const result = run(repoDirectory, process.execPath, [`scripts/specs/${script}.mjs`, '--write']);
+    const result = run(repoDirectory, process.execPath, [
+      `scripts/artifacts/${script}.mjs`,
+      '--write',
+    ]);
     assertSuccess(result, `sync ${script}`);
   }
 }

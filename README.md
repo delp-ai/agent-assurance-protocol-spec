@@ -161,7 +161,7 @@ When contributing, use these rules:
 
 - change authored Markdown first when protocol or corpus behavior changes
 - treat the numbered root specs and `conformances/` as the normative authored source
-- keep generated `specs/*` artifacts derived from the authored documents; do not hand-maintain drift
+- keep generated `artifacts/*` artifacts derived from the authored documents; do not hand-maintain drift
 - if protocol behavior changes, update the authored spec, generated SSOT, and enforcing validator or parser in the same change
 - if corpus behavior changes, update the authored conformance source, generated corpus projections, and enforcing validator in the same change
 - do not silently widen public unknown-peer interoperability claims beyond the maintained `AAP Open Core` surface
@@ -307,8 +307,8 @@ mandatory surface:
 - byte-level golden vectors plus transcript-level byte fixtures for a maintained public subset
 - end-to-end normative traces covering bootstrap, negotiation, execution, proof, dispute
   handling, settlement, and close
-- machine-readable claim-surface bindings in `specs/bindings.json`
-- transcript dependency classes and declared prerequisite contexts in `specs/bytes.json`
+- machine-readable claim-surface bindings in `artifacts/bindings.json`
+- transcript dependency classes and declared prerequisite contexts in `artifacts/bytes.json`
 - a subprocess-driven cross-implementation replay harness for the maintained public replay bundle
 
 ### AAP Open Core Claim Required Specs
@@ -359,8 +359,8 @@ This repository is validating the maintained public replay bundle through
 
 The harness is:
 
-- loading transcript and vector truth from `specs/bytes.json`
-- loading the public replay target set from `specs/bindings.json`
+- loading transcript and vector truth from `artifacts/bytes.json`
+- loading the public replay target set from `artifacts/bindings.json`
 - spawning an adapter process over a JSON stdin/stdout contract
 - comparing adapter-produced frame results against the published replay expectations
 - comparing every published expected transcript-outcome field for each selected transcript

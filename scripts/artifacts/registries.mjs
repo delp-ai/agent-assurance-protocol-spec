@@ -10,13 +10,14 @@ function main() {
     write,
     artifacts: [
       {
-        path: repoPath('specs', 'registries.json'),
-        current: loadJson('specs/registries.json'),
+        path: repoPath('artifacts', 'registries.json'),
+        current: loadJson('artifacts/registries.json'),
         next: buildRegistriesState(),
       },
     ],
-    staleMessage: 'registries artifact is stale; run `node scripts/specs/registries.mjs --write`',
-    updateMessage: 'updated specs/registries.json',
+    staleMessage:
+      'registries artifact is stale; run `node scripts/artifacts/registries.mjs --write`',
+    updateMessage: 'updated artifacts/registries.json',
   });
 }
 

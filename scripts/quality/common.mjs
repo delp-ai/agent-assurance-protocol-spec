@@ -24,7 +24,7 @@ export function run(command, args) {
 
 export function runGeneratedSpecSyncs(write) {
   for (const script of generatedSpecScripts) {
-    const args = [`scripts/specs/${script}.mjs`];
+    const args = [`scripts/artifacts/${script}.mjs`];
     if (write) {
       args.push('--write');
     }

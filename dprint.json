@@ -7,7 +7,7 @@
     "README.md",
     "*.md",
     "conformances/**/*.md",
-    "specs/**/*.json",
+    "artifacts/**/*.json",
     "scripts/**/*.mjs",
     "configs/**/*.json",
     "package.json",

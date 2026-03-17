@@ -10,13 +10,13 @@ function main() {
     write,
     artifacts: [
       {
-        path: repoPath('specs', 'protocol.json'),
-        current: loadJson('specs/protocol.json'),
+        path: repoPath('artifacts', 'protocol.json'),
+        current: loadJson('artifacts/protocol.json'),
         next: buildProtocolState(),
       },
     ],
-    staleMessage: 'protocol artifact is stale; run `node scripts/specs/protocol.mjs --write`',
-    updateMessage: 'updated specs/protocol.json',
+    staleMessage: 'protocol artifact is stale; run `node scripts/artifacts/protocol.mjs --write`',
+    updateMessage: 'updated artifacts/protocol.json',
   });
 }
 

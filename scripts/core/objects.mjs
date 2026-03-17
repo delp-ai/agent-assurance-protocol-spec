@@ -99,7 +99,7 @@ function safeJsonCompare(left, right) {
 
 function buildRegistryLookups() {
   const byField = new Map();
-  const registriesSpec = loadJson('specs/registries.json');
+  const registriesSpec = loadJson('artifacts/registries.json');
   for (const [fieldName, registryId] of Object.entries(registriesSpec.fieldRegistryMap ?? {})) {
     if (!registryId) {
       continue;

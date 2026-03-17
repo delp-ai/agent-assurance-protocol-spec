@@ -10,13 +10,13 @@ function main() {
     write,
     artifacts: [
       {
-        path: repoPath('specs', 'bytes.json'),
-        current: loadJson('specs/bytes.json'),
+        path: repoPath('artifacts', 'bytes.json'),
+        current: loadJson('artifacts/bytes.json'),
         next: buildByteFixtureState(),
       },
     ],
-    staleMessage: 'fixture metadata is stale; run `node scripts/specs/bytes.mjs --write`',
-    updateMessage: 'updated specs/bytes.json',
+    staleMessage: 'fixture metadata is stale; run `node scripts/artifacts/bytes.mjs --write`',
+    updateMessage: 'updated artifacts/bytes.json',
   });
 }
 

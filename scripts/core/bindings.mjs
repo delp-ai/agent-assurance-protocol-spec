@@ -29,7 +29,7 @@ function buildTranscriptLinks(bytesSpec) {
 }
 
 export function buildBindingsState() {
-  const bytesSpec = loadJson('specs/bytes.json');
+  const bytesSpec = loadJson('artifacts/bytes.json');
   const readme = readText('README.md');
   const corpusFiles = listMarkdownFiles()
     .filter((file) => file.startsWith('conformances/'))

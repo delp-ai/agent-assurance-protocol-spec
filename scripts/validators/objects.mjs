@@ -15,7 +15,7 @@ import {
 import { buildObjectSyncState, extractObjectBlocks } from '../core/objects.mjs';
 import { frameTypeNames, generatedObjectDefinitions, registryLookups } from '../core/schema.mjs';
 
-const bytesSpec = loadJson('specs/bytes.json');
+const bytesSpec = loadJson('artifacts/bytes.json');
 const byteAliasTokens = new Set(Object.keys(bytesSpec.aliasBindings ?? {}));
 
 const registrySymbolsByField = new Map();
@@ -341,7 +341,7 @@ export function validateObjectBlocks() {
   const regeneratedDefinitions = buildObjectSyncState().generatedObjects.definitions;
   if (JSON.stringify(regeneratedDefinitions) !== JSON.stringify(generatedObjectDefinitions)) {
     problems.push(
-      'specs/objects.json: generated object metadata is stale; run `node scripts/specs/objects.mjs --write`',
+      'artifacts/objects.json: generated object metadata is stale; run `node scripts/artifacts/objects.mjs --write`',
     );
     return problems;
   }
@@ -352,7 +352,7 @@ export function validateObjectBlocks() {
       const definition = getDefinition(block.typeName);
       if (!definition) {
         problems.push(
-          `${file}:${block.typeName}: missing object definition in specs/protocol.json`,
+          `${file}:${block.typeName}: missing object definition in artifacts/protocol.json`,
         );
         continue;
       }

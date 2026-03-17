@@ -173,9 +173,9 @@ Classification rule:
   declare the prerequisite contexts they rely on explicitly
 - declared prerequisite contexts are part of the public claim surface for that artifact; an
   implementation must not invent additional hidden bootstrap inputs to make the artifact pass
-- maintained transcript metadata is projecting into `specs/bytes.json`, so downstream validators and
+- maintained transcript metadata is projecting into `artifacts/bytes.json`, so downstream validators and
   replay tools are consuming the same declared scope machine-readably
-- the maintained public replay target set is projecting into `specs/bindings.json`, and
+- the maintained public replay target set is projecting into `artifacts/bindings.json`, and
   `scripts/replay/harness.mjs` is consuming that target set through an adapter-process boundary
 
 Gating rule:

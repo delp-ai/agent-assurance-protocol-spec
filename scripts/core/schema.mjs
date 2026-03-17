@@ -1,9 +1,9 @@
 import { loadJson } from './common.mjs';
 import { frameTypeToPayloadType } from './docs.mjs';
 
-export const protocolSpec = loadJson('specs/protocol.json');
-export const registriesSpec = loadJson('specs/registries.json');
-export const generatedObjectsSpec = loadJson('specs/objects.json');
+export const protocolSpec = loadJson('artifacts/protocol.json');
+export const registriesSpec = loadJson('artifacts/registries.json');
+export const generatedObjectsSpec = loadJson('artifacts/objects.json');
 
 function expandFieldTable(encodedTable) {
   return encodedTable.map(([tag, field, type, required]) => ({

@@ -10,13 +10,13 @@ function main() {
     write,
     artifacts: [
       {
-        path: repoPath('specs', 'bindings.json'),
-        current: loadJson('specs/bindings.json'),
+        path: repoPath('artifacts', 'bindings.json'),
+        current: loadJson('artifacts/bindings.json'),
         next: buildBindingsState(),
       },
     ],
-    staleMessage: 'bindings artifact is stale; run `node scripts/specs/bindings.mjs --write`',
-    updateMessage: 'updated specs/bindings.json',
+    staleMessage: 'bindings artifact is stale; run `node scripts/artifacts/bindings.mjs --write`',
+    updateMessage: 'updated artifacts/bindings.json',
   });
 }
 

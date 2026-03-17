@@ -10,7 +10,7 @@ import {
 } from '../core/common.mjs';
 import { extractObjectBlocks } from '../core/objects.mjs';
 
-const protocolSpec = loadJson('specs/protocol.json');
+const protocolSpec = loadJson('artifacts/protocol.json');
 
 function collectScenarioFrames(file) {
   const content = readText(file);

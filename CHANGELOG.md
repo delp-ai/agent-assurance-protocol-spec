@@ -8,7 +8,7 @@ specification workspace.
 Initial public repository state:
 
 - Initial numbered `AAP` protocol documents in the repository root
-- Generated SSOT artifacts in `specs/`
+- Generated SSOT artifacts in `artifacts/`
 - Conformance corpus documents in `conformances/`
 - Parser, validator, replay, and quality tooling under `scripts/`
 - Standard open-source project metadata and repository policy files

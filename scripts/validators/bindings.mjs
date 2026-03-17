@@ -4,13 +4,13 @@ import { isMainModule, listFiles, loadJson, requireNoProblems } from '../core/co
 export function validateCorpusBindings() {
   const problems = [];
   const generated = buildBindingsState();
-  const ssot = loadJson('specs/bindings.json');
-  const bytesSpec = loadJson('specs/bytes.json');
+  const ssot = loadJson('artifacts/bindings.json');
+  const bytesSpec = loadJson('artifacts/bytes.json');
   const packageJson = loadJson('package.json');
 
   if (JSON.stringify(ssot) !== JSON.stringify(generated)) {
     problems.push(
-      'specs/bindings.json is stale; run `node scripts/specs/bindings.mjs --write`',
+      'artifacts/bindings.json is stale; run `node scripts/artifacts/bindings.mjs --write`',
     );
   }
 
@@ -43,7 +43,7 @@ export function validateCorpusBindings() {
     for (const transcriptId of manifest.requiredByteTranscripts ?? []) {
       if (!transcriptIds.has(transcriptId)) {
         problems.push(
-          `README.md:${manifestId}: required byte transcript '${transcriptId}' is not published in specs/bytes.json`,
+          `README.md:${manifestId}: required byte transcript '${transcriptId}' is not published in artifacts/bytes.json`,
         );
       }
     }

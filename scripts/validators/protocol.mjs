@@ -72,7 +72,7 @@ function compareAliasMap(problems, actual, expected) {
     Object.entries(expected).sort(([left], [right]) => left.localeCompare(right)),
   );
   if (JSON.stringify(normalizedActual) !== JSON.stringify(normalizedExpected)) {
-    problems.push('specs/protocol.json:canonical aliases do not match documented alias rules');
+    problems.push('artifacts/protocol.json:canonical aliases do not match documented alias rules');
   }
 }
 
@@ -106,22 +106,24 @@ export function validateProtocolSsot() {
     ...Object.keys(typedDocs.objects).map((typeName) => toLowerCamelCase(typeName)),
   ]);
 
-  compareObject(problems, 'specs/protocol.json', protocolSpec, regeneratedProtocol);
+  compareObject(problems, 'artifacts/protocol.json', protocolSpec, regeneratedProtocol);
 
   for (const [tag, name, , type] of protocolSpec.wire.headerSections) {
     if (!type) {
       problems.push(
-        `specs/protocol.json: header section '${name}' (tag ${tag}) missing schema link`,
+        `artifacts/protocol.json: header section '${name}' (tag ${tag}) missing schema link`,
       );
       continue;
     }
     if (!protocolSpec.wire.compositeTypes[type]) {
       problems.push(
-        `specs/protocol.json: header section '${name}' (tag ${tag}) references unknown composite type '${type}'`,
+        `artifacts/protocol.json: header section '${name}' (tag ${tag}) references unknown composite type '${type}'`,
       );
     }
     if (!protocolSpec.wire.headerSectionPolicies?.[name]) {
-      problems.push(`specs/protocol.json: header section '${name}' (tag ${tag}) missing policy`);
+      problems.push(
+        `artifacts/protocol.json: header section '${name}' (tag ${tag}) missing policy`,
+      );
     }
   }
 
@@ -141,7 +143,7 @@ export function validateProtocolSsot() {
 
   compareTable(
     problems,
-    'specs/protocol.json:wire composite types',
+    'artifacts/protocol.json:wire composite types',
     protocolSpec.wire.compositeTypes,
     Object.fromEntries(
       Object.entries(typedDocs.compositeTypes).map(([typeName, entries]) => [
@@ -152,7 +154,7 @@ export function validateProtocolSsot() {
   );
   compareTable(
     problems,
-    'specs/protocol.json:wire payload types',
+    'artifacts/protocol.json:wire payload types',
     protocolSpec.wire.payloads,
     Object.fromEntries(
       Object.entries(typedDocs.payloads).map(([frameType, entries]) => [
@@ -163,7 +165,7 @@ export function validateProtocolSsot() {
   );
   compareTable(
     problems,
-    'specs/protocol.json:canonical common types',
+    'artifacts/protocol.json:canonical common types',
     protocolSpec.canonical.commonTypes,
     Object.fromEntries(
       Object.entries(typedDocs.commonTypes).map(([typeName, entries]) => [
@@ -174,7 +176,7 @@ export function validateProtocolSsot() {
   );
   compareTable(
     problems,
-    'specs/protocol.json:canonical objects',
+    'artifacts/protocol.json:canonical objects',
     protocolSpec.canonical.objects,
     Object.fromEntries(
       Object.entries(typedDocs.objects).map(([typeName, entries]) => [

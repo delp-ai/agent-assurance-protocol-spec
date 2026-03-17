@@ -234,8 +234,8 @@ function validateAdapterCoverage(selectedTranscripts, adapterResponse, problems)
 }
 
 export function validateCrossImplementationReplay(options = {}) {
-  const bytesSpec = loadJson('specs/bytes.json');
-  const bindingsSpec = loadJson('specs/bindings.json');
+  const bytesSpec = loadJson('artifacts/bytes.json');
+  const bindingsSpec = loadJson('artifacts/bindings.json');
   const selectedTranscripts = resolveSelectedTranscripts(bytesSpec, bindingsSpec, {
     adapterCommand: options.adapterCommand ?? 'node scripts/replay/reference.adapter.mjs',
     claimId: options.claimId ?? 'aapOpenCore',

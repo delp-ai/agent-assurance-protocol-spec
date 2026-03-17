@@ -39,19 +39,19 @@ For the machine-readable repository workflow contract, see [`configs/repository.
 When protocol behavior changes:
 
 1. Update the authored Markdown spec first.
-2. Regenerate the affected `specs/*` artifact.
+2. Regenerate the affected `artifacts/*` artifact.
 3. Update the enforcing parser or validator in the same change.
 
 When corpus behavior changes:
 
 1. Update the authored `conformances/*.md` source first.
-2. Regenerate the affected derived artifact in `specs/`.
+2. Regenerate the affected derived artifact in `artifacts/`.
 3. Update the enforcing validator in the same change.
 
 In all cases:
 
 - Treat the numbered root specs and `conformances/` as the normative authored source.
-- Keep `specs/*` derived from authored documents. Do not hand-maintain drift.
+- Keep `artifacts/*` derived from authored documents. Do not hand-maintain drift.
 - Do not weaken validation to make documents pass. Tighten the docs, SSOT, and checks until they agree.
 - Do not silently widen unknown-peer public interoperability claims beyond the maintained `AAP Open Core` surface.
 - Declare prerequisite context explicitly when a corpus artifact is not self-contained.
@@ -101,13 +101,13 @@ Before opening a PR for substantive changes:
 1. Run `npm run format`, `npm run test:validator`, and `npm run validate`.
 2. Describe which authored sources were changed and why.
 3. State whether the change affects public protocol law, conformance corpus, or reference guidance.
-4. Note which `specs/*` artifacts were regenerated, or explicitly state that none were needed.
+4. Note which `artifacts/*` artifacts were regenerated, or explicitly state that none were needed.
 5. If relevant, note the change class from `configs/repository.json`.
 6. Link related issues, prior discussion, or affected spec sections when relevant.
 
 ## What To Avoid
 
-- Hand-editing generated `specs/*` files instead of updating the authored source
+- Hand-editing generated `artifacts/*` files instead of updating the authored source
 - Widening `AAP Open Core` claims without matching spec, SSOT, validator, and corpus coverage
 - Weakening validators to accommodate drift
 - Moving parser-relevant or conformance-relevant truth into prose-only guidance

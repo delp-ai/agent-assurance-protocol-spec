@@ -13,7 +13,7 @@ import { generatedObjectDefinitions } from '../core/schema.mjs';
 
 export function validateRegistries() {
   const problems = [];
-  const ssot = loadJson('specs/registries.json');
+  const ssot = loadJson('artifacts/registries.json');
   const registryMap = new Map(Object.entries(ssot.registries));
   const fieldRegistryBindings = ssot.fieldRegistryBindings ?? {};
   const fieldRegistryMap = ssot.fieldRegistryMap ?? {};
@@ -51,12 +51,12 @@ export function validateRegistries() {
       && !binding.registryId
     ) {
       problems.push(
-        `specs/registries.json: field '${fieldName}' has documented registry binding but no resolved registry`,
+        `artifacts/registries.json: field '${fieldName}' has documented registry binding but no resolved registry`,
       );
     }
     if (fieldRegistryMap[fieldName] !== binding.registryId) {
       problems.push(
-        `specs/registries.json: fieldRegistryMap disagrees with fieldRegistryBindings for '${fieldName}'`,
+        `artifacts/registries.json: fieldRegistryMap disagrees with fieldRegistryBindings for '${fieldName}'`,
       );
     }
   }

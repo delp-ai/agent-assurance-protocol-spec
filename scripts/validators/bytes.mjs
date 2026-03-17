@@ -531,11 +531,11 @@ function parseTypedBodyBlock(blockBody, schemaType, schema, label) {
 
 export function validateByteSets() {
   const problems = [];
-  const bytesSpec = loadJson('specs/bytes.json');
+  const bytesSpec = loadJson('artifacts/bytes.json');
   const regeneratedState = buildByteFixtureState();
   if (JSON.stringify(bytesSpec) !== JSON.stringify(regeneratedState)) {
     problems.push(
-      'specs/bytes.json: byte fixture metadata is stale; run `node scripts/specs/bytes.mjs --write`',
+      'artifacts/bytes.json: byte fixture metadata is stale; run `node scripts/artifacts/bytes.mjs --write`',
     );
     return problems;
   }
